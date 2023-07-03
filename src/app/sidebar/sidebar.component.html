@@ -1,48 +1,89 @@
-<div class="box">
-    <div class="sidebar-wrapper">
-        <div class="my-space">
-            <label>My Space</label>
-            <div class="home">
-                <button (click)="onHomeButtonClick()" class="homeButton">Home</button>
-            </div>
-            <div class="create-post">
-                <button (click)="onCreateButtonClick()" class="createButton">Create</button>
-            </div>
-        </div>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
 
-        <div class="category-selector">
-            <label>Categories</label>
-            <div class="category-selector-item">
-                <button class="categoryButton">Category 5</button>
-            </div>
-            <div class="category-selector-item">
-                <button class="categoryButton">Category 4</button>
-            </div>
-            <div class="category-selector-item">
-                <button class="categoryButton">Category 3</button>
-            </div>
-            <div class="category-selector-item">
-                <button class="categoryButton">Category 2</button>
-            </div>
-            <div class="category-selector-item">
-                <button class="categoryButton">Category 1</button>
-            </div>
-        </div>
-        
-        <div class="groups">
-            <label>Groups</label>
-            <div class="group-selector-item">
-                <button class="groupButton">Group1</button>
-            </div>
-            <div class="group-selector-item">
-                <button class="groupButton">Group2</button>
-            </div>
-            <div class="group-selector-item">
-                <button class="groupButton">Group3</button>
-            </div>
-            <div class="group-selector-item">
-                <button class="groupButton">Group4</button>
-            </div>
-        </div>
+<div class="box">
+  <div class="sidebar-wrapper">
+    <div class="my-space">
+      <label>My Space</label>
+      <div class="home">
+        <button (click)="onHomeButtonClick()" class="homeButton">
+          <i class="fa-solid fa-house home-icon"></i>
+          Home
+        </button>
+      </div>
+      <div class="create-post">
+        <button (click)="onCreateButtonClick()" class="createButton">
+          <i class="fa-solid fa-pen-to-square post-icon"></i>
+          Create
+        </button>
+      </div>
     </div>
+
+    <div class="category-selector">
+      <label>Categories</label>
+      <div class="category-selector-item">
+        <button class="categoryButton">
+          <i class="fa-solid fa-hashtag"></i>
+          Category 5
+        </button>
+      </div>
+      <div class="category-selector-item">
+        <button class="categoryButton">
+          <i class="fa-solid fa-hashtag"></i>
+          Category 4
+        </button>
+      </div>
+      <div class="category-selector-item">
+        <button class="categoryButton">
+          <i class="fa-solid fa-hashtag"></i>
+          Category 3
+        </button>
+      </div>
+      <div class="category-selector-item">
+        <button class="categoryButton">
+          <i class="fa-solid fa-hashtag"></i>
+          Category 2
+        </button>
+      </div>
+      <div class="category-selector-item">
+        <button class="categoryButton">
+          <i class="fa-solid fa-hashtag"></i>
+          Category 1
+        </button>
+      </div>
+    </div>
+
+    <div class="groups">
+      <label>Groups</label>
+      <div class="group-selector-item">
+        <button class="groupButton">
+          <i class="fa-solid fa-users-rectangle"></i>
+          Group1
+        </button>
+      </div>
+      <div class="group-selector-item">
+        <button class="groupButton">
+          <i class="fa-solid fa-users-rectangle"></i>
+          Group2
+        </button>
+      </div>
+      <div class="group-selector-item">
+        <button class="groupButton">
+          <i class="fa-solid fa-users-rectangle"></i>
+          Group3
+        </button>
+      </div>
+      <div class="group-selector-item">
+        <button class="groupButton">
+          <i class="fa-solid fa-users-rectangle"></i>
+          Group4
+        </button>
+      </div>
+    </div>
+  </div>
 </div>

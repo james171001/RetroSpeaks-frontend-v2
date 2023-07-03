@@ -14,7 +14,7 @@
 .my-space label {
   color: #707070;
   font-family: "Inter-Regular", Helvetica;
-  font-size: 11px;
+  font-size: 15px;
   font-weight: 400;
   left: 0;
   letter-spacing: 0;
@@ -26,7 +26,7 @@
 .category-selector label{
   color: #707070;
   font-family: "Inter-Regular", Helvetica;
-  font-size: 11px;
+  font-size: 15px;
   font-weight: 400;
   left: 0;
   letter-spacing: 0;
@@ -38,7 +38,7 @@
 .groups label{
   color: #707070;
   font-family: "Inter-Regular", Helvetica;
-  font-size: 11px;
+  font-size: 15px;
   font-weight: 400;
   left: 0;
   letter-spacing: 0;
@@ -47,7 +47,10 @@
   width: 88px;  
 }
 
-.home .homeButton {
+.homeButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: white;
   border: none;
   padding: 10px 20px;
@@ -57,17 +60,21 @@
   width: 100%;
 
   font-family: "Inter-Regular", Helvetica;
-  font-size: 11px;
+  font-size: 15px;
   font-weight: 700;
-  left: 0;
   letter-spacing: 0;
   line-height: normal;
-  top: 0;
 }
 
-.home .homeButton:hover {
+.homeButton .home-icon {
+  margin-right: 5px;
+  font-size: 12px;
+}
+
+.homeButton:hover {
   background-color: #e6e6e6;
 }
+
 
 .feed .feedButton {
   background-color: white;
@@ -100,13 +107,14 @@
   width: 100%;
 
   font-family: "Inter-Regular", Helvetica;
-  font-size: 11px;
+  font-size: 15px;
   font-weight: 700;
   left: 0;
   letter-spacing: 0;
   line-height: normal;
   top: 0;
 }
+
 .create-post .createButton:hover {
   background-color: #e6e6e6;
 }
@@ -123,7 +131,7 @@
   width: 100%;
 
   font-family: "Inter-Regular", Helvetica;
-  font-size: 11px;
+  font-size: 15px;
   font-weight: 700;
   left: 0;
   letter-spacing: 0;
@@ -145,7 +153,7 @@
   width: 100%;
 
   font-family: "Inter-Regular", Helvetica;
-  font-size: 11px;
+  font-size: 15px;
   font-weight: 700;
   left: 0;
   letter-spacing: 0;
