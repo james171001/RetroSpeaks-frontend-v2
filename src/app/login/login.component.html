@@ -1,31 +1,78 @@
-<div class="login">
-    <div class="overlap-wrapper">
-        <div class="overlap">
-            <div class="overlap-group">
-                <div class="text-wrapper">RetroSpeaks</div>
-            </div>
-            <div class="div">
-                <form class="login-form">
-                    <div class="user-name">
-                        <input type="text" placeholder="Enter your username" class="username-input">
-                    </div>
-                    <div class="password">
-                        <input type="password" placeholder="Enter your password" class="password-input">
-                    </div>
-                    <button class="loginButton">Login</button>
-                    <div class="text-wrapper-7">Forgot Password?</div>
-                </form>
-                <h1 class="h-1">Login to your Account</h1>
-                <div class="overlap-3">
-                    <div class="sign-up-BG">
-                        <div class="text-wrapper-5">New Here?</div>
-                        <div class="sign-up">
-                            <button class="signupButton" (click)="goToRegister()">Sign-Up</button>
-                        </div>
-                        <p class="p">Sign Up and Discover what Retrospeaks is. Discuss and Connect now!</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+<h2>RetroSpeaks</h2>
+<div class="main">
+  <div class="col-md-6 col-sm-12">
+
+    <div *ngIf="success" class="dialog-box dialog-box-success">
+      <p class="dialog-box-icon-success">✔️ </p>
+      <p class="dialog-box-message-success">Congratulations! Your registration was successful.</p>
     </div>
+
+    <div *ngIf="error" class="dialog-box dialog-box-success">
+      <p class="dialog-box-icon-success">❌  </p>
+      <p class="dialog-box-message-fail">Invalid username and password.</p>
+    </div>
+
+    <div *ngIf="fail" class="dialog-box dialog-box-success">
+      <p class="dialog-box-icon-success">❌  </p>
+      <p class="dialog-box-message-fail">Email or Username already exists.</p>
+    </div>
+
+    <div *ngIf="logout" class="dialog-box dialog-box-success">
+      <p class="dialog-box-message-success">You have been logged out.</p>
+    </div>
+
+    <div class="container" #container>
+      <div class="form-container sign-up-container">
+        <form > <!-- method="post" role="form" (ngSubmit)="signUp()" [formGroup]="signupForm" -->
+          <h1>Create Account</h1>
+          <input type="text" class="form-control" placeholder="Username" formControlName="username" required>
+          <p *ngIf="signupForm.get('username')?.invalid" class="text-danger">Username is required.</p>
+          <input type="email" class="form-control" placeholder="Email" formControlName="email" required>
+          <p *ngIf="signupForm.get('email')?.invalid" class="text-danger">Email is required.</p>
+          <input type="text" class="form-control" placeholder="First Name" formControlName="firstName">
+          <p *ngIf="signupForm.get('firstName')?.invalid" class="text-danger">First Name is required.</p>
+          <input type="text" class="form-control" placeholder="Last Name" formControlName="lastName" required>
+          <p *ngIf="signupForm.get('lastName')?.invalid" class="text-danger">Last Name is required.</p>
+          <input type="password" class="form-control" placeholder="Password" formControlName="password" required>
+          <input type="password" class="form-control" placeholder="Confirm Password" id="confirm_password" required>
+          <p *ngIf="signupForm.get('password')?.invalid" class="text-danger">Password is required.</p>
+          <p id="passwordError" style="color: red;"></p>
+          <button type="submit">Sign Up</button>
+        </form>
+      </div>
+
+      <div class="form-container sign-in-container">
+        <form > 
+            <!-- method="post" [formGroup]="signInForm" (ngSubmit)="signIn()" -->
+            <h1>Sign in</h1>
+            <div class="social-container">
+              <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+              <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <span>or use your account</span>
+            <input type="email" placeholder="Email" formControlName="email" />
+            <input type="password" placeholder="Password" formControlName="password" />
+            <a href="#">Forgot your password?</a>
+            <button type="submit">Sign In</button>
+          </form>
+          
+      </div>
+
+      <div class="overlay-container">
+        <div class="overlay">
+          <div class="overlay-panel overlay-left">
+            <h1>Welcome Back!</h1>
+            <p>To keep connected with us please login with your personal info</p>
+            <button class="ghost" id="signIn" (click)="switchToSignIn()">Sign In</button>
+          </div>
+          <div class="overlay-panel overlay-right">
+            <h1>Hello, Friend!</h1>
+            <p>Enter your personal details</p>
+            <button class="ghost" id="signUp" (click)="switchToSignUp()">Sign Up</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
