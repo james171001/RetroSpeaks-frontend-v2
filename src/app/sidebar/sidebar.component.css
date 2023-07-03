@@ -1,0 +1,157 @@
+.box .sidebar-wrapper {
+  background-color: #ffffff;
+  height: 1024px;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 196px;
+}
+
+.box .sidebar-wrapper .my-space {
+  margin-top: 100px;
+}
+
+.my-space label {
+  color: #707070;
+  font-family: "Inter-Regular", Helvetica;
+  font-size: 11px;
+  font-weight: 400;
+  left: 0;
+  letter-spacing: 0;
+  line-height: normal;
+  top: 0;
+  width: 88px;
+}
+
+.category-selector label{
+  color: #707070;
+  font-family: "Inter-Regular", Helvetica;
+  font-size: 11px;
+  font-weight: 400;
+  left: 0;
+  letter-spacing: 0;
+  line-height: normal;
+  top: 0;
+  width: 88px;  
+}
+
+.groups label{
+  color: #707070;
+  font-family: "Inter-Regular", Helvetica;
+  font-size: 11px;
+  font-weight: 400;
+  left: 0;
+  letter-spacing: 0;
+  line-height: normal;
+  top: 0;
+  width: 88px;  
+}
+
+.home .homeButton {
+  background-color: white;
+  border: none;
+  padding: 10px 20px;
+  color: #333333;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+
+  font-family: "Inter-Regular", Helvetica;
+  font-size: 11px;
+  font-weight: 700;
+  left: 0;
+  letter-spacing: 0;
+  line-height: normal;
+  top: 0;
+}
+
+.home .homeButton:hover {
+  background-color: #e6e6e6;
+}
+
+.feed .feedButton {
+  background-color: white;
+  border: none;
+  padding: 10px 20px;
+  color: #333333;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+
+  font-family: "Inter-Regular", Helvetica;
+  font-size: 11px;
+  font-weight: 700;
+  left: 0;
+  letter-spacing: 0;
+  line-height: normal;
+  top: 0;
+}
+.feed .feedButton:hover {
+  background-color: #e6e6e6;
+}
+
+.create-post .createButton {
+  background-color: white;
+  border: none;
+  padding: 10px 20px;
+  color: #333333;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+
+  font-family: "Inter-Regular", Helvetica;
+  font-size: 11px;
+  font-weight: 700;
+  left: 0;
+  letter-spacing: 0;
+  line-height: normal;
+  top: 0;
+}
+.create-post .createButton:hover {
+  background-color: #e6e6e6;
+}
+
+
+
+.category-selector-item .categoryButton {
+  background-color: white;
+  border: none;
+  padding: 10px 20px;
+  color: #333333;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+
+  font-family: "Inter-Regular", Helvetica;
+  font-size: 11px;
+  font-weight: 700;
+  left: 0;
+  letter-spacing: 0;
+  line-height: normal;
+  top: 0;
+}
+.category-selector-item .categoryButton:hover {
+  background-color: #e6e6e6;
+}
+
+
+.group-selector-item .groupButton {
+  background-color: white;
+  border: none;
+  padding: 10px 20px;
+  color: #333333;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+
+  font-family: "Inter-Regular", Helvetica;
+  font-size: 11px;
+  font-weight: 700;
+  left: 0;
+  letter-spacing: 0;
+  line-height: normal;
+  top: 0;
+}
+.group-selector-item .groupButton:hover {
+  background-color: #e6e6e6;
+}

@@ -1,0 +1,309 @@
+.body {
+    background-color: #D9D9D9;
+}
+
+.register {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.register .overlap-wrapper {
+    background-color: #ffffff;
+    border: 1px none;
+    height: 1024px;
+    width: 1440px;
+}
+
+.register .overlap {
+    background-color: #D9D9D9;
+    background-size: 100% 100%;
+    height: 1024px;
+    width: 100%;
+    position: relative;
+}
+
+.register .overlap-group {
+    background-color: #ffffff;
+    box-shadow: 0px 4px 4px #0000000d;
+    height: 67px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 1440px;
+}
+
+.register .text-wrapper {
+    color: #000000;
+    font-family: "Inter-SemiBold", Helvetica;
+    font-size: 19px;
+    font-weight: 600;
+    left: 22px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 23px;
+    width: 137px;
+}
+
+.register .div {
+    background-color: #ffffff;
+    border-radius: 48px;
+    height: 504px;
+    left: 280px;
+    position: absolute;
+    top: 260px;
+    width: 880px;
+}
+
+.register .password {
+    height: 35px;
+    left: 59px;
+    position: absolute;
+    top: 390px; /* Adjusted top position */
+    width: 369px;
+}
+
+.register .overlap-group-2 {
+    background-color: #ededed;
+    border-radius: 25px;
+    height: 35px;
+    position: relative;
+    width: 367px;
+}
+
+.register input {
+    background-color: #ededed;
+    border-radius: 10px;
+    border: none;
+    height: 35px;
+    position: relative;
+    width: 367px;
+}
+
+.register .text-wrapper-2 {
+    color: #b8b8b8;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 12px;
+    font-weight: 400;
+    left: 63px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 10px;
+    width: 65px;
+}
+
+.register .fluent-password {
+    height: 24px;
+    left: 30px;
+    position: absolute;
+    top: 5px;
+    width: 26px;
+}
+
+.register .user-name {
+    height: 35px;
+    left: 59px;
+    position: absolute;
+    top: 345px;
+    width: 369px;
+}
+
+
+.register .text-wrapper-3 {
+    color: #b8b8b8;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 12px;
+    font-weight: 400;
+    left: 63px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 11px;
+    width: 65px;
+}
+
+.register .vector {
+    height: 20px;
+    left: 34px;
+    position: absolute;
+    top: 8px;
+    width: 17px;
+}
+
+.register .lastname {
+    height: 35px;
+    left: 58px;
+    position: absolute;
+    top: 252px;
+    width: 369px;
+}
+
+.register .firstname {
+    height: 35px;
+    left: 59px;
+    position: absolute;
+    top: 204px;
+    width: 369px;
+}
+
+.register .email {
+    height: 35px;
+    left: 59px;
+    position: absolute;
+    top: 297px; /* Adjusted top position */
+    width: 369px;
+}
+
+.register .overlap-group-wrapper {
+    height: 31px;
+    left: 150px;
+    position: absolute;
+    top: 450px;
+    width: 369px;
+    border-radius: 10px;
+}
+.registerButton{
+    background-color: #00866e;
+    border-radius: 20px;
+    border: none;
+    height: 31px;
+    position: absolute;
+    width: 200px;
+    color: white;
+    left: 200;
+}
+.registerButton:hover {
+    background-color: #006956;
+    cursor: pointer;
+}
+
+.register .div-wrapper {
+    background-color: #00866e;
+    border-radius: 20px;
+    height: 31px;
+    position: relative;
+    width: 367px;
+}
+
+.register .text-wrapper-4 {
+    color: #ffffff;
+    font-family: "Inter-SemiBold", Helvetica;
+    font-size: 14px;
+    font-weight: 600;
+    left: 159px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 8px;
+    white-space: nowrap;
+    width: 72px;
+}
+
+.register .h-1 {
+    color: #000000;
+    font-family: "League Spartan-Bold", Helvetica;
+    font-size: 50px;
+    font-weight: 700;
+    left: 85px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 10px;
+    width: 341px;
+}
+
+.register .overlap-2 {
+    background-color: #00866dad;
+    border-radius: 40px;
+    height: 504px;
+    left: 537px;
+    position: absolute;
+    top: 0;
+    width: 343px;
+}
+
+.register .login {
+    color: #ffffff;
+    font-family: "League Spartan-Bold", Helvetica;
+    font-size: 50px;
+    font-weight: 700;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 127px;
+    width: 341px;
+}
+
+
+.register .login-2 {
+    height: 31px;
+    left: -50px;
+    position: absolute;
+    top: 320px;
+    width: 249px;
+}
+
+.register .overlap-3 {
+    background-color: #99d6c8;
+    border-radius: 20px;
+    height: 31px;
+    position: relative;
+    width: 247px;
+}
+
+.register .text-wrapper-5 {
+    color: #ffffff;
+    font-family: "Inter-SemiBold", Helvetica;
+    font-size: 14px;
+    font-weight: 600;
+    left: 98px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 8px;
+    white-space: nowrap;
+    width: 54px;
+}
+
+.loginButton{
+    color: #ffffff;
+    font-family: "Inter-SemiBold", Helvetica;
+    font-size: 14px;
+    font-weight: 600;
+    left: 98px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 8px;
+    white-space: nowrap;
+    background-color: #99d6c8;
+    border-radius: 20px;
+    height: 31px;
+    width: 247px;
+    border: none;
+}
+.loginButton:hover {
+    background-color: #77c0b8;
+    cursor: pointer;
+}
+
+.register .p {
+    color: #ffffff;
+    font-family: "League Spartan-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    left: 51px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 238px;
+    width: 239px;
+}
