@@ -6,10 +6,13 @@ import { HomepageModule } from './homepage/homepage.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ContentCardComponent } from './content-card/content-card.component';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ContentCardComponent
   ],
   imports: [
     BrowserModule,
@@ -17,7 +20,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     HomepageModule,
     BrowserAnimationsModule,
-
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
