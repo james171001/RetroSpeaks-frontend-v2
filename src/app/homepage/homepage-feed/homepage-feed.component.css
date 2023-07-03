@@ -157,32 +157,46 @@
 }
 
 .content {
-    height: 500px;
-    margin-top: 150px;
+    height: calc(100vh - 130px);
+    margin-top: 130px;
     margin-bottom: 10px;
+    margin-left: 60px;
 }
 .scrollable-content {
-    max-height: 100%;
-    overflow-y: auto;
+    max-height: 100vh;
+    min-height: 100vh;
     max-width: 1000px;
-    margin-right: 0;
+    margin-right: 0;        
+    overflow: auto;
+    overflow-y: auto;
+    scrollbar-width: thin; 
+    scrollbar-color: transparent transparent;
 }
 
+/* Customize the appearance of the scrollbar */
+.scrollable-content::-webkit-scrollbar {
+    width: 6px; 
+  }
+  
+  .scrollable-content::-webkit-scrollbar-thumb {
+    background-color: transparent; 
+  }
+  
+  .scrollable-content::-webkit-scrollbar-track {
+    background-color: transparent; 
+  }
 
-body {
+html, body {
     width: 100%;
     height: 100vh;
-    margin: 0;
-    padding: 0;
     background-color: #d9d9d9;
-    overflow: hidden;
+    overflow-y: hidden;
 }
 
 app-content-card {
     margin-left: 40%;
     height: 100%;
 }
-
 
 app-create-post {
     width: 40%;
