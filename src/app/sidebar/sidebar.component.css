@@ -72,7 +72,8 @@
 }
 
 .homeButton:hover {
-  background-color: #e6e6e6;
+  background-color: #00866e;
+  color: white;
 }
 
 
@@ -94,7 +95,8 @@
   top: 0;
 }
 .feed .feedButton:hover {
-  background-color: #e6e6e6;
+  background-color: #00866e;
+  color: white;
 }
 
 .create-post .createButton {
@@ -116,7 +118,8 @@
 }
 
 .create-post .createButton:hover {
-  background-color: #e6e6e6;
+  background-color: #00866e;
+  color: white;
 }
 
 
@@ -139,7 +142,8 @@
   top: 0;
 }
 .category-selector-item .categoryButton:hover {
-  background-color: #e6e6e6;
+  background-color: #00866e;
+  color: white;
 }
 
 
@@ -161,5 +165,6 @@
   top: 0;
 }
 .group-selector-item .groupButton:hover {
-  background-color: #e6e6e6;
+  background-color: #00866e;
+  color: white;
 }
