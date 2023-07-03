@@ -161,6 +161,7 @@
     margin-left: 250px;
 }
 
+
 body {
     background-color: #d9d9d9;
     height: 100%;
@@ -168,4 +169,8 @@ body {
 
 app-content-card {
     margin-left: 40%;
+    height: 100vh;
+}
+app-create-post{
+    width: 40%;
 }
