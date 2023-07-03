@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 <h2>RetroSpeaks</h2>
 <div class="main">
   <div class="col-md-6 col-sm-12">
@@ -23,8 +24,8 @@
 
     <div class="container" #container>
       <div class="form-container sign-up-container">
-        <form > <!-- method="post" role="form" (ngSubmit)="signUp()" [formGroup]="signupForm" -->
-          <h1>Create Account</h1>
+        <form class="resizable-form">
+          <h2>Create Account</h2>
           <input type="text" class="form-control" placeholder="Username" formControlName="username" required>
           <p *ngIf="signupForm.get('username')?.invalid" class="text-danger">Username is required.</p>
           <input type="email" class="form-control" placeholder="Email" formControlName="email" required>
@@ -33,6 +34,8 @@
           <p *ngIf="signupForm.get('firstName')?.invalid" class="text-danger">First Name is required.</p>
           <input type="text" class="form-control" placeholder="Last Name" formControlName="lastName" required>
           <p *ngIf="signupForm.get('lastName')?.invalid" class="text-danger">Last Name is required.</p>
+          <input type="number" class="form-control" placeholder="Age" formControlName="age" required>
+          <p *ngIf="signupForm.get('age')?.invalid" class="text-danger">Age is required.</p>
           <input type="password" class="form-control" placeholder="Password" formControlName="password" required>
           <input type="password" class="form-control" placeholder="Confirm Password" id="confirm_password" required>
           <p *ngIf="signupForm.get('password')?.invalid" class="text-danger">Password is required.</p>
@@ -46,12 +49,12 @@
             <!-- method="post" [formGroup]="signInForm" (ngSubmit)="signIn()" -->
             <h1>Sign in</h1>
             <div class="social-container">
-              <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-              <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-              <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" class="social"><i class="fab fa-facebook"></i></a>
+              <a href="#" class="social"><i class="fab fa-google"></i></a>
+              <a href="#" class="social"><i class="fab fa-linkedin"></i></a>
             </div>
             <span>or use your account</span>
-            <input type="email" placeholder="Email" formControlName="email" />
+            <input type="text" placeholder="Email" formControlName="email" />
             <input type="password" placeholder="Password" formControlName="password" />
             <a href="#">Forgot your password?</a>
             <button type="submit">Sign In</button>

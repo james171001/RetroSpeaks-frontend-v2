@@ -23,6 +23,7 @@ export class LoginComponent {
       email: ['', Validators.required],
       firstName: [''],
       lastName: ['', Validators.required],
+      age: ['', Validators.required],
       password: ['', Validators.required]
     });
 
