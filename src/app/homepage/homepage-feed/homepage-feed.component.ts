@@ -8,6 +8,11 @@ import { ContentCardComponent } from 'src/app/content-card/content-card.componen
 })
 
 export class HomepageComponent {
+  showCreatePostComponent: boolean = false;
+
+  showCreatePost() {
+    this.showCreatePostComponent = true;
+  }
 }
 
 
