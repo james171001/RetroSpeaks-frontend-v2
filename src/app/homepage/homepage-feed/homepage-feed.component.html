@@ -1,6 +1,6 @@
 <body>
     <div>
-        <app-sidebar (createButtonClick)="showCreatePost()"></app-sidebar>
+        <app-sidebar (createButtonClick)="showCreatePost()" (homeButtonClick)="showHomeFeed()"></app-sidebar>
     </div>
     <div class="box">
         <div class="top-bar-wrapper">
@@ -25,19 +25,23 @@
             </div>
         </div>
     </div>
-    <!-- <h1>content here</h1> -->
-    
-    <app-content-card title="Sample Issue" description="This is a sample content card"></app-content-card>
-    <app-content-card title="Sample Issue" description="This is a sample content card"></app-content-card>
-    <app-content-card title="Sample Issue" description="This is a sample content card"></app-content-card>
-    <app-content-card title="Sample Issue" description="This is a sample content card"></app-content-card>
-    <app-content-card title="Sample Issue" description="This is a sample content card"></app-content-card>
-    <app-content-card title="Sample Issue" description="This is a sample content card"></app-content-card>
-    <app-content-card title="Sample Issue" description="This is a sample content card"></app-content-card>
-    <app-content-card title="Sample Issue" description="This is a sample content card"></app-content-card>
-    <app-content-card title="Sample Issue" description="This is a sample content card"></app-content-card>
-    
     <div class="content">
-        <app-create-post *ngIf="showCreatePostComponent"></app-create-post>
+        <div class="scrollable-content">
+            <app-content-card *ngIf="showFeedComponent" title="Sample Issue"
+                description="This is a sample content card"></app-content-card>
+            <app-content-card *ngIf="showFeedComponent" title="Sample Issue"
+                description="This is a sample content card"></app-content-card>
+            <app-content-card *ngIf="showFeedComponent" title="Sample Issue"
+                description="This is a sample content card"></app-content-card>
+            <app-content-card *ngIf="showFeedComponent" title="Sample Issue"
+                description="This is a sample content card"></app-content-card>
+            <app-content-card *ngIf="showFeedComponent" title="Sample Issue"
+                description="This is a sample content card"></app-content-card>
+            <app-content-card *ngIf="showFeedComponent" title="Sample Issue"
+                description="This is a sample content card"></app-content-card>
+            <app-content-card *ngIf="showFeedComponent" title="Sample Issue"
+                description="This is a sample content card"></app-content-card>
+            <app-create-post *ngIf="showCreatePostComponent"></app-create-post>
+        </div>
     </div>
 </body>

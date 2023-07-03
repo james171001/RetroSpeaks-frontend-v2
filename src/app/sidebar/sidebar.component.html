@@ -3,13 +3,10 @@
         <div class="my-space">
             <label>My Space</label>
             <div class="home">
-                <button class="homeButton">Home</button>
-            </div>
-            <div class="feed">
-                <button class="feedButton">Feed</button>
+                <button (click)="onHomeButtonClick()" class="homeButton">Home</button>
             </div>
             <div class="create-post">
-                <button (click)="onButtonClick()" class="createButton">Create</button>
+                <button (click)="onCreateButtonClick()" class="createButton">Create</button>
             </div>
         </div>
 

@@ -7,9 +7,14 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class SidebarComponent {
   @Output() createButtonClick: EventEmitter<void> = new EventEmitter<void>();
+  @Output() homeButtonClick: EventEmitter<void> = new EventEmitter<void>();
 
   
-  onButtonClick() {
+  onCreateButtonClick() {
     this.createButtonClick.emit();
+  }
+
+  onHomeButtonClick(){
+    this.homeButtonClick.emit();
   }
 }
