@@ -1,5 +1,9 @@
 <div class="card">
-    <h2 class="card-title">{{ title }}</h2>
-    <p class="card-description">{{ description }}</p>
+  <h2 class="card-title">{{ title }} <span class="time-passed">{{ timePassed }}</span></h2>
+  <p class="card-description">{{ description }}</p>
+  <p class="comment-count">{{ commentCount }} comments</p>
+  <div class="button-group">
+    <button class="agree-button">Agree</button>
+    <button class="disagree-button">Disagree</button>
   </div>
-  
+</div>
