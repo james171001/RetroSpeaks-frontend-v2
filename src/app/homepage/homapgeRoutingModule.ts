@@ -4,8 +4,7 @@ import { HomepageComponent } from './homepage-feed/homepage-feed.component';
 import { ContentCardComponent } from '../content-card/content-card.component';
 
 const routes: Routes = [
-  { path: 'feed', component: HomepageComponent },
-  { path: 'content', component: ContentCardComponent }
+  { path: 'feed', component: HomepageComponent }
   // Add more routes for the homepage if needed
 ];
 

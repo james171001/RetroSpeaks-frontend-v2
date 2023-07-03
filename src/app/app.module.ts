@@ -12,7 +12,6 @@ import { MatCardModule } from '@angular/material/card';
 @NgModule({
   declarations: [
     AppComponent,
-    ContentCardComponent
   ],
   imports: [
     BrowserModule,
