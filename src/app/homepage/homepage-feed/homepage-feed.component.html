@@ -1,42 +1,52 @@
 <body>
-<<<<<<< Updated upstream
-    <div class="sidebar">
-        <app-sidebar (createButtonClick)="showCreatePost()" (homeButtonClick)="showHomeFeed()"></app-sidebar>
-=======
-    <div>
-        <app-sidebar (createButtonClick)="showCreatePost()" (homeButtonClick)="showHomeFeed()"></app-sidebar>z
->>>>>>> Stashed changes
-    </div>
-    <div class="box">
-        <div class="top-bar-wrapper">
-            <div class="top-bar">
-                <div class="overlap">
-                    <div class="search-bar-group">
-                        <div class="overlap-group">
-                            <input type="text" class="text-input" placeholder="Search Issue" />
-                        </div>
-                    </div>
-                    <div class="username">
-                        <div class="div">
-                            <div class="text-wrapper-2">UserName12356</div>
-                            <div class="typcn-user-outline"></div>
-                        </div>
-                    </div>
-                    <div class="logout">
-                        <button class="logout-button" type="button">Logout</button>
-                    </div>
-                    <div class="text-wrapper-4">RetroSpeaks</div>
-                </div>
+  <div>
+    <app-sidebar
+      (createButtonClick)="showCreatePost()"
+      (homeButtonClick)="showHomeFeed()"
+    ></app-sidebar>
+  </div>
+  <div class="box">
+    <div class="top-bar-wrapper">
+      <div class="top-bar">
+        <div class="overlap">
+          <div class="search-bar-group">
+            <div class="overlap-group">
+              <input
+                type="text"
+                class="text-input"
+                placeholder="Search Issue"
+              />
             </div>
+          </div>
+          <div class="username">
+            <div class="div">
+              <div class="text-wrapper-2">UserName12356</div>
+              <div class="typcn-user-outline"></div>
+            </div>
+          </div>
+          <div class="logout">
+            <button class="logout-button" type="button">Logout</button>
+          </div>
+          <div class="text-wrapper-4">RetroSpeaks</div>
         </div>
+      </div>
     </div>
-    <div class="content">
-        <app-create-post *ngIf="showCreatePostComponent"></app-create-post>
-        <div class="scrollable-content">
-            <app-content-card title="Sample Issue" description="This is a sample content card"
-                [commentCount]="555"></app-content-card>
-            <app-content-card title="Sample Issue"
-                description="Lorem ipsum dolor sit amet, 
+  </div>
+
+  <div class="news-container">
+    <app-news-content></app-news-content>
+  </div>
+
+  <div class="content">
+    <div class="scrollable-content">
+      <app-content-card
+        title="Sample Issue"
+        description="This is a sample content card"
+        [commentCount]="555"
+      ></app-content-card>
+      <app-content-card
+        title="Sample Issue"
+        description="Lorem ipsum dolor sit amet, 
                                                                 consectetur adipiscing elit, 
                                                                 sed do eiusmod tempor incididunt 
                                                                 ut labore et dolore magna aliqua.
@@ -48,9 +58,11 @@
                                                                  fugiat nulla pariatur. Excepteur sint 
                                                                  occaecat cupidatat non proident, sunt in 
                                                                  culpa qui officia deserunt mollit anim id est laborum."
-                [commentCount]="555"></app-content-card>
-            <app-content-card title="Sample Issue"
-                description="Lorem ipsum dolor sit amet, 
+        [commentCount]="555"
+      ></app-content-card>
+      <app-content-card
+        title="Sample Issue"
+        description="Lorem ipsum dolor sit amet, 
                                                                 consectetur adipiscing elit, 
                                                                 sed do eiusmod tempor incididunt 
                                                                 ut labore et dolore magna aliqua.
@@ -62,13 +74,21 @@
                                                                  fugiat nulla pariatur. Excepteur sint 
                                                                  occaecat cupidatat non proident, sunt in 
                                                                  culpa qui officia deserunt mollit anim id est laborum."
-                [commentCount]="555"></app-content-card>
-            <app-content-card title="Sample Issue" description="This is a sample content card"
-                [commentCount]="555"></app-content-card>
-            <app-content-card title="Sample Issue" description="This is a sample content card"
-                [commentCount]="555"></app-content-card>
-            <app-content-card title="Sample Issue"
-                description="Lorem ipsum dolor sit amet, 
+        [commentCount]="555"
+      ></app-content-card>
+      <app-content-card
+        title="Sample Issue"
+        description="This is a sample content card"
+        [commentCount]="555"
+      ></app-content-card>
+      <app-content-card
+        title="Sample Issue"
+        description="This is a sample content card"
+        [commentCount]="555"
+      ></app-content-card>
+      <app-content-card
+        title="Sample Issue"
+        description="Lorem ipsum dolor sit amet, 
                                                                 consectetur adipiscing elit, 
                                                                 sed do eiusmod tempor incididunt 
                                                                 ut labore et dolore magna aliqua.
@@ -80,17 +100,25 @@
                                                                  fugiat nulla pariatur. Excepteur sint 
                                                                  occaecat cupidatat non proident, sunt in 
                                                                  culpa qui officia deserunt mollit anim id est laborum."
-                [commentCount]="555"></app-content-card>
-            <app-content-card title="Sample Issue" description="This is a sample content card"
-                [commentCount]="555"></app-content-card>
-            <app-content-card title="Sample Issue" description="This is a sample content card"
-                [commentCount]="555"></app-content-card>
-            <app-content-card title="Sample Issue" description="This is a sample content card"
-                [commentCount]="555"></app-content-card>
-<<<<<<< Updated upstream
-=======
-            <app-create-post *ngIf="showCreatePostComponent"></app-create-post>
->>>>>>> Stashed changes
-        </div>
+        [commentCount]="555"
+      ></app-content-card>
+      <app-content-card
+        title="Sample Issue"
+        description="This is a sample content card"
+        [commentCount]="555"
+      ></app-content-card>
+      <app-content-card
+        title="Sample Issue"
+        description="This is a sample content card"
+        [commentCount]="555"
+      ></app-content-card>
+      <app-content-card
+        title="Sample Issue"
+        description="This is a sample content card"
+        [commentCount]="555"
+      ></app-content-card>
+
+      <app-create-post *ngIf="showCreatePostComponent"></app-create-post>
     </div>
+  </div>
 </body>

@@ -12,6 +12,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { AuthService } from './services/auth.service';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
+import { NewsApiService } from './services/news-api.service';
 
 @NgModule({
   declarations: [

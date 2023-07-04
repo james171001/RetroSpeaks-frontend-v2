@@ -6,6 +6,7 @@ import { SidebarComponent } from '../sidebar/sidebar.component';
 import { CardModule } from 'primeng/card';
 import { ContentCardComponent } from '../content-card/content-card.component';
 import { CreatePostComponent } from '../create-post/create-post.component';
+import { NewsContentComponent } from '../news-content/news-content.component';
 
 
 
@@ -14,7 +15,8 @@ import { CreatePostComponent } from '../create-post/create-post.component';
     HomepageComponent,
     SidebarComponent,
     ContentCardComponent,
-    CreatePostComponent
+    CreatePostComponent,
+    NewsContentComponent
   ],
   imports: [
     CommonModule,
