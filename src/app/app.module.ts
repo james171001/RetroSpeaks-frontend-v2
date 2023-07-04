@@ -13,12 +13,14 @@ import { AuthService } from './services/auth.service';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { NewsApiService } from './services/news-api.service';
+import { HeaderComponent } from './header/header.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     ErrorComponent,
-    LoginComponent
+    LoginComponent,
 
   ],
   imports: [
@@ -30,7 +32,8 @@ import { NewsApiService } from './services/news-api.service';
     MatCardModule,
     HttpClientModule,
     FormsModule,
-    CommonModule
+    CommonModule,
+    MatCardModule
   
 
 
