@@ -1,6 +1,11 @@
 <body>
+<<<<<<< Updated upstream
     <div class="sidebar">
         <app-sidebar (createButtonClick)="showCreatePost()" (homeButtonClick)="showHomeFeed()"></app-sidebar>
+=======
+    <div>
+        <app-sidebar (createButtonClick)="showCreatePost()" (homeButtonClick)="showHomeFeed()"></app-sidebar>z
+>>>>>>> Stashed changes
     </div>
     <div class="box">
         <div class="top-bar-wrapper">
@@ -82,6 +87,10 @@
                 [commentCount]="555"></app-content-card>
             <app-content-card title="Sample Issue" description="This is a sample content card"
                 [commentCount]="555"></app-content-card>
+<<<<<<< Updated upstream
+=======
+            <app-create-post *ngIf="showCreatePostComponent"></app-create-post>
+>>>>>>> Stashed changes
         </div>
     </div>
 </body>
