@@ -1,5 +1,5 @@
 <body>
-    <div>
+    <div class="sidebar">
         <app-sidebar (createButtonClick)="showCreatePost()" (homeButtonClick)="showHomeFeed()"></app-sidebar>
     </div>
     <div class="box">
@@ -26,6 +26,7 @@
         </div>
     </div>
     <div class="content">
+        <app-create-post *ngIf="showCreatePostComponent"></app-create-post>
         <div class="scrollable-content">
             <app-content-card title="Sample Issue" description="This is a sample content card"
                 [commentCount]="555"></app-content-card>
@@ -61,7 +62,7 @@
                 [commentCount]="555"></app-content-card>
             <app-content-card title="Sample Issue" description="This is a sample content card"
                 [commentCount]="555"></app-content-card>
-                <app-content-card title="Sample Issue"
+            <app-content-card title="Sample Issue"
                 description="Lorem ipsum dolor sit amet, 
                                                                 consectetur adipiscing elit, 
                                                                 sed do eiusmod tempor incididunt 
@@ -81,9 +82,6 @@
                 [commentCount]="555"></app-content-card>
             <app-content-card title="Sample Issue" description="This is a sample content card"
                 [commentCount]="555"></app-content-card>
-
-
-            <app-create-post *ngIf="showCreatePostComponent"></app-create-post>
         </div>
     </div>
 </body>

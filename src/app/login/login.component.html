@@ -1,51 +1,57 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-<h2>RetroSpeaks {{diagnostics | json}}</h2>
-<div class="main">
-  <div class="col-md-6 col-sm-12">
-    
-    <div *ngIf="success" class="dialog-box dialog-box-success">
-      <p class="dialog-box-icon-success">✔️ </p>
-      <p class="dialog-box-message-success">Congratulations! Your registration was successful.</p>
-    </div>
 
-    <div *ngIf="error" class="dialog-box dialog-box-success">
-      <p class="dialog-box-icon-success">❌  </p>
-      <p class="dialog-box-message-fail">Invalid username and password.</p>
-    </div>
+<body>
+  <div class="logo">
+    <img src="../assets/logo/Retr.png" alt="RetroSpeaks">
+  </div>
+  <div class="main">
 
-    <div *ngIf="fail" class="dialog-box dialog-box-success">
-      <p class="dialog-box-icon-success">❌  </p>
-      <p class="dialog-box-message-fail">Email or Username already exists.</p>
-    </div>
+    <div class="col-md-6 col-sm-12">
 
-    <div *ngIf="logout" class="dialog-box dialog-box-success">
-      <p class="dialog-box-message-success">You have been logged out.</p>
-    </div>
+      <div *ngIf="success" class="dialog-box dialog-box-success">
+        <p class="dialog-box-icon-success">✔️ </p>
+        <p class="dialog-box-message-success">Congratulations! Your registration was successful.</p>
+      </div>
 
-    <div class="container" #container>
-      <!-- <div class="form-container sign-up-container">
-        <form class="resizable-form">
-          <h2>Create Account</h2>
-          <input type="text" class="form-control" placeholder="Username" formControlName="username" required>
-          <p *ngIf="signupForm.get('username')?.invalid" class="text-danger">Username is required.</p>
-          <input type="email" class="form-control" placeholder="Email" formControlName="email" required>
-          <p *ngIf="signupForm.get('email')?.invalid" class="text-danger">Email is required.</p>
-          <input type="text" class="form-control" placeholder="First Name" formControlName="firstName">
-          <p *ngIf="signupForm.get('firstName')?.invalid" class="text-danger">First Name is required.</p>
-          <input type="text" class="form-control" placeholder="Last Name" formControlName="lastName" required>
-          <p *ngIf="signupForm.get('lastName')?.invalid" class="text-danger">Last Name is required.</p>
-          <input type="number" class="form-control" placeholder="Age" formControlName="age" required>
-          <p *ngIf="signupForm.get('age')?.invalid" class="text-danger">Age is required.</p>
-          <input type="password" class="form-control" placeholder="Password" formControlName="password" required>
-          <input type="password" class="form-control" placeholder="Confirm Password" id="confirm_password" required>
-          <p *ngIf="signupForm.get('password')?.invalid" class="text-danger">Password is required.</p>
-          <p id="passwordError" style="color: red;"></p>
-          <button type="submit">Sign Up</button>
-        </form>
-      </div> -->
+      <div *ngIf="error" class="dialog-box dialog-box-success">
+        <p class="dialog-box-icon-success">❌ </p>
+        <p class="dialog-box-message-fail">Invalid username and password.</p>
+      </div>
 
-      <div class="form-container sign-in-container">
-        <form [formGroup]="signInForm" (ngSubmit)="signIn()" novalidate>
+      <div *ngIf="fail" class="dialog-box dialog-box-success">
+        <p class="dialog-box-icon-success">❌ </p>
+        <p class="dialog-box-message-fail">Email or Username already exists.</p>
+      </div>
+
+      <div *ngIf="logout" class="dialog-box dialog-box-success">
+        <p class="dialog-box-message-success">You have been logged out.</p>
+      </div>
+
+      <div class="container" #container>
+        <div class="form-container sign-up-container">
+          <form class="resizable-form">
+            <h2>Create Account</h2>
+            <input type="text" class="form-control" placeholder="Username" formControlName="username" required>
+            <!-- <p *ngIf="signupForm.get('username')?.invalid" class="text-danger">Username is required.</p> -->
+            <input type="email" class="form-control" placeholder="Email" formControlName="email" required>
+            <!-- <p *ngIf="signupForm.get('email')?.invalid" class="text-danger">Email is required.</p> -->
+            <input type="text" class="form-control" placeholder="First Name" formControlName="firstName">
+            <!-- <p *ngIf="signupForm.get('firstName')?.invalid" class="text-danger">First Name is required.</p> -->
+            <input type="text" class="form-control" placeholder="Last Name" formControlName="lastName" required>
+            <!-- <p *ngIf="signupForm.get('lastName')?.invalid" class="text-danger">Last Name is required.</p> -->
+            <input type="number" class="form-control" placeholder="Age" formControlName="age" required>
+            <!-- <p *ngIf="signupForm.get('age')?.invalid" class="text-danger">Age is required.</p> -->
+            <input type="password" class="form-control" placeholder="Password" formControlName="password" required>
+            <input type="password" class="form-control" placeholder="Confirm Password" id="confirm_password" required>
+            <!-- <p *ngIf="signupForm.get('password')?.invalid" class="text-danger">Password is required.</p>
+            <p id="passwordError" style="color: red;"></p> -->
+            <button type="submit">Sign Up</button>
+          </form>
+        </div>
+
+        <div class="form-container sign-in-container">
+          <form>
+            <!-- method="post" [formGroup]="signInForm" (ngSubmit)="signIn()" -->
             <h1>Sign in</h1>
             <div class="social-container">
               <a href="#" class="social"><i class="fab fa-facebook"></i></a>
@@ -53,27 +59,28 @@
               <a href="#" class="social"><i class="fab fa-linkedin"></i></a>
             </div>
             <span>or use your account</span>
-            <input type="text" placeholder="text" formControlName="userName" />
-            <input type="password" placeholder="Password" formControlName="passWord" />
+            <input type="text" placeholder="Email" formControlName="email" />
+            <input type="password" placeholder="Password" formControlName="password" />
             <a href="#">Forgot your password?</a>
             <button type="submit">Sign In</button>
-         </form>
-      </div>
+          </form>
+        </div>
 
-      <div class="overlay-container">
-        <div class="overlay">
-          <div class="overlay-panel overlay-left">
-            <h1>Welcome Back!</h1>
-            <p>To keep connected with us please login with your personal info</p>
-            <button class="ghost" id="signIn" (click)="switchToSignIn()">Sign In</button>
-          </div>
-          <div class="overlay-panel overlay-right">
-            <h1>Hello, Friend!</h1>
-            <p>Enter your personal details</p>
-            <button class="ghost" id="signUp" (click)="switchToSignUp()">Sign Up</button>
+        <div class="overlay-container">
+          <div class="overlay">
+            <div class="overlay-panel overlay-left">
+              <h1>Welcome Back!</h1>
+              <p>To keep connected with us please login with your personal info</p>
+              <button class="ghost" id="signIn" (click)="switchToSignIn()">Sign In</button>
+            </div>
+            <div class="overlay-panel overlay-right">
+              <h1>Hello, Friend!</h1>
+              <p>Enter your personal details</p>
+              <button class="ghost" id="signUp" (click)="switchToSignUp()">Sign Up</button>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+</body>
