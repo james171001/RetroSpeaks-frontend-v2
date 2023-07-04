@@ -1,51 +1,58 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { AuthService } from '../services/auth.service';
+import { UserRegistration } from '../models/UserRegistration';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
   @ViewChild('container') container!: ElementRef;
 
- // signupForm: FormGroup;
-  signInForm: FormGroup;
   success: boolean = false;
   error: boolean = false;
   fail: boolean = false;
   logout: boolean = false;
 
-  suserName: FormControl = new FormControl("", Validators.required);
-  spassWord: FormControl = new FormControl
-  userName: FormControl = new FormControl("", Validators.required);
-  passWord: FormControl = new FormControl("", Validators.required);
+  //For Sign Up
+  signUpForm: FormGroup;
+  signUpUserName: FormControl = new FormControl('', Validators.required);
+  signUpPassWord: FormControl = new FormControl();
+  signUpEmail: FormControl = new FormControl('', Validators.required);
+  signUpLastName: FormControl = new FormControl('', Validators.required);
+  signUpFirstName: FormControl = new FormControl('', Validators.required);
+  signUpAge: FormControl = new FormControl('', Validators.required);
 
-  // email: FormControl = new FormControl("", Validators.required);
-  lastName: FormControl = new FormControl("", Validators.required);
+  //For Sign In
+  signInForm: FormGroup;
+  userName: FormControl = new FormControl('', Validators.required);
+  passWord: FormControl = new FormControl('', Validators.required);
 
-  firstName: FormControl = new FormControl("", Validators.required);
-  age: FormControl = new FormControl("", Validators.required);
+  firstName: FormControl = new FormControl('', Validators.required);
+  age: FormControl = new FormControl('', Validators.required);
 
-   
-  constructor(private router: Router,private authService:AuthService) {
-    // this.signupForm = new FormGroup({
-    //   // suserName: this.suserName,
-    //   // spassWord: this.spassWord,
-    //   // email : this.email,
-    //   lastName: this.lastName,
-    //   age: this.age,
-    //   passWord1: this.passWord,
-    // })
+  constructor(private router: Router, private authService: AuthService) {
+    this.signUpForm = new FormGroup({
+      signUpUserName: this.signUpUserName,
+      signUpPassWord: this.signUpPassWord,
+      signUpEmail: this.signUpEmail,
+      signUpLastName: this.signUpLastName,
+      signUpFirstName: this.signUpFirstName,
+      signUpAge: this.signUpAge,
+    });
 
     this.signInForm = new FormGroup({
       userName: this.userName,
       passWord: this.passWord,
-    })
-   
-
+    });
   }
 
   switchToSignUp() {
@@ -57,17 +64,34 @@ export class LoginComponent {
   }
 
   signUp() {
+    const formValue = this.signUpForm.value;
+  
+    const model = {
+      userName: formValue.signUpUserName,
+      passWord: formValue.signUpPassWord,
+      email: formValue.signUpEmail,
+      lastName: formValue.signUpLastName,
+      firstName: formValue.signUpFirstName,
+      gender: '', // Set the desired value for the gender property
+    };
+    this.authService.registerUser(model).subscribe({
+      next: (response) => {
+        console.log(response);
+      },
+      error: (error) => console.log(this.error),
+    });
   }
 
   signIn() {
+
     this.authService.authenticate(this.signInForm.value).subscribe({
-      next: response =>{
+      next: (response) => {
         console.log(response);
       },
-      error: error => console.log(this.error)
+      error: (error) => console.log(this.error),
     });
   }
-  get diagnostics(){
-    return this.signInForm.value;
+  get diagnostics() {
+    return this.signUpForm.value;
   }
 }

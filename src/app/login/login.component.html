@@ -23,26 +23,21 @@
     </div>
 
     <div class="container" #container>
-      <!-- <div class="form-container sign-up-container">
-        <form class="resizable-form">
+      <div class="form-container sign-up-container">
+        <form [formGroup]="signUpForm" (ngSubmit)="signUp()" novalidate>
           <h2>Create Account</h2>
-          <input type="text" class="form-control" placeholder="Username" formControlName="username" required>
-          <p *ngIf="signupForm.get('username')?.invalid" class="text-danger">Username is required.</p>
-          <input type="email" class="form-control" placeholder="Email" formControlName="email" required>
-          <p *ngIf="signupForm.get('email')?.invalid" class="text-danger">Email is required.</p>
-          <input type="text" class="form-control" placeholder="First Name" formControlName="firstName">
-          <p *ngIf="signupForm.get('firstName')?.invalid" class="text-danger">First Name is required.</p>
-          <input type="text" class="form-control" placeholder="Last Name" formControlName="lastName" required>
-          <p *ngIf="signupForm.get('lastName')?.invalid" class="text-danger">Last Name is required.</p>
-          <input type="number" class="form-control" placeholder="Age" formControlName="age" required>
-          <p *ngIf="signupForm.get('age')?.invalid" class="text-danger">Age is required.</p>
-          <input type="password" class="form-control" placeholder="Password" formControlName="password" required>
+          <input type="text" class="form-control" placeholder="Username" formControlName="signUpUserName" required>
+          <input type="email" class="form-control" placeholder="Email" formControlName="signUpEmail" required>
+          <input type="text" class="form-control" placeholder="First Name" formControlName="signUpFirstName">
+          <input type="text" class="form-control" placeholder="Last Name" formControlName="signUpLastName" required>
+          <input type="number" class="form-control" placeholder="Age" formControlName="signUpAge" required>
+          <input type="password" class="form-control" placeholder="Password" formControlName="signUpPassWord" required>
           <input type="password" class="form-control" placeholder="Confirm Password" id="confirm_password" required>
-          <p *ngIf="signupForm.get('password')?.invalid" class="text-danger">Password is required.</p>
+    
           <p id="passwordError" style="color: red;"></p>
           <button type="submit">Sign Up</button>
         </form>
-      </div> -->
+      </div>
 
       <div class="form-container sign-in-container">
         <form [formGroup]="signInForm" (ngSubmit)="signIn()" novalidate>
