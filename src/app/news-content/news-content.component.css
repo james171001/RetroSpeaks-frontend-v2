@@ -29,6 +29,7 @@
 
 .news-container {
   margin-bottom: 20px;
+  margin-left: 12%;
 }
 
 .news-card {
@@ -40,7 +41,6 @@
   display: flex;
   flex-direction: column;
   border-radius: 10px;
-  overflow: hidden;
 }
 
 .card-img-top {
@@ -49,25 +49,30 @@
   border-radius: 10px 10px 0 0;
 }
 
-.card-body {
-  background-color: #f2f2f2;
-  margin: 10px;
-  border-radius: 10px;
-  width: 300px;
-  height: 150px;
+.card-body p {
+  color: darkgrey;
+  font-size: 10px;
   margin: 10px;
 }
 
 .card-title {
-  font-size: 15px;
-  margin-bottom: 5px;
+  font-size: 11px;
   margin: 10px;
 }
 
 .read-more-button {
-  /* margin-top: auto; */
-  border-radius: 3px;
+  border: none;
+  border-radius: 5px;
   font-size: 10px;
-  margin: 10px;
-  background-color: aquamarine;
+  margin: 5px;
+  width: 240px;
+  height: 90px;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.3);
 }
+
+.read-more-button:hover {
+  background-color: #00866e;
+  opacity: 70%;
+  color: white;
+}
+

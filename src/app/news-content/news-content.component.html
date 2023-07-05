@@ -1,13 +1,23 @@
-
 <div class="news-container">
-    <h4>Top Headlines</h4>
-    <div class="news-card">
-      <div *ngFor="let headline of topHeadlinesResult.slice(0, 3)" class="card">
-        <img [src]="headline.urlToImage" alt="Headline Image" class="card-img-top" />
+  <h4>Top Headlines</h4>
+  <div class="news-card">
+    <div *ngFor="let headline of topHeadlinesResult.slice(0, 3)" class="card">
+      <!-- <img
+        [src]="headline.urlToImage"
+        alt="Headline Image"
+        class="card-img-top"
+      /> -->
+
+      <button class="read-more-button" (click)="openUrl(headline.url)">
         <div class="card-body">
           <h5 class="card-title">{{ headline.title }}</h5>
-          <button class="read-more-button" (click)="openUrl(headline.url)">Read More</button>
+          <p>
+            {{ headline.author }} <br />
+            {{ headline.publishedAt }}
+          </p>
         </div>
-      </div>
+      </button>
+
     </div>
   </div>
+</div>
