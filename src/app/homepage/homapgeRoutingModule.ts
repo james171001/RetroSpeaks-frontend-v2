@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomepageComponent } from './homepage-feed/homepage-feed.component';
-import { ContentCardComponent } from '../content-card/content-card.component';
+import { ContentCardComponent } from '../shared/content-card/content-card.component';
 
 const routes: Routes = [
   { path: 'feed', component: HomepageComponent }

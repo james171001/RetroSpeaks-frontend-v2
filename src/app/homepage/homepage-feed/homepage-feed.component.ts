@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ContentCardComponent } from 'src/app/content-card/content-card.component';
+import { ContentCardComponent } from 'src/app/shared/content-card/content-card.component';
 
 @Component({
   selector: 'app-homepage',

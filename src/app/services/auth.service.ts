@@ -5,8 +5,8 @@ import {
   HttpErrorResponse,
   HttpParams
 } from "@angular/common/http";
-import { UserLogIn } from '../models/UserLogin';
-import { UserRegistration } from '../models/UserRegistration';
+import { UserLogIn } from '../core/models/UserLogin';
+import { UserRegistration } from '../core/models/UserRegistration';
 
 @Injectable({
   providedIn: 'root'
