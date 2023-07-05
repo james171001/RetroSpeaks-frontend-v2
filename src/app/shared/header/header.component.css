@@ -13,6 +13,8 @@
 }
 
 .app-name {
+  padding-left: 50px;
+  font-size: 22px;
   font-weight: bold;
 }
 
@@ -53,4 +55,58 @@
 
 .logout-button:hover {
   background-color: #007959;
+}
+
+
+
+
+
+
+
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #19161c;
+  height: 100vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  align-content: center;
+}
+
+.input {
+  padding: 8px;
+  width: 400px;
+  height: 40px;
+  background: none;
+  border: 3px solid #00866E;
+  border-radius: 50px;
+  box-sizing: border-box;
+  font-family: "monospace", sans-serif;
+  font-size: 20px;
+  color: black;
+  outline: none;
+  transition: .5s;
+}
+
+.box:hover input {
+  width: 600px;
+  background: hsla(169, 100%, 26%, 0.24);
+  border-radius: 8px;
+}
+
+.box i {
+  position: absolute;
+  top: 50%;
+  transform: translate(-900%,-50%);
+  font-size: 20px;
+  color: #00866E;
+  transition: .2s;
+}
+
+.box:hover i {
+  opacity: 0;
+  z-index: -1;
 }

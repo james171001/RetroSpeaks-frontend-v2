@@ -43,6 +43,10 @@
     margin-left: 500px;
     cursor: pointer;
   }
+
+  .agree-button:hover {
+    background-color: #007959;
+  }
   
   .disagree-button {
     background-color: #860018;
@@ -52,5 +56,9 @@
     border-radius: 5px;
     margin-left: 20px;
     cursor: pointer;
+  }
+
+  .disagree-button:hover {
+    background-color: #590012;
   }
   
