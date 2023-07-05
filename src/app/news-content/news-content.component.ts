@@ -21,4 +21,12 @@ export class NewsContentComponent implements OnInit {
   openUrl(url: string): void {
     window.open(url, '_blank');
   }
+
+  formatTitle(title: string): string {
+    const maxLength = 80;
+    if (title.length > maxLength) {
+      return title.substring(0, maxLength) + '...';
+    }
+    return title;
+  }
 }

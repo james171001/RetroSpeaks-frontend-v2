@@ -27,13 +27,13 @@
 <div class="news-container">
     <h4>Trending News</h4>
     <div class="news-card">
-      <ng-container *ngFor="let headline of topHeadlinesResult">
-        <div class="card" *ngIf="headline.urlToImage">
+      <ng-container *ngFor="let headline of topHeadlinesResult; let i = index">
+        <div class="card" *ngIf="headline.urlToImage && i < 3">
           <a [href]="headline.url" target="_blank">
             <img [src]="headline.urlToImage" alt="Headline Image" class="card-img-top" />
             <button class="read-more-button" (click)="openUrl(headline.url)">
               <div class="card-body">
-                <h5 class="card-title">{{ headline.title }}</h5>
+                <h5 class="card-title">{{ formatTitle(headline.title) }}</h5>
               </div>
             </button>
           </a>
