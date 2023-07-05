@@ -1,76 +1,56 @@
-.box .top-bar-wrapper {
-    background-color: #bbd1e7;
-    padding: 1px;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 999;
-  }
-  
-  .top-bar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    background-color: white; /* Add background color to create the floating card effect */
-    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5); /* Add box shadow for the card-like appearance */
-    border-radius: 20px; /* Add border radius for rounded corners */
-  }
-  
-  
-  .search-bar-group {
-    margin-right: 10px;
-    margin-left: 800px;
-    padding-right: 20px;
-  }
-  
-  .text-input {
-    padding: 8px;
-    padding-right: 200px;
-    border-radius: 4px;
-    border: none;
-    background-color: #ffffff;
-    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
-    font-size: 14px;
-    color: #333333;
-  }
-  
-  .user-profile {
-    display: flex;
-    align-items: center;
-  }
-  
-  .username-text {
-    margin-right: 5px;
-    font-weight: 500;
-  }
-  
-  .typcn-user-outline {
-    font-size: 18px;
-    color: #707070;
-  }
-  
-  .logout-button {
-    background-color: #ffffff;
-    border: none;
-    padding: 8px 16px;
-    color: #333333;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-size: 14px;
-    font-weight: 500;
-    border-radius: 4px;
-    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
-  }
-  
-  .logout-button:hover {
-    background-color: #00866e;
-    color: white;
-  }
-  
-  .app-name {
-    font-size: 18px;
-    font-weight: 600;
-    color: #333333;
-  }
-  
+.box {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.app-name {
+  font-weight: bold;
+}
+
+.search-bar-group {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+
+}
+
+.text-input {
+  padding-left: 40px;
+  padding-right: 40px;
+  width: 100%;
+  text-align: center;
+  max-width: 300px;
+}
+
+
+.user-profile {
+  display: flex;
+  align-items: center;
+}
+
+.username-text {
+  margin-right: 8px;
+}
+
+.logout-button {
+  background-color: #00866E;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.logout-button:hover {
+  background-color: #007959;
+}
