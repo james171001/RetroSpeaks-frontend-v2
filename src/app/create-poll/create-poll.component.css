@@ -1,52 +1,53 @@
 .poll-container {
-    background-color: #849b95;;
+    background-color: #849b95;
+    ;
     padding: 20px;
     border-radius: 5px;
     width: 500px;
     margin-left: 20%;
     margin-top: 10px;
-  }
-  
-  .poll-container h2 {
+}
+
+.poll-container h2 {
     font-size: 20px;
     margin: 0;
     margin-bottom: 10px;
-  }
-  
-  .poll-content {
+}
+
+.poll-content {
     background-color: #f7f7f7;
     padding: 20px;
     border-radius: 5px;
-  }
-  
-  .form-group {
+}
+
+.form-group {
     margin-bottom: 15px;
-  }
-  
-  .form-control {
+}
+
+.form-control {
     width: 300px;
     padding: 10px;
     border-radius: 3px;
     border: 1px solid #ccc;
-  }
-  
-  .card {
+}
+
+.card {
     border: 1px solid #ccc;
     border-radius: 5px;
     margin-top: 20px;
-  }
-  
-  .card-header {
+}
+
+.card-header {
     background-color: #f7f7f7;
     padding: 10px;
     font-weight: bold;
-  }
-  
-  .card-body {
+}
+
+.card-body {
     padding: 20px;
-  }
-  
-  .btn-primary {
+}
+
+.btn-primary {
     background-color: #007bff;
     color: #fff;
     padding: 10px 20px;
@@ -54,9 +55,42 @@
     border-radius: 3px;
     cursor: pointer;
     margin-top: 10px;
-  }
-  
-  .btn-primary:hover {
+}
+
+.btn-primary:hover {
     background-color: #0056b3;
-  }
-  
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    padding: 35;
+    cursor: pointer;
+}
+
+.btn-secondary i {
+    margin-right: 0;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+/* Assuming you are using Font Awesome icons */
+.fa-plus:before {
+    content: "\f067";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+
+.btn-remove {
+    background-color: #e2786a;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    padding: 35;
+    cursor: pointer;
+    margin-left: 5px;
+}

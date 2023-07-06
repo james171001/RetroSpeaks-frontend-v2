@@ -6,19 +6,37 @@ import { Component } from '@angular/core';
   styleUrls: ['./create-poll.component.css']
 })
 export class CreatePollComponent {
-  pollTitle: string = '';
-  option1: string = '';
-  option2: string = '';
+  pollTitle!: string;
+  options: string[] = [''];
 
   createPoll() {
-    // Add logic to handle the creation of the poll
-    console.log('Poll Title:', this.pollTitle);
-    console.log('Option 1:', this.option1);
-    console.log('Option 2:', this.option2);
+    // Check if the poll title is provided
+    if (!this.pollTitle) {
+      alert('Please enter the poll title');
+      return;
+    }
 
-    // Clear the input fields after the poll is created
-    this.pollTitle = '';
-    this.option1 = '';
-    this.option2 = '';
+    // Check if at least two options are provided
+    if (this.options.length < 2) {
+      alert('Please enter at least two options');
+      return;
+    }
+
+    // Perform the poll creation logic here
+    const poll = {
+      title: this.pollTitle,
+      options: this.options
+    };
+
+    // Print the created poll object (replace with actual logic)
+    console.log(poll);
+  }
+
+  addOption() {
+    this.options.push('');
+  }
+
+  removeOption(index: number) {
+    this.options.splice(index, 1);
   }
 }
