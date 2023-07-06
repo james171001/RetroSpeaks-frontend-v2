@@ -1,3 +1,4 @@
+
 <body>
   <div>
     <app-sidebar
@@ -104,10 +105,10 @@
       ></app-content-card>
 
       <app-create-post *ngIf="showCreatePostComponent"></app-create-post>
-    </div>
+      
 
-    <button class="back-to-top-button" (click)="scrollToTop()" aria-label="Back to Top">
-      <i class="fas fa-arrow-up"></i>
-    </button>
+    </div>
+    <button class="back-to-top-button" (click)="scrollToTop()" [class.show]="showBackToTopButton">Back to Top</button>
+
 
 </body>

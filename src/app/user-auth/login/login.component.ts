@@ -1,13 +1,12 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import {
-  FormBuilder,
   FormControl,
   FormGroup,
   Validators,
 } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
-import { UserRegistration } from '../../core/models/UserRegistration';
+
 
 @Component({
   selector: 'app-login',

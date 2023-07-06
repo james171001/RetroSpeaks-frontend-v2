@@ -11,25 +11,25 @@ import {HttpClientModule} from "@angular/common/http";
 import { AuthService } from './services/auth.service';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './user-auth/login/login.component';
+import { UserAuthModule } from './user-auth/user-auth.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ErrorComponent,
-    LoginComponent,
 
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatCardModule,
     HttpClientModule,
     FormsModule,
     CommonModule,
-    MatCardModule
+    UserAuthModule,
+    ReactiveFormsModule,
   
 
 

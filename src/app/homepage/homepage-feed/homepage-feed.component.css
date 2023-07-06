@@ -194,6 +194,29 @@ html, body {
     overflow-y: auto;
 }
 
+/* Set the width and height of the scrollbar track */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* Customize the color of the scrollbar track */
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+/* Customize the color and shape of the scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 5px;
+}
+
+/* Customize the appearance of the scrollbar thumb when hovered */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+
 app-content-card {
     margin-left: 40%;
     height: 100%;
@@ -209,25 +232,22 @@ app-create-post {
 .news-container {
     margin-left: 18%;
 }
-
-
-
+  
 .back-to-top-button {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #00866E;
-    color: white;
-    border: none;
+    z-index: 9999;
     padding: 10px 20px;
-    border-radius: 5px;
+    border: none;
+    border-radius: 4px;
+    background-color: #333;
+    color: #fff;
     cursor: pointer;
-    display: none;
-    z-index: 9999; /* Ensure the button appears above other content */
+    opacity: 0;
+    transition: opacity 0.3s ease;
   }
   
-  .back-to-top-button i {
-    font-size: 20px;
-  }
-  
-  
+  .back-to-top-button.show {
+    opacity: 1;
+  }  

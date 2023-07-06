@@ -14,16 +14,17 @@ import { NewsContentComponent } from '../shared/news-content/news-content.compon
 @NgModule({
   declarations: [
     HomepageComponent,
+    HeaderComponent,
     SidebarComponent,
     ContentCardComponent,
     CreatePostComponent,
     NewsContentComponent,
-    HeaderComponent
+
   ],
   imports: [
     CommonModule,
     HomepageRoutingModule,
-    CardModule
+    CardModule,
   ]
 })
 export class HomepageModule { }

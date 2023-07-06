@@ -25,20 +25,21 @@ export class HomepageComponent {
     return this.showFeedComponent && !this.showCreatePostComponent;
   }
 
-  @HostListener('window:scroll', [])
-  onWindowScroll() {
-    this.toggleBackToTopButton();
-  }
+  showBackToTopButton: boolean = false;
 
   scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
   }
 
-  private toggleBackToTopButton() {
-    const button = document.querySelector('.back-to-top-button') as HTMLElement;
-    if (button) {
-      button.style.display = window.pageYOffset > 200 ? 'block' : 'none';
-    }
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    this.showBackToTopButton = scrollPosition > 200; 
   }
+
+
 }
 
