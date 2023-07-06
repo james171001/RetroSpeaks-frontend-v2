@@ -225,6 +225,10 @@ app-content-card {
 app-create-post {
     width: 40%;
 }
+app-create-poll {
+    width: 40%;
+}
+
 .sidebar{
     margin-left: 130px;
 }

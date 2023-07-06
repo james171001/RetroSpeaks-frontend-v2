@@ -1,0 +1,47 @@
+.box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 500px;
+    margin-left: 20%;
+    margin-top: 10px;
+}
+
+.title {
+    background-color: #ECECEC;
+    border: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 95%;
+    border-radius: 5px;
+}
+
+.description {
+    background-color: #ECECEC;
+    border: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 95%;
+    border-radius: 5px;
+    resize: vertical;
+    /* Allow vertical resizing */
+    height: 80px;
+    /* Set initial height */
+    min-height: 80px;
+    /* Set minimum height */
+    max-height: 160px;
+    /* Set maximum height */
+}
+
+.post-button {
+    background-color: #9AD7C8;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.post-button:hover {
+    background-color: #7DBDAE;
+}

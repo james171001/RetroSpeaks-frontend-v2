@@ -8,6 +8,10 @@ import { ContentCardComponent } from '../shared/content-card/content-card.compon
 import { CreatePostComponent } from '../create-post/create-post.component';
 import { HeaderComponent } from '../shared/header/header.component';
 import { NewsContentComponent } from '../shared/news-content/news-content.component';
+import { CreateButtonsComponent } from '../create-buttons/create-buttons.component';
+import { CreatePollComponent } from '../create-poll/create-poll.component';
+import { CreateSurveyComponent } from '../create-survey/create-survey.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -19,12 +23,16 @@ import { NewsContentComponent } from '../shared/news-content/news-content.compon
     ContentCardComponent,
     CreatePostComponent,
     NewsContentComponent,
-
+    HeaderComponent,
+    CreateButtonsComponent,
+    CreatePollComponent,
+    CreateSurveyComponent
   ],
   imports: [
     CommonModule,
     HomepageRoutingModule,
     CardModule,
+    FormsModule
   ]
 })
 export class HomepageModule { }

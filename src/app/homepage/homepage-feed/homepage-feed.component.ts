@@ -9,11 +9,28 @@ import { ContentCardComponent } from 'src/app/shared/content-card/content-card.c
 
 export class HomepageComponent {
   showCreatePostComponent: boolean = false;
+  showCreatePollCard: boolean = false;
+  showCreateSurveyCard: boolean = false;
+
   showFeedComponent:boolean = true;
 
-  showCreatePost() {
+  handleShowCreatePollEvent(createPollActive: boolean) {
+    this.showCreatePollCard = createPollActive;
+    this.showCreatePostComponent = false;
+    this.showCreateSurveyCard = false;
+  }
+
+  handleShowCreateSurveyEvent(createSurveyActive: boolean) {
+    this.showCreateSurveyCard = createSurveyActive;
+    this.showCreatePollCard = false;
+    this.showCreatePostComponent = false;
+  }
+
+  handleShowCreatePostEvent() {
     this.showCreatePostComponent = true;
     this.showFeedComponent = false;
+    this.showCreatePollCard = false;
+    this.showCreateSurveyCard = false;
   }
 
   showHomeFeed(){

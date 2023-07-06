@@ -1,0 +1,10 @@
+<div class="buttons-container">
+  <button class="create-button" *ngIf="!createPollActive && !createSurveyActive" (click)="showCreatePoll()">Create Poll</button>
+  <button class="create-button" *ngIf="!createPollActive && !createSurveyActive" (click)="showCreateSurvey()">Create Survey</button>
+
+  <button class="create-button" *ngIf="!createPollActive && !createPostActive" (click)="showCreatePost()">Create Post</button>
+  <button class="create-button" *ngIf="!createPollActive && !createPostActive" (click)="showCreatePoll()">Create Poll</button>
+
+  <button class="create-button" *ngIf="!createSurveyActive && !createPostActive" (click)="showCreatePost()">Create Post</button>
+  <button class="create-button" *ngIf="!createSurveyActive && !createPostActive" (click)="showCreateSurvey()">Create Survey</button>
+</div>

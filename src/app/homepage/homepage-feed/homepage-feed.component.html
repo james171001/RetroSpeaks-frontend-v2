@@ -2,7 +2,7 @@
 <body>
   <div>
     <app-sidebar
-      (createButtonClick)="showCreatePost()"
+      (createButtonClick)="handleShowCreatePostEvent()"
       (homeButtonClick)="showHomeFeed()"
     ></app-sidebar>
   </div>
@@ -104,8 +104,22 @@
         [commentCount]="555"
       ></app-content-card>
 
-      <app-create-post *ngIf="showCreatePostComponent"></app-create-post>
+      <!-- <app-create-post *ngIf="showCreatePostComponent"></app-create-post>
+      <app-create-buttons></app-create-buttons> -->
+
+      <div>
+        <app-create-post *ngIf="!showCreatePollCard && !showCreateSurveyCard"></app-create-post>
+        <app-create-poll *ngIf="!showCreatePostComponent && !showCreateSurveyCard"></app-create-poll>
+        <app-create-survey *ngIf="!showCreatePostComponent && !showCreatePollCard"></app-create-survey>
       
+        <app-create-buttons
+          (showCreatePollEvent)="handleShowCreatePollEvent($event)"
+          (showCreateSurveyEvent)="handleShowCreateSurveyEvent($event)"
+          (showCreatePostEvent)="handleShowCreatePostEvent()"
+        ></app-create-buttons>
+      </div>
+      
+
 
     </div>
     <button class="back-to-top-button" (click)="scrollToTop()" [class.show]="showBackToTopButton">Back to Top</button>
