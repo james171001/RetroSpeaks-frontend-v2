@@ -14,7 +14,7 @@
   </div>
 
   <div class="content">
-    <div class="scrollable-content">
+
       <app-content-card
         *ngIf="showFeedComponent"
         title="Sample Issue"
@@ -105,5 +105,9 @@
 
       <app-create-post *ngIf="showCreatePostComponent"></app-create-post>
     </div>
-  </div>
+
+    <button class="back-to-top-button" (click)="scrollToTop()" aria-label="Back to Top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
 </body>
