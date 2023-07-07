@@ -1,6 +1,15 @@
 import { Component, HostListener } from '@angular/core';
 import { ContentCardComponent } from 'src/app/shared/content-card/content-card.component';
 
+
+interface Post {
+  title: string;
+  description: string;
+  commentCount: number;
+}
+
+
+
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage-feed.component.html',
@@ -36,27 +45,31 @@ export class HomepageComponent {
   showHomeFeed(){
     this.showFeedComponent =true;
     this.showCreatePostComponent = false;
+    this.showCreatePollCard = false;
+    this.showCreateSurveyCard = false;
   }
 
   isFeedComponentVisible() {
     return this.showFeedComponent && !this.showCreatePostComponent;
   }
 
-  showBackToTopButton: boolean = false;
 
-  scrollToTop() {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
-  }
-
-  @HostListener('window:scroll', [])
-  onWindowScroll() {
-    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    this.showBackToTopButton = scrollPosition > 200; 
-  }
-
-
+  posts: Post[] = [
+    {
+      title: 'Sample Issue 1',
+      description: 'This is a sample content card 1',
+      commentCount: 5
+    },
+    {
+      title: 'Sample Issue 2',
+      description: 'This is a sample content card 2',
+      commentCount: 10
+    },
+    {
+      title: 'Sample Issue 3',
+      description: 'This is a sample content card 3',
+      commentCount: 2
+    }
+  ];
 }
 

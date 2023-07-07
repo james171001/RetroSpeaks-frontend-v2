@@ -1,10 +1,7 @@
 
 <body>
   <div>
-    <app-sidebar
-      (createButtonClick)="handleShowCreatePostEvent()"
-      (homeButtonClick)="showHomeFeed()"
-    ></app-sidebar>
+    <app-sidebar (createButtonClick)="handleShowCreatePostEvent()" (homeButtonClick)="showHomeFeed()"></app-sidebar>
   </div>
   <div class="box">
     <app-header></app-header>
@@ -14,100 +11,22 @@
     <app-news-content></app-news-content>
   </div>
 
-  <div class="content">
+  <div class="content" >
 
-      <app-content-card
-        *ngIf="showFeedComponent"
-        title="Sample Issue"
-        description="This is a sample content card"
-        [commentCount]="555"
-      ></app-content-card>
-      <app-content-card
-        *ngIf="showFeedComponent"
-        title="Sample Issue"
-        description="Lorem ipsum dolor sit amet, 
-                                                                consectetur adipiscing elit, 
-                                                                sed do eiusmod tempor incididunt 
-                                                                ut labore et dolore magna aliqua.
-                                                                 Ut enim ad minim veniam, quis nostrud 
-                                                                 exercitation ullamco laboris nisi ut 
-                                                                 aliquip ex ea commodo consequat. Duis 
-                                                                 aute irure dolor in reprehenderit in 
-                                                                 voluptate velit esse cillum dolore eu 
-                                                                 fugiat nulla pariatur. Excepteur sint 
-                                                                 occaecat cupidatat non proident, sunt in 
-                                                                 culpa qui officia deserunt mollit anim id est laborum."
-        [commentCount]="555"
-      ></app-content-card>
-      <app-content-card
-        *ngIf="showFeedComponent"
-        title="Sample Issue"
-        description="Lorem ipsum dolor sit amet, 
-                                                                consectetur adipiscing elit, 
-                                                                sed do eiusmod tempor incididunt 
-                                                                ut labore et dolore magna aliqua.
-                                                                 Ut enim ad minim veniam, quis nostrud 
-                                                                 exercitation ullamco laboris nisi ut 
-                                                                 aliquip ex ea commodo consequat. Duis 
-                                                                 aute irure dolor in reprehenderit in 
-                                                                 voluptate velit esse cillum dolore eu 
-                                                                 fugiat nulla pariatur. Excepteur sint 
-                                                                 occaecat cupidatat non proident, sunt in 
-                                                                 culpa qui officia deserunt mollit anim id est laborum."
-        [commentCount]="555"
-      ></app-content-card>
-      <app-content-card
-      *ngIf="showFeedComponent"
-        title="Sample Issue"
-        description="This is a sample content card"
-        [commentCount]="555"
-      ></app-content-card>
-      <app-content-card
-        *ngIf="showFeedComponent"
-        title="Sample Issue"
-        description="This is a sample content card"
-        [commentCount]="555"
-      ></app-content-card>
-      <app-content-card
-        *ngIf="showFeedComponent"
-        title="Sample Issue"
-        description="Lorem ipsum dolor sit amet, 
-                                                                consectetur adipiscing elit, 
-                                                                sed do eiusmod tempor incididunt 
-                                                                ut labore et dolore magna aliqua.
-                                                                 Ut enim ad minim veniam, quis nostrud 
-                                                                 exercitation ullamco laboris nisi ut 
-                                                                 aliquip ex ea commodo consequat. Duis 
-                                                                 aute irure dolor in reprehenderit in 
-                                                                 voluptate velit esse cillum dolore eu 
-                                                                 fugiat nulla pariatur. Excepteur sint 
-                                                                 occaecat cupidatat non proident, sunt in 
-                                                                 culpa qui officia deserunt mollit anim id est laborum."
-        [commentCount]="555"
-      ></app-content-card>
-      <app-content-card
-        *ngIf="showFeedComponent"
-        title="Sample Issue"
-        description="This is a sample content card"
-        [commentCount]="555"
-      ></app-content-card>
-      <app-content-card
-        *ngIf="showFeedComponent"
-        title="Sample Issue"
-        description="This is a sample content card"
-        [commentCount]="555"
-      ></app-content-card>
-      <app-content-card
-        *ngIf="showFeedComponent"
-        title="Sample Issue"
-        description="This is a sample content card"
-        [commentCount]="555"
-      ></app-content-card>
+      <div *ngIf="showFeedComponent">
+        <div *ngFor="let post of posts">
+          <app-content-card
+            [title]="post.title"
+            [description]="post.description"
+            [commentCount]="post.commentCount"
+          ></app-content-card>
+        </div>
+      </div>
 
       <!-- <app-create-post *ngIf="showCreatePostComponent"></app-create-post>
       <app-create-buttons></app-create-buttons> -->
 
-      <div>
+      <div *ngIf="showCreatePostComponent || showCreatePollCard || showCreateSurveyCard">
         <app-create-post *ngIf="!showCreatePollCard && !showCreateSurveyCard"></app-create-post>
         <app-create-poll *ngIf="!showCreatePostComponent && !showCreateSurveyCard"></app-create-poll>
         <app-create-survey *ngIf="!showCreatePostComponent && !showCreatePollCard"></app-create-survey>
@@ -122,7 +41,7 @@
 
 
     </div>
-    <button class="back-to-top-button" (click)="scrollToTop()" [class.show]="showBackToTopButton">Back to Top</button>
+    <!-- <button class="back-to-top-button" (click)="scrollToTop()" [class.show]="showBackToTopButton">Back to Top</button> -->
 
 
 </body>
