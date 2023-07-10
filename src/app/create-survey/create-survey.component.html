@@ -1,12 +1,74 @@
-<div class="box">
-    <form>
-        <div>
-            <input type="text" placeholder="Card for Survey" name="title" class="title">
+<div class="container">
+    <h1>Create Survey</h1>
+    <div id="survey-container">
+        <div class="form-group">
+            <div class="form-title">
+                <label>Form Title:</label>
+                <input type="text" [(ngModel)]="surveyTitle" required>
+            </div>
         </div>
-        <br>
-        <div>
-            <textarea placeholder="Description here" name="description" class="description"></textarea>
+
+        <div class="questions-container">
+            <div *ngFor="let question of questions; let i = index"
+                class="form-group">
+                <label>Question {{ i + 1 }}:</label>
+                <input type="text" [(ngModel)]="question.question" required>
+                <label>Answer Type:</label>
+                <select [(ngModel)]="question.answerType"
+                    (change)="resetAnswerOptions(question)">
+                    <option value="multiple-choice">Multiple Choice</option>
+                    <option value="checkboxes">Checkboxes</option>
+                    <option value="dropdown">Dropdown</option>
+                    <option value="linear-scale">Linear Scale</option>
+                </select>
+                <div *ngIf="question.answerType !== 'linear-scale'">
+                    <label>Answer Options:</label>
+                    <div
+                        *ngFor="let option of question.answerOptions; let j = index"
+                        class="answer-option">
+                        <div class="options-container">
+                            <div class="option-checkbox"
+                                *ngIf="question.answerType === 'checkboxes'">
+                                <input type="checkbox" [disabled]="true">
+                            </div>
+                            <div class="option-radio"
+                                *ngIf="question.answerType === 'multiple-choice'">
+                                <input type="radio" [disabled]="true">
+                            </div>
+                            <div class="option-input"
+                                *ngIf="question.answerType !== 'linear-scale'">
+                                <input type="text" [(ngModel)]="option.text"
+                                    required>
+                            </div>
+                        </div>
+                        <button class="remove-option-btn"
+                            (click)="removeAnswerOption(question, j)">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <button class="add-option-btn"
+                        (click)="addAnswerOption(question)">Add Option</button>
+                </div>
+                <div *ngIf="question.answerType === 'linear-scale'">
+                    <label>Answer Options:</label>
+                    <div class="answer-option">
+                        <div class="options-container">
+                            <div class="option-linear-scale">
+                                <span>1</span>
+                                <input type="text"
+                                    [(ngModel)]="question.minValue" required>
+                                <input type="text"
+                                    [(ngModel)]="question.maxValue" required>
+                                <span>5</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="remove-question-btn" (click)="removeQuestion(i)">Remove
+                    Question</button>
+            </div>
         </div>
-        <button type="submit" class="post-button">Post</button>
-    </form>
+    </div>
+    <button (click)="addQuestion()">Add Question</button>
+    <button (click)="submitSurvey()">Submit</button>
 </div>

@@ -1,47 +1,165 @@
-.box {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    width: 500px;
-    margin-left: 20%;
-    margin-top: 10px;
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ccc;
 }
 
-.title {
-    background-color: #ECECEC;
-    border: none;
-    padding: 10px;
-    margin-bottom: 10px;
-    width: 95%;
-    border-radius: 5px;
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 
-.description {
-    background-color: #ECECEC;
-    border: none;
-    padding: 10px;
-    margin-bottom: 10px;
-    width: 95%;
-    border-radius: 5px;
-    resize: vertical;
-    /* Allow vertical resizing */
-    height: 80px;
-    /* Set initial height */
-    min-height: 80px;
-    /* Set minimum height */
-    max-height: 160px;
-    /* Set maximum height */
+.form-group {
+  margin-bottom: 20px;
 }
 
-.post-button {
-    background-color: #9AD7C8;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
+.form-group input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
-.post-button:hover {
-    background-color: #7DBDAE;
+.form-group .form-title input {
+  width: 700px;
+}
+
+.form-group .form-title label {
+  font-size: 18px;
+}
+
+label {
+  font-weight: bold;
+}
+
+select {
+  width: 200px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  display: flex;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.remove-option-btn {
+  background-color: #e2786a;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-left: 5px;
+  padding: 3px 5px 2px;
+}
+
+.remove-option-btn i {
+  margin: 0;
+}
+
+.remove-question-btn {
+  padding: 8px 16px;
+  background-color: #e2786a;
+  margin-top: 15px;
+  color: white;
+}
+
+#survey-container {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 4px;
+  background-color: #f7f7f7;
+}
+
+.container button {
+  margin-right: 5px;
+  margin-top: 5px;
+}
+
+.answer-option {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.answer-option .options-container {
+  display: flex;
+  align-items: center;
+}
+
+.answer-option .option-checkbox,
+.answer-option .option-radio {
+  margin-right: 10px;
+}
+
+.answer-option input[type="text"] {
+  width: 300px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.questions-container .form-group {
+  position: relative;
+  padding: 20px;
+  border-radius: 5px;
+  width: 680px;
+  margin-bottom: 10px;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.questions-container .form-group::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 10px;
+  background-color: #00866E;
+  border-radius: 5px 0 0 5px;
+}
+
+.questions-container .form-group input[type="text"] {
+  width: 600px;
+  display: flex;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.questions-container .form-group .answer-option input[type="text"] {
+  width: 200px;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.option-linear-scale {
+  display: flex;
+  align-items: center;
+}
+
+.option-linear-scale span {
+  margin-right: 10px;
+}
+
+.option-linear-scale input[type="text"] {
+  width: 50px;
+  margin-right: 10px;
+}
+
+.add-option-btn {
+  border-radius: 5px;
+  font-size: 12px;
+  padding: 5px;
+  margin: 5px;
+  background-color: #00866E;
 }
