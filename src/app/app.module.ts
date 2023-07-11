@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { HomepageModule } from './homepage/homepage.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -10,14 +9,16 @@ import { MatCardModule } from '@angular/material/card';
 import {HttpClientModule} from "@angular/common/http";
 import { AuthService } from './services/auth.service';
 import { CommonModule } from '@angular/common';
-import { LoginComponent } from './user-auth/login/login.component';
 import { UserAuthModule } from './user-auth/user-auth.module';
+import { CoreModule } from './core/core.module';
+import { LayoutComponent } from './core/layout/layout.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ErrorComponent,
+    
 
   ],
   imports: [
@@ -30,6 +31,7 @@ import { UserAuthModule } from './user-auth/user-auth.module';
     CommonModule,
     UserAuthModule,
     ReactiveFormsModule,
+    CoreModule
   
 
 

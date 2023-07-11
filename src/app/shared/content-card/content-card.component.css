@@ -1,64 +1,60 @@
 .card {
-    background-color: #f1f1f1;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 700px;
-    margin-left: 20%;
-  }
-  
-  .card-title {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-  
-  .card-description {
-    font-size: 16px;
-  }
-  
-  .time-passed {
-    opacity: 0.7;
-    font-weight: normal;
-    font-size: 16px;
-  }
+  background-color: #f1f1f1;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 700px;
 
-  .comment-count {
-    opacity: 0.7;
-    font-weight: normal;
-    font-size: 16px;
-    overflow-y: -50px;
-  }
 
-  .agree-button,
+  
+  margin-top: 20px; /* Adds some top margin */
+}
+
+.card-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.card-description {
+  font-size: 16px;
+}
+
+.time-passed,
+.comment-count {
+  opacity: 0.7;
+  font-weight: normal;
+  font-size: 16px;
+}
+
+.agree-button,
 .disagree-button {
   transform: translateY(-10%);
 }
-  
-  .agree-button {
-    background-color: #00866E;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    margin-left: 500px;
-    cursor: pointer;
-  }
 
-  .agree-button:hover {
-    background-color: #007959;
-  }
-  
-  .disagree-button {
-    background-color: #860018;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    margin-left: 20px;
-    cursor: pointer;
-  }
+.agree-button {
+  background-color: #00866E;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-left: auto; /* Aligns the button to the right */
+  cursor: pointer;
+}
 
-  .disagree-button:hover {
-    background-color: #590012;
-  }
-  
+.agree-button:hover {
+  background-color: #007959;
+}
+
+.disagree-button {
+  background-color: #860018;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.disagree-button:hover {
+  background-color: #590012;
+}
