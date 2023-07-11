@@ -47,7 +47,7 @@ export class AuthService {
         }
 
    
-        this.router.navigate(['/home/feed']);
+        this.router.navigate(['/auth/login']);
       });
   }
 }
