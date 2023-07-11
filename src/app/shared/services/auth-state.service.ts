@@ -13,6 +13,8 @@ export class AuthStateService {
   getToken(): string | null {
     return localStorage.getItem(this.TOKEN_KEY);
   }
+
+  
   setToken(token: string): void {
     localStorage.setItem(this.TOKEN_KEY, token);
   }
@@ -31,5 +33,11 @@ export class AuthStateService {
 
   setUsername(username: string): void {
     localStorage.setItem(this.USERNAME_KEY, username);
+  }
+  hasCurrentUser(){
+    if(localStorage.getItem(this.TOKEN_KEY)){
+      return true;
+    }
+    return false;
   }
 }

@@ -1,26 +1,28 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from './core/layout/layout.component';
-import { ErrorComponent } from './shared/error/error.component';
 import { CreatePostComponent } from './create-post/create-post.component';
+import { AuthGuard } from './shared/services/auth-guard.service';
+import { LoginComponent } from './user-auth/login/login.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'auth/login', pathMatch: 'full' },
-  // { path: 'login', component: LoginComponent },
   { 
-    path: 'auth', 
-    component: LayoutComponent,
+    path: '', 
+    component: LoginComponent,
     loadChildren: () => import('./user-auth/user-auth.module').then(m => m.UserAuthModule) },
+ 
 
   {
     path: 'home',
     component: LayoutComponent,
+    canActivate: [AuthGuard],
     loadChildren: () => import('./homepage/homepage.module').then(m => m.HomepageModule)
   },
 
   {
     path: 'group',
     component: LayoutComponent,
+    canActivate: [AuthGuard],
     loadChildren: () => import('./group/group.module').then(m => m.GroupModule)
   },
   { path: 'create-post', component: CreatePostComponent },

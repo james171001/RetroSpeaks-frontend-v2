@@ -12,6 +12,7 @@ import { CommonModule } from '@angular/common';
 import { UserAuthModule } from './user-auth/user-auth.module';
 import { CoreModule } from './core/core.module';
 import { LayoutComponent } from './core/layout/layout.component';
+import { AuthGuard } from './shared/services/auth-guard.service';
 
 
 @NgModule({
@@ -36,7 +37,7 @@ import { LayoutComponent } from './core/layout/layout.component';
 
 
   ],
-  providers: [AuthService],
+  providers: [AuthService,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

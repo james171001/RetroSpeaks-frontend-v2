@@ -63,4 +63,7 @@ export class AuthService {
     this.authStateService.clearToken();
     this.router.navigate(['/login']);
   }
+  isAuthenticated(){
+    return this.authStateService.hasCurrentUser();
+  }
 }
