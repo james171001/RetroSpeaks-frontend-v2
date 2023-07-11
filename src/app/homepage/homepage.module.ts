@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomepageComponent } from './homepage-feed/homepage-feed.component';
-import { HomepageRoutingModule } from './homapgeRoutingModule';
+import { UserFeedComponent } from './user-feed/user-feed.component';
+import { HomepageRoutingModule } from './hompageRoutingModule';
 import { CardModule } from 'primeng/card';
 import { CreatePostComponent } from '../create-post/create-post.component';
 import { CreateButtonsComponent } from '../create-buttons/create-buttons.component';
@@ -13,7 +13,7 @@ import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    HomepageComponent,
+    UserFeedComponent,
     CreatePostComponent,
     CreateButtonsComponent,
     CreatePollComponent,

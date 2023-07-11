@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomepageComponent } from './homepage-feed/homepage-feed.component';
+import { UserFeedComponent } from './user-feed/user-feed.component';
 import { ContentCardComponent } from '../shared/content-card/content-card.component';
 
 const routes: Routes = [
-  { path: 'feed', component: HomepageComponent }
+  { path: 'feed', component: UserFeedComponent }
   // Add more routes for the homepage if needed
 ];
 

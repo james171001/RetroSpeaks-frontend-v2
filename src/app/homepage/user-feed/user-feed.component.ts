@@ -11,12 +11,12 @@ interface Post {
 
 
 @Component({
-  selector: 'app-homepage',
-  templateUrl: './homepage-feed.component.html',
-  styleUrls: ['./homepage-feed.component.css'],
+  selector: 'app-user-feed',
+  templateUrl: './user-feed.component.html',
+  styleUrls: ['./user-feed.component.css'],
 })
 
-export class HomepageComponent {
+export class UserFeedComponent {
   showCreatePostComponent: boolean = false;
   showCreatePollCard: boolean = false;
   showCreateSurveyCard: boolean = false;
@@ -42,7 +42,7 @@ export class HomepageComponent {
     this.showCreateSurveyCard = false;
   }
 
-  showHomeFeed(){
+  showUserFeed(){
     this.showFeedComponent =true;
     this.showCreatePostComponent = false;
     this.showCreatePollCard = false;

@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HomepageComponent } from './homepage-feed.component';
+import { UserFeedComponent } from './user-feed.component';
 
-describe('HomepageComponent', () => {
-  let component: HomepageComponent;
-  let fixture: ComponentFixture<HomepageComponent>;
+describe('UserFeedComponent', () => {
+  let component: UserFeedComponent;
+  let fixture: ComponentFixture<UserFeedComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [HomepageComponent]
+      declarations: [UserFeedComponent]
     });
-    fixture = TestBed.createComponent(HomepageComponent);
+    fixture = TestBed.createComponent(UserFeedComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
