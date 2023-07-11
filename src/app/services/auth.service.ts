@@ -24,12 +24,16 @@ export class AuthService {
     return this.httpClient.post(this.baseUrl + "login", body, { headers: headers })
       .subscribe((response: any) => {
         const token = response.token;
+        const username = model.userName;
 
         if (token) {
           this.authStateService.setToken(token);
         }
 
-   
+        if (username) {
+          this.authStateService.setUsername(username);
+        }
+
         this.router.navigate(['/home/feed']);
       });
   }
@@ -41,13 +45,22 @@ export class AuthService {
     return this.httpClient.post(this.baseUrl + "register", body, { headers: headers })
       .subscribe((response: any) => {
         const token = response.token;
+        const username = model.userName;
 
         if (token) {
           this.authStateService.setToken(token);
         }
 
-   
-        this.router.navigate(['/auth/login']);
+        if (username) {
+          this.authStateService.setUsername(username);
+        }
+
+        this.router.navigate(['/login']);
       });
+  }
+
+  logout() {
+    this.authStateService.clearToken();
+    this.router.navigate(['/login']);
   }
 }

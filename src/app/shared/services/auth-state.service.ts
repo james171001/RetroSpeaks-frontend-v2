@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class AuthStateService {
   private readonly TOKEN_KEY = 'token';
+  private readonly USERNAME_KEY = 'username';
 
   constructor() { }
 
@@ -22,5 +23,13 @@ export class AuthStateService {
 
   isAuthenticated(): boolean {
     return !!this.getToken();
+  }
+
+  getUsername(): string | null {
+    return localStorage.getItem(this.USERNAME_KEY);
+  }
+
+  setUsername(username: string): void {
+    localStorage.setItem(this.USERNAME_KEY, username);
   }
 }
