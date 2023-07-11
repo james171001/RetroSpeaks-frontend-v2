@@ -1,33 +1,53 @@
 import { Injectable } from '@angular/core';
-import {
-  HttpClient,
-  HttpHeaders,
-  HttpErrorResponse,
-  HttpParams
-} from "@angular/common/http";
+import { Router } from "@angular/router";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { UserLogIn } from '../core/models/UserLogin';
 import { UserRegistration } from '../core/models/UserRegistration';
+import { AuthStateService } from '../shared/services/auth-state.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  baseUrl = 'http://localhost:8080/api/auth/'
-  constructor(private http:HttpClient) { }
+  baseUrl = 'http://localhost:8080/api/auth/';
 
+  constructor(
+    private router: Router,
+    private httpClient: HttpClient,
+    private authStateService: AuthStateService
+  ) {}
 
-  authenticate(model:UserLogIn){
+  authenticate(model: UserLogIn) {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
     const body = JSON.stringify(model);
-  
-    return this.http.post(this.baseUrl + "login", body, { headers: headers });
+
+    return this.httpClient.post(this.baseUrl + "login", body, { headers: headers })
+      .subscribe((response: any) => {
+        const token = response.token;
+
+        if (token) {
+          this.authStateService.setToken(token);
+        }
+
+   
+        this.router.navigate(['/home/feed']);
+      });
   }
-  registerUser(model: UserRegistration){
-    
+
+  registerUser(model: UserRegistration) {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
     const body = JSON.stringify(model);
-    console.log(body);
-    return this.http.post(this.baseUrl +"register", body, { headers: headers });
 
+    return this.httpClient.post(this.baseUrl + "register", body, { headers: headers })
+      .subscribe((response: any) => {
+        const token = response.token;
+
+        if (token) {
+          this.authStateService.setToken(token);
+        }
+
+   
+        this.router.navigate(['/home/feed']);
+      });
   }
 }

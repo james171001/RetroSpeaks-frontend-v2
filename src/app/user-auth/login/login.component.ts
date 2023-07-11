@@ -1,12 +1,7 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import {
-  FormControl,
-  FormGroup,
-  Validators,
-} from '@angular/forms';
-import { AuthService } from '../../services/auth.service';
-
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -21,7 +16,7 @@ export class LoginComponent {
   fail: boolean = false;
   logout: boolean = false;
 
-  //For Sign Up
+  // For Sign Up
   signUpForm: FormGroup;
   signUpUserName: FormControl = new FormControl('', Validators.required);
   signUpPassWord: FormControl = new FormControl();
@@ -30,13 +25,10 @@ export class LoginComponent {
   signUpFirstName: FormControl = new FormControl('', Validators.required);
   signUpAge: FormControl = new FormControl('', Validators.required);
 
-  //For Sign In
+  // For Sign In
   signInForm: FormGroup;
   userName: FormControl = new FormControl('', Validators.required);
   passWord: FormControl = new FormControl('', Validators.required);
-
-  firstName: FormControl = new FormControl('', Validators.required);
-  age: FormControl = new FormControl('', Validators.required);
 
   constructor(private router: Router, private authService: AuthService) {
     this.signUpForm = new FormGroup({
@@ -64,7 +56,7 @@ export class LoginComponent {
 
   signUp() {
     const formValue = this.signUpForm.value;
-  
+
     const model = {
       userName: formValue.signUpUserName,
       passWord: formValue.signUpPassWord,
@@ -73,23 +65,16 @@ export class LoginComponent {
       firstName: formValue.signUpFirstName,
       gender: '', // Set the desired value for the gender property
     };
-    this.authService.registerUser(model).subscribe({
-      next: (response) => {
-        console.log(response);
-      },
-      error: (error) => console.log(this.error),
-    });
+
+    this.authService.registerUser(model);
+  
   }
 
   signIn() {
-
-    this.authService.authenticate(this.signInForm.value).subscribe({
-      next: (response) => {
-        console.log(response);
-      },
-      error: (error) => console.log(this.error),
-    });
+    this.authService.authenticate(this.signInForm.value);
   }
+  
+
   get diagnostics() {
     return this.signUpForm.value;
   }
