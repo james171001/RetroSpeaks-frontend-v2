@@ -116,7 +116,6 @@ html, body{
 
 .dark-mode .username-text {
   /* Example: Adjust username text styles for dark mode */
-  color: #fff;
   font-size: 16px;
   margin-right: 8px;
 }
@@ -148,97 +147,3 @@ html, body{
   
 
 
-
-
-
-
-
-
-  /* Light Mode */
-.light-mode {
-    --primary-color: #007bff;
-    --secondary-color: #6c757d;
-    --background-color: #f8f9fa;
-    --text-color: #212529;
-  }
-  
-  .light-mode .card {
-    background-color: #ffffff;
-    color: #000000;
-  }
-  
-  .light-mode .app-name {
-    color: #000000;
-  }
-  
-  .light-mode .dark-mode-toggle {
-    background-color: #ffffff;
-    color: #000000;
-  }
-  
-  .light-mode .search-bar-group {
-    background-color: #ffffff;
-  }
-  
-  .light-mode .username-text {
-    color: #000000;
-  }
-  
-  .light-mode .logout-button {
-    background-color: #007bff;
-    color: #ffffff;
-  }
-  
-  .light-mode .sidebar-wrapper {
-    background-color: #ffffff;
-  }
-  
-  .light-mode .categoryButton,
-  .light-mode .groupButton {
-    color: #007bff;
-  }
-  
-  /* Dark Mode */
-  .dark-mode {
-    --primary-color: #007bff;
-    --secondary-color: #6c757d;
-    --background-color: #212529;
-    --text-color: #ffffff;
-  }
-  
-  .dark-mode .card {
-    background-color: #343a40;
-    color: #ffffff;
-  }
-  
-  .dark-mode .app-name {
-    color: #ffffff;
-  }
-  
-  .dark-mode .dark-mode-toggle {
-    background-color: #343a40;
-    color: #ffffff;
-  }
-  
-  .dark-mode .search-bar-group {
-    background-color: #343a40;
-  }
-  
-  .dark-mode .username-text {
-    color: #ffffff;
-  }
-  
-  .dark-mode .logout-button {
-    background-color: #007bff;
-    color: #ffffff;
-  }
-  
-  .dark-mode .sidebar-wrapper {
-    background-color: #343a40;
-  }
-  
-  .dark-mode .categoryButton,
-  .dark-mode .groupButton {
-    color: #ffffff;
-  }
-  

@@ -67,7 +67,7 @@ export class LoginComponent {
     };
 
     this.authService.registerUser(model);
-  
+    window.alert("Registration Success!");
   }
 
   signIn() {

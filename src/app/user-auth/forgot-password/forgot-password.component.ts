@@ -29,10 +29,15 @@ export class ForgotPasswordComponent {
     this.authService.forgotPassword(email).subscribe(
       (response: any) => {
         console.log(response);
+        this.router.navigate(['/']);
       },
       (err: any) => {
         console.log(err);
       }
     );
+  }
+
+  goBack() {
+    this.router.navigate(['/']);
   }
 }
