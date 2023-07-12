@@ -4,8 +4,10 @@ import { LayoutComponent } from './core/layout/layout.component';
 import { CreatePostComponent } from './create-post/create-post.component';
 import { AuthGuard } from './shared/services/auth-guard.service';
 import { LoginComponent } from './user-auth/login/login.component';
+import { ForgotPasswordComponent } from './user-auth/forgot-password/forgot-password.component';
 
 const routes: Routes = [
+  { path: 'forgot-password', component: ForgotPasswordComponent },
   { 
     path: '', 
     component: LoginComponent,
@@ -13,6 +15,7 @@ const routes: Routes = [
  
 
   {
+    
     path: 'home',
     component: LayoutComponent,
     canActivate: [AuthGuard],
@@ -26,6 +29,7 @@ const routes: Routes = [
     loadChildren: () => import('./group/group.module').then(m => m.GroupModule)
   },
   { path: 'create-post', component: CreatePostComponent },
+
 ];
 
 @NgModule({

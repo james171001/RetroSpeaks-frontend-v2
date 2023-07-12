@@ -105,7 +105,7 @@ input {
 	border-radius: 10px;
 	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 	position: absolute;
-	top: 50%;
+	top: 53%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	width: 768px;
@@ -262,5 +262,5 @@ input {
 
 .logo{
 	margin-left: 1%;
-	margin-bottom: 550px;
+	margin-bottom: 600px;
 }
