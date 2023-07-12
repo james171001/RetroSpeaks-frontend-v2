@@ -3,6 +3,7 @@ import { AuthStateService } from '../services/auth-state.service';
 import { AuthService } from '../../services/auth.service';
 import { ThemeService } from '../services/theme.service';
 
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
