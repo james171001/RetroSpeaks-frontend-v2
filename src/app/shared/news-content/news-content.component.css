@@ -53,18 +53,7 @@
 }
 
 
-.news-container {
-  margin-left: 12%;
-}
 
-.news-container h4 {
-  font-size: 15px;
-}
-
-.news-card {
-  display: flex;
-  flex-wrap: wrap;
-}
 
 .card {
   width: 240px;

@@ -1,5 +1,7 @@
-.box .sidebar-wrapper {
-  margin-top: 75px;
+.sidebar-box .sidebar-wrapper {
+  margin-top: 100px;
+  margin-left: 20px;
+
   
 }
 
@@ -12,7 +14,7 @@
   display: flex;
   flex-direction: column;
   padding: 15px;
-  height: 640px;
+  height:450px;
   position: fixed;
 }
 
@@ -102,11 +104,13 @@
   letter-spacing: 0;
   line-height: normal;
   top: 0;
+  text-align: left; 
 }
 .category-selector-item .categoryButton:hover {
   background-color: #00866e;
   color: white;
   opacity: 68%;
+  
 }
 
 .groups label {
@@ -132,11 +136,9 @@
   font-family: "Inter-Regular", Helvetica;
   font-size: 15px;
   font-weight: 500;
-  left: 0;
-  letter-spacing: 0;
-  line-height: normal;
-  top: 0;
+  text-align: left; 
 }
+
 .group-selector-item .groupButton:hover {
   background-color: #00866e;
   color: white;

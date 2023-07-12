@@ -1,27 +1,31 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { GroupService } from '../services/group.service';
 import { Group } from '../models/group';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css']
 })
-export class SidebarComponent {
+export class SidebarComponent implements OnInit {
 
   groups: Group[]=[];
   @Output() createButtonClick: EventEmitter<void> = new EventEmitter<void>();
   @Output() homeButtonClick: EventEmitter<void> = new EventEmitter<void>();
 
-  constructor(private groupService:GroupService){
+  constructor(private groupService:GroupService, private router:Router){
     this.fetchGroupsByUser();
+  }
+  ngOnInit() {
+   this.fetchGroupsByUser();
   }
   onCreateButtonClick() {
     this.createButtonClick.emit();
   }
 
   onHomeButtonClick(){
-    this.homeButtonClick.emit();
+    this.router.navigate(['/home/feed']); 
   }
 
   fetchGroupsByUser() {
@@ -36,6 +40,9 @@ export class SidebarComponent {
 
       }
     );
+  }
+  navigateToGroup(groupId: number) {
+    this.router.navigate(['/group', groupId]); 
   }
   
 }

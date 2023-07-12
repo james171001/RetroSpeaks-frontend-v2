@@ -6,24 +6,10 @@
   referrerpolicy="no-referrer"
 />
 
-<div class="box">
-  <div class="sidebar-wrapper dark-mode">
+<div class="sidebar-box">
+  <div class="sidebar-wrapper">
     <div class="home-left">
-      <div class="my-space">
-        <label>My Space</label>
-        <div class="home">
-          <button (click)="onHomeButtonClick()" class="homeButton">
-            <i class="fa-solid fa-house home-icon"></i>
-            Home
-          </button>
-        </div>
-        <div class="create-post">
-          <button (click)="onCreateButtonClick()" class="createButton">
-            <i class="fa-solid fa-pen-to-square post-icon"></i>
-            Create
-          </button>
-        </div>
-      </div>
+   
 
       <br/>
       <div class="category-selector">
@@ -59,28 +45,19 @@
           ><br />
         </div>
       </div>
-      <button class="see-more-btn">
-        See more <i class="fa-solid fa-angle-down"></i>
-      </button>
-
+  
       <br/>
       <div class="groups">
         <label>Groups</label>
         <div class="group-selector-item" *ngFor="let group of groups">
-          <button class="groupButton">
+          <button class="groupButton" (click)="navigateToGroup(group.id)">
             <i class="fa-solid fa-users-rectangle"></i>
             {{ group.name }}
           </button>
         </div>
       </div>
-      <button class="see-more-btn">
-        See more <i class="fa-solid fa-angle-down"></i>
-      </button>
-      
-      <button class="see-more-btn">
-        See more <i class="fa-solid fa-angle-down"></i>
-      </button>
-
+   
+  
     </div>
   </div>
 </div>
