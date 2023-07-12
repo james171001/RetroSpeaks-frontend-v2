@@ -26,8 +26,6 @@
 
 }
 
-
-
 .text-input {
   padding-left: 40px;
   padding-right: 40px;
@@ -43,8 +41,11 @@
 }
 
 .username-text {
-  margin-right: 8px;
+  font-size: 16px;
+  margin-right: 20px;
+  margin-left: 8px;
 }
+
 
 .logout-button {
   background-color: #00866E;
@@ -59,13 +60,6 @@
 .logout-button:hover {
   background-color: #007959;
 }
-
-
-
-
-
-
-
 
 body {
   margin: 0;
@@ -113,6 +107,59 @@ form:hover input {
 .search-bar-group:hover i {
   opacity: 0;
   z-index: -1;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-button {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 50px;
+}
+
+.dropdown-button .username-text {
+  margin-right: 4px;
+}
+
+.dropdown-button i {
+  margin-left: 2px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 120px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  padding: 0;
+}
+
+.dropdown-content button {
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  width: 100%;
+  text-align: left;
+}
+
+.dropdown-content button:hover {
+  background-color: #00866e;
+  color: white;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
 

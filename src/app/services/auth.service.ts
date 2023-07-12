@@ -66,9 +66,22 @@ export class AuthService {
     return this.httpClient.post(this.baseUrl + "forgot-password", body, { headers: headers });
   }
 
+  editProfile(model: any) {
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
+    const body = JSON.stringify(model);
+
+    return this.httpClient.post(this.baseUrl + "edit-profile", body, { headers: headers });
+  }
+
+
+
   logout() {
     this.authStateService.clearToken();
     this.router.navigate(['/login']);
+  }
+
+  goToEditProfile() {
+    this.router.navigate(['/edit-profile']);
   }
 
   isAuthenticated() {

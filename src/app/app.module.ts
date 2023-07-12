@@ -13,14 +13,14 @@ import { UserAuthModule } from './user-auth/user-auth.module';
 import { CoreModule } from './core/core.module';
 import { LayoutComponent } from './core/layout/layout.component';
 import { AuthGuard } from './shared/services/auth-guard.service';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ErrorComponent,
-    
-
+    EditProfileComponent,
   ],
   imports: [
     BrowserModule,

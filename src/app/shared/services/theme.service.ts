@@ -8,8 +8,6 @@ export class ThemeService {
 
   toggleDarkMode() {
     this.isDarkMode = !this.isDarkMode;
-
-    // Toggle the class on the body element to switch between dark and light mode
     if (this.isDarkMode) {
       document.body.classList.add('dark-mode');
     } else {

@@ -4,9 +4,11 @@ import { LayoutComponent } from './core/layout/layout.component';
 import { AuthGuard } from './shared/services/auth-guard.service';
 import { LoginComponent } from './user-auth/login/login.component';
 import { ForgotPasswordComponent } from './user-auth/forgot-password/forgot-password.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
 
 const routes: Routes = [
   { path: 'forgot-password', component: ForgotPasswordComponent },
+  { path: 'edit-profile', component: EditProfileComponent },
   { 
     path: '', 
     component: LoginComponent,

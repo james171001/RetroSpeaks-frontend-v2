@@ -11,6 +11,7 @@ import { ThemeService } from '../services/theme.service';
 })
 export class HeaderComponent implements OnInit{
   searchQuery: string = '';
+  router: any;
 
   ngOnInit() {
     this.usernameText = this.authStateService.getUsername();
@@ -31,6 +32,10 @@ export class HeaderComponent implements OnInit{
   performSearch() {
     // Implement your search functionality here
     console.log('Performing search:', this.searchQuery);
+  }
+
+  goToEditProfile() {
+    this.authService.goToEditProfile();
   }
 
   logout() {
