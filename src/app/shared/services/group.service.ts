@@ -1,23 +1,17 @@
-import {
-  HttpClient,
-  HttpHeaders,
-  HttpErrorResponse,
-  HttpParams
-} from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Group } from "../models/group";
+import { GenericService } from "./generic.service";
+import { AuthStateService } from "./auth-state.service";
+
 @Injectable({
   providedIn: 'root'
 })
-export class GroupService {
-  baseUrl = 'http://localhost:8080/api/group/'
-  constructor(private http: HttpClient) { }
+export class GroupService extends GenericService<Group, number> {
+  protected ENDPOINT = "group";
 
-  getGroupsByUser(): Observable<any[]> {
-    const headers = new HttpHeaders().set('Content-Type', 'application/json');
-  
-    return this.http.get<any[]>(this.baseUrl, { headers });
+  constructor(protected override _http: HttpClient, protected override authState: AuthStateService) {
+    super(_http, authState);
+    this.baseUrl(this.ENDPOINT);
   }
-
-
 }

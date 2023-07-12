@@ -66,31 +66,17 @@
       <br/>
       <div class="groups">
         <label>Groups</label>
-        <div class="group-selector-item">
+        <div class="group-selector-item" *ngFor="let group of groups">
           <button class="groupButton">
             <i class="fa-solid fa-users-rectangle"></i>
-            Group1
-          </button>
-        </div>
-        <div class="group-selector-item">
-          <button class="groupButton">
-            <i class="fa-solid fa-users-rectangle"></i>
-            Group2
-          </button>
-        </div>
-        <div class="group-selector-item">
-          <button class="groupButton">
-            <i class="fa-solid fa-users-rectangle"></i>
-            Group3
-          </button>
-        </div>
-        <div class="group-selector-item">
-          <button class="groupButton">
-            <i class="fa-solid fa-users-rectangle"></i>
-            Group4
+            {{ group.name }}
           </button>
         </div>
       </div>
+      <button class="see-more-btn">
+        See more <i class="fa-solid fa-angle-down"></i>
+      </button>
+      
       <button class="see-more-btn">
         See more <i class="fa-solid fa-angle-down"></i>
       </button>

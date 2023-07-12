@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { GroupService } from '../services/group.service';
+import { Group } from '../models/group';
 
 @Component({
   selector: 'app-sidebar',
@@ -8,11 +9,13 @@ import { GroupService } from '../services/group.service';
 })
 export class SidebarComponent {
 
-
+  groups: Group[]=[];
   @Output() createButtonClick: EventEmitter<void> = new EventEmitter<void>();
   @Output() homeButtonClick: EventEmitter<void> = new EventEmitter<void>();
 
-  constructor(private groupService:GroupService){}
+  constructor(private groupService:GroupService){
+    this.fetchGroupsByUser();
+  }
   onCreateButtonClick() {
     this.createButtonClick.emit();
   }
@@ -21,8 +24,18 @@ export class SidebarComponent {
     this.homeButtonClick.emit();
   }
 
-  fetchGroupsByUser(){
+  fetchGroupsByUser() {
+    this.groupService.findAll().subscribe(
+      groups => {
+        this.groups = groups;
+        
+     
+      },
+      error => {
+        console.error('Error fetching groups:', error);
 
-    this.groupService.getGroupsByUser
+      }
+    );
   }
+  
 }
