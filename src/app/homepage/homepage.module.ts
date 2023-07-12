@@ -9,6 +9,7 @@ import { CreatePollComponent } from '../post/create-post/create-poll/create-poll
 import { FormsModule } from '@angular/forms';
 import { CreatePostComponent } from '../post/create-post/create-post/create-post.component';
 import { CreateSurveyComponent } from '../post/create-post/create-survey/create-survey.component';
+import { MatTabsModule } from '@angular/material/tabs';
 
 
 
@@ -24,7 +25,8 @@ import { CreateSurveyComponent } from '../post/create-post/create-survey/create-
     CommonModule,
     HomepageRoutingModule,
     CardModule,
-    FormsModule
+    FormsModule,
+    MatTabsModule
   ]
 })
 export class HomepageModule { }

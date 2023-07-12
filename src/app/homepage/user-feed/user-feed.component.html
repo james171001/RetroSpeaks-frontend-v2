@@ -1,16 +1,26 @@
+<!-- HTML FOR CREATE POST, POLL, SURVEY -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
 
-      <!-- <app-create-post *ngIf="showCreatePostComponent"></app-create-post>
-      <app-create-buttons></app-create-buttons> -->
+<div class="container">
+  <mat-tab-group animationDuration="0ms">
+    <mat-tab label="Post">
+      <app-create-post></app-create-post>
+    </mat-tab>
+    <mat-tab label="Poll">
+      <app-create-poll></app-create-poll>
+    </mat-tab>
+    <mat-tab label="Survey">
+      <app-create-survey></app-create-survey>
+    </mat-tab>
+  </mat-tab-group>
+</div>
 
-      <div *ngIf="showCreatePostComponent || showCreatePollCard || showCreateSurveyCard">
-        <app-create-post *ngIf="!showCreatePollCard && !showCreateSurveyCard"></app-create-post>
-        <app-create-poll *ngIf="!showCreatePostComponent && !showCreateSurveyCard"></app-create-poll>
-        <app-create-survey *ngIf="!showCreatePostComponent && !showCreatePollCard"></app-create-survey>
-      
-        <app-create-buttons
-          (showCreatePollEvent)="handleShowCreatePollEvent($event)"
-          (showCreateSurveyEvent)="handleShowCreateSurveyEvent($event)"
-          (showCreatePostEvent)="handleShowCreatePostEvent()"
-        ></app-create-buttons>
-      </div>
-      
+<!-- HTML FOR CREATE POST, POLL, SURVEY === [END]-->
+  
+  

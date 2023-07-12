@@ -1,5 +1,6 @@
 import { Component, HostListener } from '@angular/core';
 import { ContentCardComponent } from 'src/app/shared/content-card/content-card.component';
+import {MatTabsModule} from '@angular/material/tabs';
 
 
 interface Post {
@@ -17,7 +18,7 @@ interface Post {
 })
 
 export class UserFeedComponent {
-  showCreatePostComponent: boolean = false;
+  showCreatePostComponent: boolean = true;
   showCreatePollCard: boolean = false;
   showCreateSurveyCard: boolean = false;
 

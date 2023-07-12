@@ -1,0 +1,14 @@
+/* Post CSS */
+.container {
+    width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ccc;
+    border-radius: 5px;
+}
+
+.mat-tab-group {
+    margin-bottom: 48px;
+}
+
+/* Post CSS --- END*/

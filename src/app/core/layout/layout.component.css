@@ -157,10 +157,10 @@
 }
 
 .content {
-    height: calc(100vh - 130px);
+    /* height: calc(100vh - 130px); */
     margin-top: 60px;
     margin-bottom: 10px;
-    margin-left: 220px;
+    /* margin-left: 220px; */
     
 }
 .scrollable-content {
