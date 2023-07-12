@@ -59,11 +59,19 @@ export class AuthService {
       });
   }
 
+  forgotPassword(email: string) {
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
+    const body = JSON.stringify({ email });
+
+    return this.httpClient.post(this.baseUrl + "forgot-password", body, { headers: headers });
+  }
+
   logout() {
     this.authStateService.clearToken();
     this.router.navigate(['/login']);
   }
-  isAuthenticated(){
+
+  isAuthenticated() {
     return this.authStateService.hasCurrentUser();
   }
 }

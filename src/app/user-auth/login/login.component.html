@@ -1,76 +1,76 @@
 <body>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
-<body>
-  <div class="logo">
-    <img src="../assets/logo/Retr.png" alt="RetroSpeaks">
-  </div>
-  <div class="main">
+  <body>
+    <div class="logo">
+      <img src="../assets/logo/Retr.png" alt="RetroSpeaks">
+    </div>
+    <div class="main">
 
-    <div class="col-md-6 col-sm-12">
+      <div class="col-md-6 col-sm-12">
 
-      <div *ngIf="success" class="dialog-box dialog-box-success">
-        <p class="dialog-box-icon-success">✔️ </p>
-        <p class="dialog-box-message-success">Congratulations! Your registration was successful.</p>
-      </div>
-
-    <div class="container" #container>
-      <div class="form-container sign-up-container">
-        <form [formGroup]="signUpForm" (ngSubmit)="signUp()" novalidate>
-          <h2>Create Account</h2>
-          <input type="text" class="form-control" placeholder="Username" formControlName="signUpUserName" required>
-          <input type="email" class="form-control" placeholder="Email" formControlName="signUpEmail" required>
-          <input type="text" class="form-control" placeholder="First Name" formControlName="signUpFirstName">
-          <input type="text" class="form-control" placeholder="Last Name" formControlName="signUpLastName" required>
-          <input type="number" class="form-control" placeholder="Age" formControlName="signUpAge" required>
-          <input type="password" class="form-control" placeholder="Password" formControlName="signUpPassWord" required>
-          <input type="password" class="form-control" placeholder="Confirm Password" id="confirm_password" required>
-    
-          <p id="passwordError" style="color: red;"></p>
-          <button type="submit">Sign Up</button>
-        </form>
-      </div>
-
-      <div *ngIf="fail" class="dialog-box dialog-box-success">
-        <p class="dialog-box-icon-success">❌ </p>
-        <p class="dialog-box-message-fail">Email or Username already exists.</p>
-      </div>
-
-      <div *ngIf="logout" class="dialog-box dialog-box-success">
-        <p class="dialog-box-message-success">You have been logged out.</p>
-      </div>
-
-        <div class="form-container sign-in-container">
-          <form [formGroup]="signInForm" (ngSubmit)="signIn()" novalidate>
-            <h1>Sign in</h1>
-            <div class="social-container">
-              <a href="#" class="social"><i class="fab fa-facebook"></i></a>
-              <a href="#" class="social"><i class="fab fa-google"></i></a>
-              <a href="#" class="social"><i class="fab fa-linkedin"></i></a>
-            </div>
-            <span>or use your account</span>
-            <input type="text" placeholder="Username" formControlName="userName" />
-            <input type="password" placeholder="Password" formControlName="passWord" />
-            <a routerLink="/forgot-password">Forgot your password?</a>
-            <button type="submit">Sign In</button>
-          </form>
+        <div *ngIf="success" class="dialog-box dialog-box-success">
+          <p class="dialog-box-icon-success">✔️ </p>
+          <p class="dialog-box-message-success">Congratulations! Your registration was successful.</p>
         </div>
 
-        <div class="overlay-container">
-          <div class="overlay">
-            <div class="overlay-panel overlay-left">
-              <h1>Welcome Back!</h1>
-              <p>To keep connected with us please login with your personal info</p>
-              <button class="ghost" id="signIn" (click)="switchToSignIn()">Sign In</button>
-            </div>
-            <div class="overlay-panel overlay-right">
-              <h1>Hello, Friend!</h1>
-              <p>Enter your personal details</p>
-              <button class="ghost" id="signUp" (click)="switchToSignUp()">Sign Up</button>
+        <div class="container" #container>
+          <div class="form-container sign-up-container">
+            <form [formGroup]="signUpForm" (ngSubmit)="signUp()" novalidate>
+              <h2>Create Account</h2>
+              <input type="text" class="form-control" placeholder="Username *" formControlName="signUpUserName" required>
+              <input type="email" class="form-control" placeholder="Email *" formControlName="signUpEmail" required>
+              <input type="text" class="form-control" placeholder="First Name" formControlName="signUpFirstName">
+              <input type="text" class="form-control" placeholder="Last Name" formControlName="signUpLastName" required>
+              <input type="number" class="form-control" placeholder="Age" formControlName="signUpAge" required>
+              <input type="password" class="form-control" placeholder="Password *" formControlName="signUpPassWord" required>
+              <input type="password" class="form-control" placeholder="Confirm Password" id="confirm_password" required>
+        
+              <p id="passwordError" style="color: red;"></p>
+              <button type="submit">Sign Up</button>
+            </form>
+          </div>
+
+          <div *ngIf="fail" class="dialog-box dialog-box-success">
+            <p class="dialog-box-icon-success">❌ </p>
+            <p class="dialog-box-message-fail">Email or Username already exists.</p>
+          </div>
+
+          <div *ngIf="logout" class="dialog-box dialog-box-success">
+            <p class="dialog-box-message-success">You have been logged out.</p>
+          </div>
+
+          <div class="form-container sign-in-container">
+            <form [formGroup]="signInForm" (ngSubmit)="signIn()" novalidate>
+              <h1>Sign in</h1>
+              <div class="social-container">
+                <a href="#" class="social"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="social"><i class="fab fa-google"></i></a>
+                <a href="#" class="social"><i class="fab fa-linkedin"></i></a>
+              </div>
+              <span>or use your account</span>
+              <input type="text" placeholder="Username" formControlName="userName" />
+              <input type="password" placeholder="Password" formControlName="passWord" />
+              <a routerLink="/forgot-password">Forgot your password?</a>
+              <button type="submit">Sign In</button>
+            </form>
+          </div>
+
+          <div class="overlay-container">
+            <div class="overlay">
+              <div class="overlay-panel overlay-left">
+                <h1>Welcome Back!</h1>
+                <p>To keep connected with us please login with your personal info</p>
+                <button class="ghost" id="signIn" (click)="switchToSignIn()">Sign In</button>
+              </div>
+              <div class="overlay-panel overlay-right">
+                <h1>Hello, Friend!</h1>
+                <p>Enter your personal details</p>
+                <button class="ghost" id="signUp" (click)="switchToSignUp()">Sign Up</button>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</body>
+  </body>

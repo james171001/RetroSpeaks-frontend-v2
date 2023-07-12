@@ -1,5 +1,8 @@
 <div class="box">
   <div class="app-name">RetroSpeaks</div>
+  <button class="dark-mode-toggle" (click)="toggleDarkMode()">
+    Dark Mode
+  </button>
   <div class="search-bar-group">
     <form name="search">
       <input type="text" class="input" name="txt" (mouseleave)="resetSearch()" placeholder="     Search" /> <!-- [(ngModel)]="searchQuery" -->

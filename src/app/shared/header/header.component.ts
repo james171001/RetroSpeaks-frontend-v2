@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthStateService } from '../services/auth-state.service';
 import { AuthService } from '../../services/auth.service';
+import { ThemeService } from '../services/theme.service';
 
 @Component({
   selector: 'app-header',
@@ -16,7 +17,11 @@ export class HeaderComponent implements OnInit{
 
   usernameText: string | null = null;
 
-  constructor(private authStateService: AuthStateService, private authService: AuthService) { }
+  constructor(private authStateService: AuthStateService, private authService: AuthService, private themeService: ThemeService) { }
+
+  toggleDarkMode() {
+    this.themeService.toggleDarkMode();
+  }
 
   resetSearch() {
     this.searchQuery = '';

@@ -1,7 +1,150 @@
 /* You can add global styles to this file, and also import other style files */
 html, body{
-    overflow: hidden;
     margin: 0;
     padding: 0;
     font-family:monospace;
 }
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  
+  /* Customize the color of the scrollbar track */
+  ::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+  }
+  
+  /* Customize the color and shape of the scrollbar thumb */
+  ::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 5px;
+  }
+  
+  /* Customize the appearance of the scrollbar thumb when hovered */
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+  }
+
+/* Light mode styles */
+/* Add your light mode styles here */
+
+/* Dark mode styles */
+.dark-mode {
+  /* Set background color to dark */
+  
+  background-color: #222;
+}
+
+/* Additional dark mode styles */
+.dark-mode .box {
+  /* Example: Adjust box styles for dark mode */
+  background-color: #333;
+  border-radius: 4px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .card {
+  /* Example: Adjust card styles for dark mode */
+  background-color: #333;
+  border-radius: 4px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .app-name {
+  /* Example: Adjust app name styles for dark mode */
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.dark-mode-toggle {
+    background-color: #444;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dark-mode .dark-mode-toggle {
+  /* Example: Adjust dark mode toggle button styles for dark mode */
+  background-color: #444;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dark-mode .dark-mode-toggle:hover {
+  background-color: #555;
+}
+
+.dark-mode .input {
+  /* Example: Adjust input styles for dark mode */
+  background-color: #555;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 8px;
+  width: 200px;
+}
+
+.dark-mode .input::placeholder {
+  /* Example: Adjust input placeholder styles for dark mode */
+  color: #bbb;
+}
+
+.dark-mode .fas.fa-search {
+  /* Example: Adjust search icon styles for dark mode */
+  color: #fff;
+  cursor: pointer;
+}
+
+.dark-mode .user-profile {
+  /* Example: Adjust user profile styles for dark mode */
+  display: flex;
+  align-items: center;
+}
+
+.dark-mode .username-text {
+  /* Example: Adjust username text styles for dark mode */
+  color: #fff;
+  font-size: 16px;
+  margin-right: 8px;
+}
+
+.dark-mode .typcn-user-outline {
+  /* Example: Adjust user outline icon styles for dark mode */
+  color: #fff;
+  font-size: 24px;
+}
+
+.dark-mode .logout-button {
+  /* Example: Adjust logout button styles for dark mode */
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dark-mode .logout-button:hover {
+  background-color: #0056b3;
+}
+
+/* Adjust other component styles as needed */
+
+  
+
+
