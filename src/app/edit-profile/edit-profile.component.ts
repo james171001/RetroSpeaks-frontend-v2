@@ -1,46 +1,59 @@
+// edit-profile.component.ts
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
-import { AuthService } from '../services/auth.service';
-
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-edit-profile',
   templateUrl: './edit-profile.component.html',
   styleUrls: ['./edit-profile.component.css']
 })
-export class EditProfileComponent {
+export class EditProfileComponent implements OnInit {
   profileForm: FormGroup;
-  username: FormControl = new  FormControl('', Validators.required);
-  password: FormControl = new  FormControl('');
-  firstName: FormControl = new  FormControl('');
-  lastName: FormControl = new  FormControl('');
-  gender: FormControl = new  FormControl('');
 
-  constructor(private formBuilder: FormBuilder, private router: Router,private httpClient: HttpClient,private authService: AuthService) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private userService: UserService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {
     this.profileForm = this.formBuilder.group({
-      username: this.username,
-      password: this.password,
-      firstName: this.firstName,
-      lastName: this.lastName,
-      gender: this.gender,
+      passWord: ['', Validators.required],
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      gender: ['', Validators.required]
     });
   }
 
-  saveChanges() {
-    const formValue = this.profileForm.value;
-
-    const model = {
-      username: formValue.username,
-      password: formValue.password,
-      email: formValue.email,
-      lastName: formValue.lastName,
-      firstName: formValue.firstName,
-      gender: formValue.gender,
-    };
-      this.authService.editProfile(model);
-      window.alert("Profile edited successfully!");
+  ngOnInit() {
+    const userId = this.route.snapshot.params['userId'];
+    this.userService.getUserById(userId).subscribe(
+      (user) => {
+        this.profileForm.patchValue({
+          passWord: user.passWord,
+          firstName: user.firstName,
+          lastName: user.lastName,
+          gender: user.gender
+        });
+      },
+      (error) => {
+        console.error('Failed to fetch user details:', error);
+      }
+    );
   }
-  
+
+  saveChanges() {
+    const userId = this.route.snapshot.params['userId'];
+    const updatedUser = this.profileForm.value;
+    this.userService.updateUserProfile(userId, updatedUser).subscribe(
+      (response) => {
+        console.log('Profile updated successfully:', response);
+        this.router.navigate(['/home']);
+      },
+      (error) => {
+        console.error('Failed to update profile:', error);
+      }
+    );
+  }
 }

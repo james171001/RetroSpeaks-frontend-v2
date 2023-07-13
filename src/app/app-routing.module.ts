@@ -8,7 +8,13 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
 
 const routes: Routes = [
   { path: 'forgot-password', component: ForgotPasswordComponent },
-  { path: 'edit-profile', component: EditProfileComponent },
+
+  {
+    path: 'user/:userId/edit-profile',
+    component: EditProfileComponent,
+    canActivate: [AuthGuard]
+  },
+
   { 
     path: '', 
     component: LoginComponent,

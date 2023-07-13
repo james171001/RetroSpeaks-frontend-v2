@@ -2,24 +2,33 @@ import { Component, OnInit } from '@angular/core';
 import { AuthStateService } from '../services/auth-state.service';
 import { AuthService } from '../../services/auth.service';
 import { ThemeService } from '../services/theme.service';
-
+import { Router } from '@angular/router';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit{
+export class HeaderComponent implements OnInit {
   searchQuery: string = '';
-  router: any;
+
+  usernameText: string | null = null;
+  userId: string | null = null;
+
+  constructor(
+    private authStateService: AuthStateService,
+    private authService: AuthService,
+    private userService: UserService,
+    private themeService: ThemeService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.usernameText = this.authStateService.getUsername();
+    this.userId = this.authStateService.getUserId();
+
   }
-
-  usernameText: string | null = null;
-
-  constructor(private authStateService: AuthStateService, private authService: AuthService, private themeService: ThemeService) { }
 
   toggleDarkMode() {
     this.themeService.toggleDarkMode();
@@ -35,7 +44,12 @@ export class HeaderComponent implements OnInit{
   }
 
   goToEditProfile() {
-    this.authService.goToEditProfile();
+    const userId = this.authStateService.getUserId();
+    if (userId) {
+      this.router.navigate([`user/${userId}/edit-profile`]);
+    } else {
+      console.error('User ID not found.');
+    }
   }
 
   logout() {

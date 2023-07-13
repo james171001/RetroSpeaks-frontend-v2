@@ -6,15 +6,14 @@ import { Injectable } from '@angular/core';
 export class AuthStateService {
   private readonly TOKEN_KEY = 'token';
   private readonly USERNAME_KEY = 'username';
+  private readonly USER_ID_KEY = 'userId';
 
   constructor() { }
-
 
   getToken(): string | null {
     return localStorage.getItem(this.TOKEN_KEY);
   }
 
-  
   setToken(token: string): void {
     localStorage.setItem(this.TOKEN_KEY, token);
   }
@@ -34,10 +33,20 @@ export class AuthStateService {
   setUsername(username: string): void {
     localStorage.setItem(this.USERNAME_KEY, username);
   }
-  hasCurrentUser(){
-    if(localStorage.getItem(this.TOKEN_KEY)){
-      return true;
-    }
-    return false;
+
+  getUserId(): string | null {
+    return localStorage.getItem(this.USER_ID_KEY);
+  }
+
+  setUserId(userId: string): void {
+    localStorage.setItem(this.USER_ID_KEY, userId);
+  }
+
+  clearUserId(): void {
+    localStorage.removeItem(this.USER_ID_KEY);
+  }
+
+  hasCurrentUser(): boolean {
+    return !!this.getToken();
   }
 }
