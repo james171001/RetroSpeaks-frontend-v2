@@ -1,25 +1,25 @@
 <div class="container">
-
-    <mat-tab-group animationDuration="0ms">
-  
-      <mat-tab label="Post">
-  
-        <app-create-post></app-create-post>
-  
-      </mat-tab>
-  
-      <mat-tab label="Poll">
-  
-        <app-create-poll></app-create-poll>
-  
-      </mat-tab>
-  
-      <mat-tab label="Survey">
-  
-        <app-create-survey></app-create-survey>
-  
-      </mat-tab>
-  
-    </mat-tab-group>
-  
-  </div>
+  <mat-tab-group animationDuration="0ms">
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="example-tab-icon">notes</mat-icon>
+        <span class="bold-label">Post</span>
+      </ng-template>
+      <app-create-post></app-create-post>
+    </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="example-tab-icon">poll</mat-icon>
+        <span class="bold-label">Poll</span>
+      </ng-template>
+      <app-create-poll></app-create-poll>
+    </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="example-tab-icon">assignment</mat-icon>
+        <span class="bold-label">Survey</span>
+      </ng-template>
+      <app-create-survey></app-create-survey>
+    </mat-tab>
+  </mat-tab-group>
+</div>

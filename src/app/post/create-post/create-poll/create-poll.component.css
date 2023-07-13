@@ -1,6 +1,5 @@
 .poll-container {
     background-color: #849b95;
-    ;
     padding: 20px;
     border-radius: 5px;
     max-width: 760px;
@@ -14,7 +13,7 @@
 }
 
 .poll-content {
-    background-color: #f7f7f7;
+    background-color: white;
     padding: 20px;
     border-radius: 5px;
 }
@@ -24,20 +23,32 @@
 }
 
 .form-control {
-    width: 300px;
+    background-color: #feffff;
+    border: 2px solid #00866E;
     padding: 10px;
-    border-radius: 3px;
-    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    width: 95%;
+    border-radius: 5px
 }
 
+.option-input-box {
+    width: 300px;
+    background-color: #feffff;
+    border: 2px solid #00866E;
+  }
+  
+
+
 .card {
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
     border-radius: 5px;
     margin-top: 20px;
+    background-color: #feffff;
+    border: 2px solid #00866E;
 }
 
 .card-header {
-    background-color: #f7f7f7;
+    background-color: #daf3ee;
     padding: 10px;
     font-weight: bold;
 }
@@ -58,6 +69,11 @@
 
 .btn-primary:hover {
     background-color: #0056b3;
+}
+
+.btn-primary:disabled {
+    background-color: #b3b3b3;
+    cursor: not-allowed;
 }
 
 .btn-secondary {

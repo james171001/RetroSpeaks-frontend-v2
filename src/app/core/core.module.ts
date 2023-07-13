@@ -6,6 +6,10 @@ import { HeaderComponent } from '../shared/header/header.component';
 import { NewsContentComponent } from '../shared/news-content/news-content.component';
 import { RouterOutlet } from '@angular/router';
 import { PostNavComponent } from '../post/post-nav/post-nav.component';
+import {MatDividerModule} from '@angular/material/divider';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
 
 
 
@@ -19,7 +23,11 @@ import { PostNavComponent } from '../post/post-nav/post-nav.component';
   ],
   imports: [
     CommonModule,
-    RouterOutlet
+    RouterOutlet,
+    MatDividerModule,
+    MatIconModule,
+    MatInputModule,
+    MatButtonModule
   ]
 })
 export class CoreModule { }

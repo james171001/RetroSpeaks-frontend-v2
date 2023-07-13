@@ -1,14 +1,14 @@
 .box {
-    background-color: white;
+    background-color: #ffffff;
     padding: 20px;
     border-radius: 5px;
     max-width: 760px;
-    margin-top: 10px;
 }
 
-.title {
-    background-color: #ECECEC;
-    border: none;
+.title,
+.description {
+    background-color: #feffff;
+    border: 2px solid #00866E; /* Add thin green border */
     padding: 10px;
     margin-bottom: 10px;
     width: 95%;
@@ -16,12 +16,6 @@
 }
 
 .description {
-    background-color: #ECECEC;
-    border: none;
-    padding: 10px;
-    margin-bottom: 10px;
-    width: 95%;
-    border-radius: 5px;
     resize: vertical;
     /* Allow vertical resizing */
     height: 80px;
@@ -33,14 +27,20 @@
 }
 
 .post-button {
-    background-color: #9AD7C8;
-    color: white;
-    border: none;
+    background-color: #007bff;
+    color: #fff;
     padding: 10px 20px;
-    border-radius: 5px;
+    border: none;
+    border-radius: 3px;
     cursor: pointer;
+    margin-top: 10px;
 }
 
 .post-button:hover {
-    background-color: #7DBDAE;
+    background-color: #0056b3;
+}
+
+.post-button:disabled {
+    background-color: #b3b3b3;
+    cursor: not-allowed;
 }

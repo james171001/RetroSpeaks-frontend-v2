@@ -1,12 +1,12 @@
 <div class="box">
     <form>
         <div>
-            <input type="text" placeholder="Title here" name="title" class="title">
+            <input type="text" placeholder="Title here" name="title" class="title" [(ngModel)]="title">
         </div>
         <br>
         <div>
-            <textarea placeholder="Description here" name="description" class="description"></textarea>
+            <textarea placeholder="Description here" name="description" class="description" [(ngModel)]="description"></textarea>
         </div>
-        <button type="submit" class="post-button">Submit</button>
+        <button type="submit" class="post-button" [disabled]="!title || !description">Submit</button>
     </form>
 </div>

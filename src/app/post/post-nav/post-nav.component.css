@@ -1,39 +1,30 @@
+
+.example-button-row {
+  display: table-cell;
+  max-width: 600px;
+}
+
 .post-nav-input {
-  /* Button dimensions */
-  width: 654px;
+  width: 735px;
   height: 40px;
-
-
-  font-family: Arial, sans-serif;
-  font-size: 16px;
+  margin-left: 26.5%;
+  border-radius: 5px;
+  font-size: 15px;
   font-weight: bold;
   text-transform: uppercase;
-
-
-  background-color: #4c6ef5;
-  color: #ffffff;
-  border: none;
-
-
-  border-radius: 20px;
-  padding: 10px 20px;
-
-  
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
   cursor: pointer;
-
   transition: background-color 0.3s ease-in-out;
 }
 
-.post-nav-input:hover {
-  background-color: #3457c2;
+.custom-button {
+  /* border-color: green !important; */
+  border: 3px solid #00866E !important;
+  color: gray !important;
+  font-family: 'Courier New', Courier, monospace;
 }
 
-.post-nav-input:focus {
-  outline: none;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+.spaced-text {
+  letter-spacing: 0.2em !important;
 }
 
-.post-nav-input:active {
-  transform: scale(0.95);
-}

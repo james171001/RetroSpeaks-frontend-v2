@@ -14,6 +14,10 @@ import { CoreModule } from './core/core.module';
 import { LayoutComponent } from './core/layout/layout.component';
 import { AuthGuard } from './shared/services/auth-guard.service';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+import {MatDividerModule} from '@angular/material/divider';
 
 
 @NgModule({
@@ -32,7 +36,11 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
     CommonModule,
     UserAuthModule,
     ReactiveFormsModule,
-    CoreModule
+    CoreModule,
+    MatIconModule,
+    MatInputModule,
+    MatButtonModule,
+    MatDividerModule
   
 
 
