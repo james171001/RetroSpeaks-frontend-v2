@@ -14,9 +14,7 @@ export class SidebarComponent implements OnInit {
   @Output() createButtonClick: EventEmitter<void> = new EventEmitter<void>();
   @Output() homeButtonClick: EventEmitter<void> = new EventEmitter<void>();
 
-  constructor(private groupService:GroupService, private router:Router){
-    this.fetchGroupsByUser();
-  }
+  constructor(private groupService:GroupService, private router:Router){}
   ngOnInit() {
    this.fetchGroupsByUser();
   }
