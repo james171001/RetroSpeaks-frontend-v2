@@ -12,7 +12,7 @@ export abstract class GenericService<T, ID> implements CrudOperations<T, ID> {
   private getHeaders(): HttpHeaders {
     let headers = new HttpHeaders();
     if (this.authState.hasCurrentUser()) {
-      const token = this.authState.getToken();
+      const token = this.authState.getToken(); 
       if (token) {
         headers = headers.set('Authorization', `Bearer ${token}`);
       }

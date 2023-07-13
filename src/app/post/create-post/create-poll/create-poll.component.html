@@ -5,7 +5,7 @@
             <!-- <label for="pollTitle">Poll Title</label> -->
             <input type="text" id="pollTitle"
                 placeholder="Enter the poll question" name="title"
-                class="form-control" [(ngModel)]="pollTitle">
+                class="form-control" >
         </div>
         <div class="card">
             <div class="card-header">
@@ -18,7 +18,7 @@
                     <div class="option-input">
                         <input type="text" [id]="'option' + (i+1)"
                             [name]="'option' + (i+1)"
-                            class="form-control" [(ngModel)]="options[i]">
+                            class="form-control" >
                         <button type="button" class="btn btn-remove"
                             (click)="removeOption(i)">
                             <i class="fas fa-times"></i>

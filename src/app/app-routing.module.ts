@@ -23,11 +23,18 @@ const routes: Routes = [
   },
 
   {
-    path: 'group/:id',
+    path: 'group/:groupId',
     component: LayoutComponent,
     canActivate: [AuthGuard],
     loadChildren: () => import('./group/group.module').then(m => m.GroupModule)
-  }
+  },
+
+  {
+    path: 'group/:groupId/post',
+    component: LayoutComponent,
+    canActivate: [AuthGuard],
+    loadChildren: () => import('./post/post.module').then(m => m.PostModule)
+  },
   
 
 ];

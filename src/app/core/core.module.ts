@@ -5,6 +5,7 @@ import { SidebarComponent } from '../shared/sidebar/sidebar.component';
 import { HeaderComponent } from '../shared/header/header.component';
 import { NewsContentComponent } from '../shared/news-content/news-content.component';
 import { RouterOutlet } from '@angular/router';
+import { PostNavComponent } from '../post/post-nav/post-nav.component';
 
 
 
@@ -13,7 +14,8 @@ import { RouterOutlet } from '@angular/router';
     SidebarComponent,
     HeaderComponent,
     NewsContentComponent,
-    LayoutComponent
+    LayoutComponent,
+    PostNavComponent
   ],
   imports: [
     CommonModule,

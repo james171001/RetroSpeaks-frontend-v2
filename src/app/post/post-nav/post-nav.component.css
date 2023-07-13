@@ -1,0 +1,23 @@
+.post-nav-input {
+    width: 650px;
+    padding: 10px;
+    font-size: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #f8f8f8;
+    color: #333;
+    transition: border-color 0.3s ease-in-out;
+  }
+  
+  .post-nav-input::placeholder {
+    color: #999;
+    opacity: 0.6;
+  }
+  
+  .post-nav-input:focus {
+    border-color: #66afe9;
+    outline: none;
+    box-shadow: 0 0 6px rgba(102, 175, 233, 0.5);
+  }
+  

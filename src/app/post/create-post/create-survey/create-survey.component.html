@@ -4,7 +4,7 @@
         <div class="form-group">
             <div class="form-title">
                 <label>Form Title:</label>
-                <input type="text" [(ngModel)]="surveyTitle" required>
+                <input type="text">
             </div>
         </div>
 
@@ -12,9 +12,9 @@
             <div *ngFor="let question of questions; let i = index"
                 class="form-group">
                 <label>Question {{ i + 1 }}:</label>
-                <input type="text" [(ngModel)]="question.question" required>
+                <input type="text" >
                 <label>Answer Type:</label>
-                <select [(ngModel)]="question.answerType"
+                <select 
                     (change)="resetAnswerOptions(question)">
                     <option value="multiple-choice">Multiple Choice</option>
                     <option value="checkboxes">Checkboxes</option>
@@ -37,7 +37,7 @@
                             </div>
                             <div class="option-input"
                                 *ngIf="question.answerType !== 'linear-scale'">
-                                <input type="text" [(ngModel)]="option.text"
+                                <input type="text" 
                                     required>
                             </div>
                         </div>
@@ -56,9 +56,9 @@
                             <div class="option-linear-scale">
                                 <span>1</span>
                                 <input type="text"
-                                    [(ngModel)]="question.minValue" required>
+                                   required>
                                 <input type="text"
-                                    [(ngModel)]="question.maxValue" required>
+                                   required>
                                 <span>5</span>
                             </div>
                         </div>
