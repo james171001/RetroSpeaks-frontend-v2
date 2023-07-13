@@ -43,6 +43,10 @@ export class EditProfileComponent implements OnInit {
     );
   }
 
+  goBack() {
+    this.router.navigate(['/home']); 
+  }
+
   saveChanges() {
     const userId = this.route.snapshot.params['userId'];
     const updatedUser = this.profileForm.value;
