@@ -18,7 +18,7 @@ import { MatTabsModule } from '@angular/material/tabs';
     HomepageRoutingModule,
     CardModule,
     FormsModule,
-    MatTabsModule
+    MatTabsModule,
   ]
 })
 export class HomepageModule { }

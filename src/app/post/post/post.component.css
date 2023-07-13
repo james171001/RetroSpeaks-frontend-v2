@@ -1,7 +1,7 @@
 /* Post CSS */
 .container {
     width: 730px;
-    margin: 0 auto;
+    margin-left: 12%;
     padding: 10px;
     padding-top: 5px;
     padding-top: 5px;
@@ -17,6 +17,13 @@
 .bold-label {
     font-weight: bold !important;
     font-size: 15px;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+    }
 }
 
 /* Post CSS --- END*/
