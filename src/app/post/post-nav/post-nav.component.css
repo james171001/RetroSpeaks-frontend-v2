@@ -1,23 +1,39 @@
 .post-nav-input {
-    width: 650px;
-    padding: 10px;
-    font-size: 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    background-color: #f8f8f8;
-    color: #333;
-    transition: border-color 0.3s ease-in-out;
-  }
+  /* Button dimensions */
+  width: 654px;
+  height: 40px;
+
+
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+
+
+  background-color: #4c6ef5;
+  color: #ffffff;
+  border: none;
+
+
+  border-radius: 20px;
+  padding: 10px 20px;
+
   
-  .post-nav-input::placeholder {
-    color: #999;
-    opacity: 0.6;
-  }
-  
-  .post-nav-input:focus {
-    border-color: #66afe9;
-    outline: none;
-    box-shadow: 0 0 6px rgba(102, 175, 233, 0.5);
-  }
-  
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+
+  transition: background-color 0.3s ease-in-out;
+}
+
+.post-nav-input:hover {
+  background-color: #3457c2;
+}
+
+.post-nav-input:focus {
+  outline: none;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.post-nav-input:active {
+  transform: scale(0.95);
+}

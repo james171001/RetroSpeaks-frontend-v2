@@ -160,7 +160,7 @@
     /* height: calc(100vh - 130px); */
     margin-top: 60px;
     height: calc(100vh - 130px);
-
+    position: sticky;
     margin-bottom: 10px;
     /* margin-left: 220px; */
     margin-left: 120px;
@@ -219,17 +219,6 @@ html, body {
 }
 
 
-app-content-card {
-    margin-left: 40%;
-    height: 100%;
-}
-
-app-create-post {
-    width: 40%;
-}
-app-create-poll {
-    width: 40%;
-}
 
 .sidebar{
     margin-left: 130px;
@@ -237,6 +226,8 @@ app-create-poll {
 
 .news-container {
     margin-left: 18%;
+    position: sticky;
+    
 }
   
 .back-to-top-button {
@@ -268,6 +259,7 @@ app-create-poll {
     max-width: 800px; /* Set a maximum width if desired */
   }
   .post-nav {
+    position: sticky;
     display: flex;
     justify-content: center;
     align-items: center;
