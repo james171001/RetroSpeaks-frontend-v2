@@ -1,12 +1,11 @@
-<div class ="container " >
-  <div class="box">  
-    
+<div class="container">
+  <div class="box">
     <div *ngFor="let post of posts">
-    <app-content-card
-      [title]="post.title"
-      [description]="post.content"
-      [commentCount]="post.agreeCount"
-    ></app-content-card></div>
- 
-</div>
+      <app-content-card
+        [title]="post.title ?? ''"
+        [description]="post.content ?? ''"
+  
+      ></app-content-card>
+    </div>
+  </div>
 </div>

@@ -10,7 +10,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     CreatePostRoutingModule,
-    ReactiveFormsModule,
-  ],
+    ReactiveFormsModule
+  
+  ]
 })
 export class CreatePostModule { }

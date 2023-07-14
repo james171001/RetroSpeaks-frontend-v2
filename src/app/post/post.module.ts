@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ViewPostComponent } from './view-post/view-post.component';
 import { PostComponent } from './post/post.component';
 import { MatTabsModule } from '@angular/material/tabs';
@@ -13,7 +13,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDividerModule} from '@angular/material/divider';
-import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -35,7 +35,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatInputModule,
     MatButtonModule,
     MatDividerModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
 
   ]
 })
