@@ -18,32 +18,28 @@ const routes: Routes = [
   { 
     path: '', 
     component: LoginComponent,
-    loadChildren: () => import('./user-auth/user-auth.module').then(m => m.UserAuthModule) },
- 
+    loadChildren: () => import('./user-auth/user-auth.module').then(m => m.UserAuthModule)
+  },
   {
-    
     path: 'home',
     component: LayoutComponent,
     canActivate: [AuthGuard],
     loadChildren: () => import('./homepage/homepage.module').then(m => m.HomepageModule)
   },
-
-  {
-    path: 'group/:groupId',
-    component: LayoutComponent,
-    canActivate: [AuthGuard],
-    loadChildren: () => import('./group/group.module').then(m => m.GroupModule)
-  },
-
   {
     path: 'group/:groupId/post',
     component: LayoutComponent,
     canActivate: [AuthGuard],
     loadChildren: () => import('./post/post.module').then(m => m.PostModule)
   },
-  
-
+  {
+    path: 'group/:groupId',
+    component: LayoutComponent,
+    canActivate: [AuthGuard],
+    loadChildren: () => import('./group/group.module').then(m => m.GroupModule)
+  }
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

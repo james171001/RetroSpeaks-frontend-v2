@@ -1,14 +1,21 @@
-.news-container {
-  margin-left: 12%;
+.box{
+  display: flex;
 }
+.box-container {
 
-.news-container h4 {
-  font-size: 15px;
+  border-radius: 20px;
+  border-color: black;
+  box-shadow: 32px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+ 
+  justify-content: space-between;
+  
+
 }
-
 .news-card {
   display: flex;
-  flex-wrap: wrap;
+  margin-left: 50px;
+
 }
 
 .card {

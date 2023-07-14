@@ -10,6 +10,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
+import { RouterLink } from '@angular/router';
 
 
 
@@ -27,7 +28,7 @@ import {MatButtonModule} from '@angular/material/button';
     MatDividerModule,
     MatIconModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,RouterLink
   ]
 })
 export class CoreModule { }

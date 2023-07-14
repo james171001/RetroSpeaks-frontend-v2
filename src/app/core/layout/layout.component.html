@@ -1,21 +1,8 @@
-<div class="light-mode">
-  <app-sidebar></app-sidebar>
-</div>
-<div class="box">
-  <app-header></app-header>
-</div>
-
-<div class="news-container">
-  <app-news-content></app-news-content>
-  <div class="post-nav">
-    <app-post-nav></app-post-nav>
+<div class="container">
+  <div class="header"><app-header></app-header></div>
+  <div class="side-bar"> <app-sidebar></app-sidebar> </div>
+  <div class="body">     
+  <app-news-content></app-news-content><br><br>
+   <app-post-nav></app-post-nav><br><br>
+   <router-outlet></router-outlet>
   </div>
-</div>
-
-<div class="content">
-
-  <div class="router-outlet-container">
-
-    <router-outlet></router-outlet>
-  </div>
-</div>

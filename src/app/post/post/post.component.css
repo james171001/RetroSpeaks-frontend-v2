@@ -1,13 +1,15 @@
-/* Post CSS */
-.container {
-    width: 730px;
-    margin-left: 12%;
-    padding: 10px;
-    padding-top: 5px;
-    padding-top: 5px;
-    background-color: #ebf8f6;
-    border: 1px solid #00866E;
-    border-radius: 5px;
+.postcontainer {
+  display: table-cell; /* Consider removing this property */
+  width: 735px;
+  position: relative;
+  left:70px;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .mat-tab-group {

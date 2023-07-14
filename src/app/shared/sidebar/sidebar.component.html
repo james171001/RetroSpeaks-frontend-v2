@@ -10,7 +10,7 @@
   <div class="sidebar-wrapper">
     <div class="home-left">
       <div class="home-button">
-        <button class="homeButton" (click)="onHomeButtonClick()">
+        <button class="homeButton">
           <i class="fa-solid fa-home"></i>
           Home
         </button>
@@ -44,23 +44,22 @@
         <div class="category-selector-item">
           <button class="categoryButton">
             <i class="fa-solid fa-hashtag"></i>
-            Category 1</button
-          ><br />
+            Category 1
+          </button>
+          <br />
         </div>
       </div>
-  
-      <br/>
+
+      <br />
       <div class="groups">
         <label>Groups</label>
         <div class="group-selector-item" *ngFor="let group of groups">
-          <button class="groupButton" (click)="navigateToGroup(group.id)">
+          <button class="groupButton" [routerLink]="['/group', group.id]">
             <i class="fa-solid fa-users-rectangle"></i>
             {{ group.name }}
           </button>
         </div>
       </div>
-   
-  
     </div>
   </div>
 </div>

@@ -19,10 +19,13 @@
     </ng-container>
   </div>
 </div> -->
-
-<div class="news-container">
-  <h4>Trending News Today</h4>
+<h4>Trending News Today</h4>
+<div class ="box">
+ 
+<div class="box-container">
+ 
   <div class="news-card">
+   
     <ng-container *ngFor="let headline of topHeadlinesResult; let i = index">
       <div class="card" *ngIf="headline.urlToImage && i < 3">
         <a [href]="headline.url" target="_blank">
@@ -34,5 +37,6 @@
       </div>
     </ng-container>
   </div>
+</div>
 </div>
 

@@ -3,8 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { ViewgroupComponent } from './viewgroup/viewgroup.component';
 
 const routes: Routes = [
-  { path: '', component: ViewgroupComponent }
-  
+  {
+    path: '',
+    component: ViewgroupComponent,
+
+  }
 ];
 
 @NgModule({
