@@ -16,7 +16,6 @@ export class CreatePostComponent implements OnInit {
   title: FormControl = new FormControl('', Validators.required);
   description: FormControl = new FormControl('', Validators.required);
 
-
   constructor(
     private router: Router,
     private route: ActivatedRoute,
@@ -51,7 +50,8 @@ export class CreatePostComponent implements OnInit {
       (savedPost) => {
    
         console.log('Post saved successfully:', savedPost);
-      
+        this.router.navigate(['/home/feed']);
+        window.alert('Posted successfully');
       },
       (error) => {
     

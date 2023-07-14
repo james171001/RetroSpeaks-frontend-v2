@@ -15,4 +15,6 @@ export class GroupService extends GenericService<Group, number> {
   setBaseUrl(): void {
     this._baseUrl = `http://localhost:8080/api/group`;
   }
+
+  
 }

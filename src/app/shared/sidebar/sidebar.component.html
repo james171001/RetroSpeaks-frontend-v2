@@ -49,6 +49,7 @@
 
       <br />
       <div class="groups">
+        <button mat-button (click)="openCreateGroupDialog()">Create Group</button>
         <label>Groups</label>
         <div class="group-selector-item" *ngFor="let group of groups">
           <button class="groupButton" [routerLink]="['/group', group.id]">

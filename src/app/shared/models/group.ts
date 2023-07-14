@@ -4,7 +4,6 @@ export interface Group {
     id : number;
     name: String;
     description: String;
-    users: User[];
-
-    
+    categoryType: String;
+    users: User[];    
 }

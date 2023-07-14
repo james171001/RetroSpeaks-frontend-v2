@@ -20,6 +20,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatDividerModule} from '@angular/material/divider';
 import { CreatePostComponent } from './post/create-post/create-post/create-post.component';
 import { PostModule } from './post/post.module';
+import { SharedModule } from './shared/shared.module';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { PostModule } from './post/post.module';
     HttpClientModule,
     FormsModule,
     CommonModule,
+    SharedModule,
     UserAuthModule,
     ReactiveFormsModule,
     CoreModule,
