@@ -1,0 +1,13 @@
+<div class="comment-list">
+    <div class="comment-input">
+      <input type="text" placeholder="Enter your comment" [(ngModel)]="newCommentText" />
+      <button class="comment-submit" (click)="addComment()">Submit</button>
+    </div>
+    <div class="comment-user">
+      <span class="comment-author">{{ username }}:</span>
+      <div *ngFor="let comment of comments" class="comment">
+        <span class="comment-text">{{ comment.text }}</span>
+      </div>
+    </div>
+  </div>
+  

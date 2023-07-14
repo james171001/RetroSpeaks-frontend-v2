@@ -1,8 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { MatCardModule } from '@angular/material/card';
-import { MatDividerModule } from '@angular/material/divider';
-import { MatButtonModule } from '@angular/material/button';
-import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @Component({
   selector: 'app-content-card',
@@ -10,14 +6,17 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
   styleUrls: ['./content-card.component.css']
 })
 export class ContentCardComponent {
+  @Input() username!: string;
   @Input() title!: string;
   @Input() description!: string;
   @Input() commentCount!: number;
 
+  showComments = false;
+
   get timePassed(): string {
     const createdDate = new Date(); // Replace this with the actual creation date of the post
     const currentTime = new Date();
-    const timeDifference = Math.abs(currentTime.getTime() - createdDate.getTime());
+    const timeDifference = Math.abs(currentTime.getTime() - createdDate.getTime()); 
     const minutesPassed = Math.floor(timeDifference / (1000 * 60));
   
     if (minutesPassed < 1) {
@@ -31,4 +30,7 @@ export class ContentCardComponent {
     }
   }
   
+  toggleComments() {
+    this.showComments = !this.showComments;
+  }
 }
