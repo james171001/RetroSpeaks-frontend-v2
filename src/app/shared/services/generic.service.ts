@@ -5,7 +5,7 @@ import { AuthStateService } from "./auth-state.service";
 import { Token } from "@angular/compiler";
 
 export abstract class GenericService<T, ID> implements CrudOperations<T, ID> {
-  private _baseUrl: string = 'http://localhost:8080/api/';
+  _baseUrl: string = '';
 
   constructor(protected _http: HttpClient, protected authState: AuthStateService) {}
   
@@ -52,7 +52,8 @@ export abstract class GenericService<T, ID> implements CrudOperations<T, ID> {
     return this._http.delete<T>(this._baseUrl + "/" + id, options);
   }
 
-  baseUrl(endpoint: string): void {
-    this._baseUrl = `${this._baseUrl}${endpoint}`;
+  baseUrl(url: string): void {
+    this._baseUrl = `${url}`;
+
   }
 }

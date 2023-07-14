@@ -8,10 +8,11 @@ import { AuthStateService } from "./auth-state.service";
   providedIn: 'root'
 })
 export class GroupService extends GenericService<Group, number> {
-  protected ENDPOINT = "group";
-
   constructor(protected override _http: HttpClient, protected override authState: AuthStateService) {
     super(_http, authState);
-    this.baseUrl(this.ENDPOINT);
+    this.setBaseUrl();
+  }
+  setBaseUrl(): void {
+    this._baseUrl = `http://localhost:8080/api/group`;
   }
 }

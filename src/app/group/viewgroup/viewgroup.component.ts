@@ -3,43 +3,47 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Post } from 'src/app/shared/models/post';
 import { PostService } from 'src/app/shared/services/post.service';
 import { Subscription } from 'rxjs';
-import { PostDataService } from 'src/app/shared/DataService/post-data.service';
 
 @Component({
   selector: 'app-viewgroup',
   templateUrl: './viewgroup.component.html',
   styleUrls: ['./viewgroup.component.css']
 })
-export class ViewgroupComponent implements OnInit {
+export class ViewgroupComponent implements OnInit, OnDestroy {
   posts: Post[] = [];
-  groupId!: string | null;
   paramMapSubscription: Subscription | undefined;
 
   constructor(
-    private postDataService:PostDataService,
+    private postService: PostService,
     private router: Router,
     private route: ActivatedRoute
   ) {}
-  ngOnInit() {
-    console.log(this.route.url);
-    this.route.paramMap.subscribe(params => {
-      this.groupId = params.get('groupId');
-      if (this.groupId) {
-        this.postDataService.fetchPostsByGroup(this.groupId).subscribe(
-          posts => {
-            this.posts = posts;
-          },
-          error => {
-            console.error('Error fetching posts:', error);
-          }
-        );
-      }
-    });
-  }
+
   
+ngOnInit() {
+  console.log(this.route.url);
+  this.route.paramMap.subscribe(params => {
+    const groupId = params.get('groupId');
+    if (groupId) {
+      const parseGroupId = parseInt(groupId);
+      console.log(parseGroupId);
+      this.postService.setBaseUrl(parseGroupId);
+      this.postService.findAll().subscribe(
+        posts => {
+          this.posts = posts;
+        },
+        error => {
+          console.error('Error fetching posts:', error);
+        }
+      );
+    }
+  });
+}
 
 
-
-
-
+  ngOnDestroy() {
+    if (this.paramMapSubscription) {
+      this.paramMapSubscription.unsubscribe();
+    }
+  }
 }
