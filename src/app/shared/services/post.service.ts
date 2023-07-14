@@ -15,4 +15,6 @@ export class PostService extends GenericService<Post, number> {
   setBaseUrl(groupId: number): void {
     this._baseUrl = `http://localhost:8080/api/group/${groupId}/post`;
   }
+
+  
 }

@@ -11,6 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import { RouterLink } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -28,7 +29,8 @@ import { RouterLink } from '@angular/router';
     MatDividerModule,
     MatIconModule,
     MatInputModule,
-    MatButtonModule,RouterLink
+    MatButtonModule,RouterLink,
+    ReactiveFormsModule
   ]
 })
 export class CoreModule { }

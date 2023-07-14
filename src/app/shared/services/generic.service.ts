@@ -29,6 +29,7 @@ export abstract class GenericService<T, ID> implements CrudOperations<T, ID> {
 
   save(t: T): Observable<T> {
     const options = this.createOptions();
+    const body = JSON.stringify(t);
     return this._http.post<T>(this._baseUrl, t, options);
   }
 

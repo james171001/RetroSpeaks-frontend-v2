@@ -1,12 +1,24 @@
-<div class="box">
-    <form>
-        <div>
-            <input type="text" placeholder="Title here" name="title" class="title" [(ngModel)]="title">
-        </div>
-        <br>
-        <div>
-            <textarea placeholder="Description here" name="description" class="description" [(ngModel)]="description"></textarea>
-        </div>
-        <button type="submit" class="post-button" [disabled]="!title || !description">Submit</button>
+<!-- <div class="box">
+    <form (submit)="createPost()">
+      <div>
+        <input type="text" placeholder="Title here" name="title" class="title" [(ngModel)]="title">
+      </div>
+      <br>
+      <div>
+        <textarea placeholder="Description here" name="content" class="content" [(ngModel)]="content"></textarea>
+      </div>
+      <button type="submit" class="post-button" [disabled]="!title || !content">Submit</button>
     </form>
-</div>
+  </div> -->
+  <div class="box">
+    <form [formGroup]="postForm" (ngSubmit)="createPost()">
+      <div>
+        <input formControlName="title" type="text" placeholder="Title here" name="title" class="title">
+      </div>
+      <br>
+      <div>
+        <textarea formControlName="content" placeholder="Description here" name="content" class="content"></textarea>
+      </div>
+      <button type="submit" class="post-button" [disabled]="!postForm.valid">Submit</button>
+    </form>
+  </div>

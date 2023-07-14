@@ -6,7 +6,7 @@
 }
 
 .title,
-.description {
+.content {
     background-color: #feffff;
     border: 2px solid #00866E; /* Add thin green border */
     padding: 10px;
@@ -15,7 +15,7 @@
     border-radius: 5px;
 }
 
-.description {
+.content {
     resize: vertical;
     /* Allow vertical resizing */
     height: 80px;

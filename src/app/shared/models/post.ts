@@ -1,13 +1,13 @@
 export interface Post{
 
-    username: string;
-    postType: number;
+    username?: string;
+    //postType?: number;
     title: string;
     content:string;
-    postDate: Date;
-    groupId: number;
+    postDate?: Date;
+    groupId?: number;
     agreeCount: number;
-    disagreeCount: number;
+    disagreeCount?: number;
    
 
 }
