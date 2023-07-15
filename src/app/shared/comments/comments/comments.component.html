@@ -1,13 +1,35 @@
 <div class="comment-list">
-    <div class="comment-input">
-      <input type="text" placeholder="Enter your comment" [(ngModel)]="newCommentText" />
-      <button class="comment-submit" (click)="addComment()">Submit</button>
-    </div>
-    <div class="comment-user">
-      <span class="comment-author">{{ username }}:</span>
-      <div *ngFor="let comment of comments" class="comment">
-        <span class="comment-text">{{ comment.text }}</span>
-      </div>
-    </div>
+  <div class="comment-input">
+    <input type="text" placeholder="Enter your comment" [(ngModel)]="newCommentText" (keyup.enter)="addComment()" />
+    <button class="comment-submit" (click)="addComment()">Submit</button>
   </div>
-  
+  <div class="comment-user">
+    <ng-container *ngFor="let comment of comments">
+      <div class="comment">
+        <mat-card>
+          <mat-card-content class="parent-comment-content">
+            <span class="comment-author">@{{ comment.username }}:&nbsp;</span>
+            <span class="comment-text">{{ comment.text }}</span>
+            <button class="reply-button" (click)="toggleReply(comment)">Reply</button>
+          </mat-card-content>
+          <div *ngIf="comment.showReply" class="comment-reply-input">
+            <input type="text" placeholder="Enter your reply" [(ngModel)]="comment.replyText" (keyup.enter)="addReply(comment)" />
+          </div>
+          <div class="reply-indicator" *ngIf="comment.showChildComments"></div>
+          <div *ngIf="comment.showChildComments">
+            <div *ngFor="let reply of comment.childComments" class="reply">
+              <span class="reply-author">@{{ reply.username }}:&nbsp;</span>
+              <span class="reply-text">{{ reply.text }}</span>
+            </div>
+            <div class="hide-replies" (click)="toggleComment(comment)">
+              Hide Replies
+            </div>
+          </div>
+        </mat-card>
+        <div class="show-replies" *ngIf="!comment.showChildComments" (click)="toggleComment(comment)">
+          Show Replies
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>

@@ -1,226 +1,51 @@
-/* .card {
-  background-color: #f1f1f1;
-  border-radius: 25px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 700px;
-  height: 200px;
-
-}
-
-.card-title {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.card-description {
-  font-size: 16px;
-}
-
-.time-passed,
-.comment-count {
-  opacity: 0.7;
-  font-weight: normal;
-  font-size: 16px;
-}
-
-.agree-button,
-.disagree-button {
-  transform: translateY(-10%);
-}
-
-.agree-button {
-  background-color: #00866E;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  margin-left: auto;
-  cursor: pointer;
-}
-
-.agree-button:hover {
-  background-color: #007959;
-}
-
-.disagree-button {
-  background-color: #860018;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  margin-left: 20px;
-  cursor: pointer;
-}
-
-.disagree-button:hover {
-  background-color: #590012;
-}
-
-.card-header {
-  cursor: pointer;
-}
-
-.comment-section {
-  margin-top: 16px;
-}
-
-.comment-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
-}
-
-.toggle-button {
-  background: none;
-  border: none;
-  outline: none;
-  cursor: pointer;
-}
-
-.comment-list {
-  display: none;
-}
-
-.comment-list.show {
-  display: block;
-} */
-
-.card {
-  background-color: #f1f1f1;
-  border-radius: 25px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 650px;
-  height: auto;
-  padding: 20px;
-  margin-bottom: 20px;
-}
-
-.card-title {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.card-description {
-  font-size: 16px;
-}
-
-.time-passed,
-.comment-count {
-  opacity: 0.7;
-  font-weight: normal;
-  font-size: 16px;
-}
-
-.agree-button,
-.disagree-button {
-  transform: translateY(-10%);
-}
-
-.agree-button {
-  background-color: #00866E;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  margin-left: auto; /* Aligns the button to the right */
-  cursor: pointer;
-}
-
-.agree-button:hover {
-  background-color: #007959;
-}
-
-.disagree-button {
-  background-color: #860018;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  margin-left: 20px;
-  cursor: pointer;
-}
-
-.disagree-button:hover {
-  background-color: #590012;
-}
-
-.card-header {
-  cursor: pointer;
-}
-
-.creator-username {
-  text-transform: lowercase;
-  color: gray;
-  font-weight: normal;
-  font-style: italic;
-  font-family: 'Courier New', Courier, monospace;
-}
-
-.comment-section {
-  margin-top: 16px;
-}
-
-.comment-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
-}
-
-.toggle-button {
-  background: none;
-  border: none;
-  outline: none;
-  cursor: pointer;
-}
-
-.comment-list {
-  display: none;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.comment-list.show {
-  display: block;
-}
-
-.comment-input {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.comment-input input {
-  flex: 1;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-right: 10px;
-  font-size: 14px;
-}
-
-.comment-submit {
-  background-color: #00866E;
-  color: white;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.comment-submit:hover {
-  background-color: #007959;
-}
-
 .title-and-time {
+  display: flex;
+  align-items: center;
+}
+
+.mat-card {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.card-actions {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .time-passed {
-  font-size: 14px; /* Adjust the font size as desired */
-  opacity: 0.7;
+  margin-left: 8px;
+  color: gray;
+  font-weight: normal;
 }
 
+
+.mat-card-actions button {
+  margin-left: 8px;
+  /* Add your mat-button styles here */
+}
+
+.spacer {
+  flex: 1;
+}
+
+.comment-section {
+  margin-top: 10px;
+  /* Add your comment section styles here */
+}
+
+.card-description {
+  margin: 0;
+  font-weight: normal;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.toggle-comments-button {
+  font-size: 12px;
+}
+
+.post-card {
+  margin-bottom: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}

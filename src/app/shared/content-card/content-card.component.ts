@@ -3,7 +3,8 @@ import { Component, Input } from '@angular/core';
 @Component({
   selector: 'app-content-card',
   templateUrl: './content-card.component.html',
-  styleUrls: ['./content-card.component.css']
+  styleUrls: ['./content-card.component.css'],
+
 })
 export class ContentCardComponent {
   @Input() username!: string;
@@ -30,7 +31,7 @@ export class ContentCardComponent {
     }
   }
   
-  toggleComments() {
+  toggleComments(): void {
     this.showComments = !this.showComments;
   }
 }

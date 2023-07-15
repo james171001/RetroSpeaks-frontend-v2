@@ -2,6 +2,16 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Post } from 'src/app/shared/models/post';
 import { PostService } from 'src/app/shared/services/post.service';
+import { AuthStateService } from '../../services/auth-state.service';
+
+interface Comment {
+  username: string;
+  text: string;
+  showChildComments: boolean;
+  childComments: Comment[];
+  showReply: boolean;
+  replyText: string;
+}
 
 @Component({
   selector: 'app-comments',
@@ -10,48 +20,65 @@ import { PostService } from 'src/app/shared/services/post.service';
 })
 export class CommentsComponent implements OnInit {
   @Input() postId!: number;
-  newCommentText = '';
-  comments: { text: string }[] = [];
-  @Input() username?: string; // Use optional string type
+  @Input() usernameText: string | null = null;
+  userId: string | null = null;
 
+  newCommentText = '';
+  comments: Comment[] = [];
   posts: Post[] = [];
+
+  showComments = false;
 
   constructor(
     private postService: PostService,
     private router: Router,
+    private authStateService: AuthStateService,
     private route: ActivatedRoute
   ) {}
 
   ngOnInit() {
-    this.route.paramMap.subscribe(params => {
-      const groupId = params.get('groupId');
-      if (groupId) {
-        const parseGroupId = parseInt(groupId);
-        this.postService.setBaseUrl(parseGroupId);
-        this.postService.findAll().subscribe(
-          (posts: Post[]) => {
-            this.posts = posts;
-            const post = this.posts.find(p => p.postType === this.postId); // Use 'id' instead of 'postType'
-
-            if (post) {
-              this.username = post.username;
-            }
-          },
-          (error: any) => {
-            console.error('Error fetching posts:', error);
-          }
-        );
-      }
-    });
+    this.usernameText = this.authStateService.getUsername();
   }
 
   addComment() {
     if (this.newCommentText.trim() !== '') {
-      const newComment = {
-        text: this.newCommentText.trim()
+      const newComment: Comment = {
+        username: this.usernameText || '',
+        text: this.newCommentText.trim(),
+        showChildComments: false,
+        childComments: [],
+        showReply: false,
+        replyText: ''
       };
       this.comments.push(newComment);
       this.newCommentText = '';
+    }
+  }
+
+  toggleComment(comment: Comment) {
+    comment.showChildComments = !comment.showChildComments;
+  }
+
+  toggleReply(comment: Comment) {
+    comment.showReply = !comment.showReply;
+    if (!comment.showReply) {
+      comment.replyText = ''; // Reset the reply text when hiding the input box
+    }
+  }
+
+  addReply(comment: Comment) {
+    if (comment.replyText.trim() !== '') {
+      const newReply: Comment = {
+        username: this.usernameText || '',
+        text: comment.replyText.trim(),
+        showChildComments: false,
+        childComments: [],
+        showReply: false,
+        replyText: ''
+      };
+      comment.childComments.push(newReply);
+      comment.showReply = false; // Hide the input box after adding the reply
+      comment.replyText = ''; // Reset the reply text
     }
   }
 }

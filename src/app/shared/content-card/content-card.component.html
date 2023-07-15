@@ -1,29 +1,28 @@
-<div class="card">
-  <div class="card-content">
-    <div class="card-header">
+<mat-card class="post-card">
+  <mat-card-header>
+    <div class="creator-info">
       <span class="creator-username">@{{ username }}</span>
       <div class="title-and-time">
         <h2 class="card-title">{{ title }}</h2>
         <span class="time-passed">{{ timePassed }}</span>
       </div>
     </div>
+  </mat-card-header>
+  <mat-card-content>
     <p class="card-description">{{ description }}</p>
-    
-    <div class="comment-section">
-      <div class="comment-header" (click)="toggleComments()">
-        <p class="comment-count">{{ commentCount }} comments</p>
-        <button class="toggle-button">
-          <span [class]="showComments ? 'icon-chevron-up' : 'icon-chevron-down'"></span>
-        </button>
-      </div>
-      <app-comments *ngIf="showComments" [username]="username"></app-comments>
-
-      <div class="card-footer">
-        <div class="button-group">
-          <button class="agree-button">Agree</button>
-          <button class="disagree-button">Disagree</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+  </mat-card-content>
+  <mat-card-actions class="card-actions">
+    <button mat-button class="toggle-comments-button" (click)="toggleComments()">Comments</button>
+    <span class="spacer"></span>
+    <button mat-icon-button class="agree-button">
+      <mat-icon>thumb_up</mat-icon>
+    </button>
+    <button mat-icon-button class="disagree-button">
+      <mat-icon>thumb_down</mat-icon>
+    </button>
+  </mat-card-actions>
+  <mat-expansion-panel [expanded]="showComments" [hideToggle]="!showComments">
+    <mat-panel-description>{{ commentCount }}</mat-panel-description>
+    <app-comments [usernameText]="username"></app-comments>
+  </mat-expansion-panel>
+</mat-card>

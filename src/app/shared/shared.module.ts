@@ -8,6 +8,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatOptionModule } from '@angular/material/core';
+import {MatCardModule} from '@angular/material/card';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { MatOptionModule } from '@angular/material/core';
     MatOptionModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatCardModule
   ]
 })
 export class SharedModule { }

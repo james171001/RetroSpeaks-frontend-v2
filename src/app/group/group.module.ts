@@ -6,6 +6,10 @@ import { ViewgroupComponent } from './viewgroup/viewgroup.component';
 import { ContentCardComponent } from '../shared/content-card/content-card.component';
 import { CommentsComponent } from '../shared/comments/comments/comments.component';
 import { FormsModule } from '@angular/forms';
+import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 
 @NgModule({
@@ -17,7 +21,11 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     GroupRoutingModule,
-    FormsModule
+    FormsModule,
+    MatCardModule,
+    MatButtonModule,
+    MatIconModule,
+    MatExpansionModule
   ]
 })
 export class GroupModule { }
