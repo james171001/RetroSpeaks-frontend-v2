@@ -14,37 +14,13 @@
       <br/>
       <div class="category-selector">
         <label>Categories</label>
-        <div class="category-selector-item">
-          <button class="categoryButton">
+        <div class="category-selector-item" *ngFor = "let category of categories">
+          <button class="categoryButton" [routerLink]="['/category', category.id]">
             <i class="fa-solid fa-hashtag"></i>
-            Category 5
+            {{category.name}}
           </button>
         </div>
-        <div class="category-selector-item">
-          <button class="categoryButton">
-            <i class="fa-solid fa-hashtag"></i>
-            Category 4
-          </button>
-        </div>
-        <div class="category-selector-item">
-          <button class="categoryButton">
-            <i class="fa-solid fa-hashtag"></i>
-            Category 3
-          </button>
-        </div>
-        <div class="category-selector-item">
-          <button class="categoryButton">
-            <i class="fa-solid fa-hashtag"></i>
-            Category 2
-          </button>
-        </div>
-        <div class="category-selector-item">
-          <button class="categoryButton">
-            <i class="fa-solid fa-hashtag"></i>
-            Category 1
-          </button>
-          <br />
-        </div>
+      
       </div>
 
       <br />

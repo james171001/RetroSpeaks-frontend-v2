@@ -27,6 +27,12 @@ const routes: Routes = [
     loadChildren: () => import('./homepage/homepage.module').then(m => m.HomepageModule)
   },
   {
+    path: 'category/:categoryId',
+    component: LayoutComponent,
+    canActivate: [AuthGuard],
+    loadChildren: () => import('./category/category.module').then(m => m.CategoryModule)
+  },
+  {
     path: 'group/:groupId/post',
     component: LayoutComponent,
     canActivate: [AuthGuard],
@@ -37,7 +43,9 @@ const routes: Routes = [
     component: LayoutComponent,
     canActivate: [AuthGuard],
     loadChildren: () => import('./group/group.module').then(m => m.GroupModule)
-  }
+  },
+ 
+  
 ];
 
 

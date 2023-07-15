@@ -4,6 +4,8 @@ import { GroupService } from '../services/group.service';
 import { Group } from '../models/group';
 import { Router } from '@angular/router';
 import { CreateGroupComponent } from '../create-group/create-group.component';
+import { Category } from '../models/category';
+import { CategoryService } from '../services/category.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -13,12 +15,27 @@ import { CreateGroupComponent } from '../create-group/create-group.component';
 export class SidebarComponent  {
 
   groups: Group[]=[];
+  categories: Category[] =[]
   @Output() createButtonClick: EventEmitter<void> = new EventEmitter<void>();
   @Output() homeButtonClick: EventEmitter<void> = new EventEmitter<void>();
 
-  constructor(private groupService:GroupService, private router:Router, public dialog: MatDialog){
+  constructor(private groupService:GroupService, private categoryService:CategoryService, private router:Router, public dialog: MatDialog){
     this.fetchGroupsByUser();
+    this.fetchCategory();
   }
+
+  
+  fetchCategory() {
+    this.categoryService.findAll().subscribe(
+      categories => {
+        this.categories = categories;
+      },
+      error => {
+        console.error('Error fetching groups:', error);
+      }
+    );
+  }
+
 
   fetchGroupsByUser() {
     this.groupService.findAll().subscribe(
