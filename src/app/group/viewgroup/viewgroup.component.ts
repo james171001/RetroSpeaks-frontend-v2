@@ -40,7 +40,6 @@ ngOnInit() {
   });
 }
 
-
   ngOnDestroy() {
     if (this.paramMapSubscription) {
       this.paramMapSubscription.unsubscribe();

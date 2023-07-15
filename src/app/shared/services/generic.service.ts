@@ -9,7 +9,7 @@ export abstract class GenericService<T, ID> implements CrudOperations<T, ID> {
 
   constructor(protected _http: HttpClient, protected authState: AuthStateService) {}
   
-  private getHeaders(): HttpHeaders {
+ protected getHeaders(): HttpHeaders {
     let headers = new HttpHeaders();
     if (this.authState.hasCurrentUser()) {
       const token = this.authState.getToken(); 
@@ -22,7 +22,7 @@ export abstract class GenericService<T, ID> implements CrudOperations<T, ID> {
   }
   
 
-  private createOptions(): { headers: HttpHeaders } {
+  protected createOptions(): { headers: HttpHeaders } {
     const headers = this.getHeaders();
     return { headers };
   }

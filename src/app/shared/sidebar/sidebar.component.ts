@@ -26,6 +26,7 @@ export class SidebarComponent  {
 
   
   fetchCategory() {
+    this.categoryService.setBaseUrl('','');
     this.categoryService.findAll().subscribe(
       categories => {
         this.categories = categories;
@@ -38,6 +39,7 @@ export class SidebarComponent  {
 
 
   fetchGroupsByUser() {
+    this.groupService.setBaseUrl('','');
     this.groupService.findAll().subscribe(
       groups => {
         this.groups = groups;
