@@ -9,11 +9,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatOptionModule } from '@angular/material/core';
 import {MatCardModule} from '@angular/material/card';
+import { PollContentCardComponent } from './poll-content-card/poll-content-card.component';
 
 
 @NgModule({
   declarations: [
-    CreateGroupComponent
+    CreateGroupComponent,
+    // PollContentCardComponent
   ],
   imports: [
     CommonModule,

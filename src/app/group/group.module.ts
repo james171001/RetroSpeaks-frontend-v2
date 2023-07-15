@@ -10,6 +10,9 @@ import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { PollContentCardComponent } from '../shared/poll-content-card/poll-content-card.component';
+import {MatListModule} from '@angular/material/list';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 
 @NgModule({
@@ -17,6 +20,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
     ViewgroupComponent,
     ContentCardComponent,
     CommentsComponent,
+    PollContentCardComponent
   ],
   imports: [
     CommonModule,
@@ -25,7 +29,9 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatCardModule,
     MatButtonModule,
     MatIconModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatListModule,
+    MatProgressBarModule
   ]
 })
 export class GroupModule { }
