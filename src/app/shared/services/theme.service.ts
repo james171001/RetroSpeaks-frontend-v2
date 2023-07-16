@@ -1,10 +1,12 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ThemeService {
-  private isDarkMode = false;
+  public isDarkMode = false;
+
+  themeChangeEmitter = new EventEmitter<boolean>();
 
   toggleDarkMode() {
     this.isDarkMode = !this.isDarkMode;
@@ -13,5 +15,7 @@ export class ThemeService {
     } else {
       document.body.classList.remove('dark-mode');
     }
+    
+    this.themeChangeEmitter.emit(this.isDarkMode);
   }
 }

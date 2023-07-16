@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { CreateGroupComponent } from '../create-group/create-group.component';
 import { Category } from '../models/category';
 import { CategoryService } from '../services/category.service';
+import { ThemeService } from '../services/theme.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -19,9 +20,13 @@ export class SidebarComponent  {
   @Output() createButtonClick: EventEmitter<void> = new EventEmitter<void>();
   @Output() homeButtonClick: EventEmitter<void> = new EventEmitter<void>();
 
-  constructor(private groupService:GroupService, private categoryService:CategoryService, private router:Router, public dialog: MatDialog){
+  constructor(private groupService:GroupService, private categoryService:CategoryService, private router:Router, public dialog: MatDialog, private themeService: ThemeService,){
     this.fetchGroupsByUser();
     this.fetchCategory();
+  }
+
+  isDarkModeEnabled(): boolean {
+    return this.themeService.isDarkMode;
   }
 
   

@@ -32,6 +32,10 @@ html, body{
   background-color: #222;
 }
 
+.dark-mode h4 {
+  color: #fff;
+}
+
 .dark-mode .box {
   background-color: #333;
   border-radius: 4px;
