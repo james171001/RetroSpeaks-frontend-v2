@@ -13,20 +13,22 @@ export class CreateGroupComponent implements OnInit {
   groupForm = new FormGroup({
     name: new FormControl(''),
     description: new FormControl(''),
-    categoryType: new FormControl('')
+    categoryId: new FormControl('')
   });
 
   constructor(private groupService: CreateGroupService) { }
-  categoryTypes: string[] = ['ENTERTAINMENT', 'LIFESTYLE', 'SCIENCE_AND_TECHNOLOGY', 'HISTORY', 'BUSINESS_AND_FINANCE'];
+  //categoryTypes: string[] = ['ENTERTAINMENT', 'LIFESTYLE', 'SCIENCE_AND_TECHNOLOGY', 'HISTORY', 'BUSINESS_AND_FINANCE'];
   ngOnInit(): void {
   }
 
   onSubmit(): void {
+    
     this.groupService.createGroup(this.groupForm.value as GroupCreationPayload).subscribe(
       response => {
         console.log('Group created', response);
       },
       error => {
+        console.log(this.groupForm.value);
         console.error('Error creating group', error);
       }
     );
