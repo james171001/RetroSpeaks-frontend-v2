@@ -7,6 +7,19 @@
   referrerpolicy="no-referrer"
 />
 
+<div class="container">
+  <div class="box">
+    <div *ngFor="let post of allPosts">
+      <app-content-card
+        [username]="post.username ?? ''"
+        [title]="post.title ?? ''"
+        [description]="post.content ?? ''"
+        [creationDate]="post.postDate ?? null"
+      ></app-content-card>
+    </div>
+  </div>
+</div>
+
 <!-- HTML FOR CREATE POST, POLL, SURVEY === [END]-->
   
   

@@ -1,13 +1,8 @@
 import { Component, HostListener } from '@angular/core';
-import { ContentCardComponent } from 'src/app/shared/content-card/content-card.component';
 import {MatTabsModule} from '@angular/material/tabs';
-
-
-interface Post {
-  title: string;
-  description: string;
-  commentCount: number;
-}
+import { Post } from 'src/app/shared/models/post';
+import { PostService } from 'src/app/shared/services/post.service';
+import { ContentCardComponent } from 'src/app/shared/content-card/content-card.component';
 
 
 
@@ -23,6 +18,27 @@ export class UserFeedComponent {
   showCreateSurveyCard: boolean = false;
 
   showFeedComponent:boolean = true;
+
+
+  constructor(private postService: PostService) { }
+
+  allPosts: Post[] = [];
+
+  ngOnInit(): void {
+    // Fetch all posts from the API
+    this.postService.getAllPostsFromApi().subscribe(
+      (posts) => {
+        this.allPosts = posts; // Assign the fetched posts to the allPosts property
+      },
+      (error) => {
+        console.error('Error fetching posts:', error);
+      }
+    );
+  }
+
+
+
+
 
   handleShowCreatePollEvent(createPollActive: boolean) {
     this.showCreatePollCard = createPollActive;
@@ -55,22 +71,9 @@ export class UserFeedComponent {
   }
 
 
-  posts: Post[] = [
-    {
-      title: 'Sample Issue 1',
-      description: 'This is a sample content card 1',
-      commentCount: 5
-    },
-    {
-      title: 'Sample Issue 2',
-      description: 'This is a sample content card 2',
-      commentCount: 10
-    },
-    {
-      title: 'Sample Issue 3',
-      description: 'This is a sample content card 3',
-      commentCount: 2
-    }
-  ];
+  
+
+
+  
 }
 

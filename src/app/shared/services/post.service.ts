@@ -16,6 +16,12 @@ export class PostService extends GenericService<Post, number> {
     this._baseUrl = `http://localhost:8080/api/group/${groupId}/post`;
   }
 
+  getAllPostsFromApi() {
+    // Assuming the endpoint for all posts is `/api/post/`
+    const option = this.createOptions();
+    const apiUrl = 'http://localhost:8080/api/post/';
+    return this._http.get<Post[]>(`${apiUrl}`, option);
+  }
 
 
 

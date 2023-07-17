@@ -17,11 +17,11 @@ import { SurveyContentCardComponent } from '../shared/survey-content-card/survey
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSliderModule } from '@angular/material/slider';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
     ViewgroupComponent,
-    ContentCardComponent,
     CommentsComponent,
     PollContentCardComponent,
     SurveyContentCardComponent,
@@ -39,6 +39,7 @@ import { MatSliderModule } from '@angular/material/slider';
     MatCheckboxModule,
     MatRadioModule,
     MatSliderModule,
+    SharedModule,
   ],
 })
 export class GroupModule {}
