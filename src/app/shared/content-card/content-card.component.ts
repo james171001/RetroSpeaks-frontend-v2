@@ -1,4 +1,3 @@
-
 import { Component, Input, OnInit } from '@angular/core';
 import { Post } from '../models/post';
 import { PostService } from '../services/post.service';
@@ -20,6 +19,8 @@ export class ContentCardComponent implements OnInit {
   @Input() commentCount!: number; // Add the commentCount property
 
   private _creationDate!: Date | null;
+  agreeCount = 0;
+  disagreeCount = 0;
 
   constructor(
     private postService: PostService,
@@ -39,12 +40,13 @@ export class ContentCardComponent implements OnInit {
     return this._creationDate;
   }
 
-  
-
   showComments = false;
   timePassed!: string;
-
-  agreeCount!: number;
+  
+  agreeClicked = false;
+  disagreeClicked = false;
+  agreeDisabled = false;
+  disagreeDisabled = false
 
   ngOnInit() {
     this.timePassed = this.calculateTimePassed();
@@ -88,15 +90,27 @@ export class ContentCardComponent implements OnInit {
   }
   
   thumbsUp(): void {
+    this.agreeClicked = true;
+    this.disagreeClicked = false;
+    this.agreeDisabled = true;
+    this.disagreeDisabled = true;
     console.log('Thumbs up!');
     console.log(this.post.groupId??0,this.post.id??'');
-    this.postService.agreeToPost(this.post.groupId??0,this.post.id??'')
+    this.postService.agreeToPost(this.post.groupId??0,this.post.id??'').subscribe((newPost: Post) => {
+      this.post = newPost;
+    })
   }
 
   thumbsDown(): void {
+    this.disagreeClicked = true;
+    this.agreeClicked = false;
+    this.agreeDisabled = true;
+    this.disagreeDisabled = true;
     console.log('Thumbs down!');
     console.log(this.post.groupId??0,this.post.id??'');
-    this.postService.disagreeToPost(this.post.groupId??0,this.post.id??'')
+    this.postService.disagreeToPost(this.post.groupId??0,this.post.id??'').subscribe((newPost: Post) => {
+      this.post = newPost;
+    })
   }
 
   toggleComments(): void {

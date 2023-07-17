@@ -49,3 +49,20 @@
   margin-bottom: 15px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
+
+.vote-count-disagree {
+  color: red;
+}
+
+.vote-count-agree {
+  margin-right: 15px;
+  color: green;
+}
+
+.agree-button.clicked {
+  color: green;
+}
+
+.disagree-button.clicked {
+  color: red;
+}

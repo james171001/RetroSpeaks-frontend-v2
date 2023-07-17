@@ -1,8 +1,10 @@
 <div class="box">
   <a class="app-name" routerLink="/home/feed">RetroSpeaks</a>
-  <button class="dark-mode-toggle" (click)="toggleDarkMode()">
-    Dark Mode
-  </button>
+  <div class="dark-mode-label">{{ darkMode ? 'Dark Mode' : 'Light Mode' }}</div> <!-- Update the label here -->
+  <label class="dark-mode-toggle">
+    <input type="checkbox" [checked]="darkMode" (change)="toggleDarkMode($event)">
+    <span class="slider round"></span>
+  </label>
   <div class="search-bar-group">
     <form name="search">
       <input type="text" class="input" name="txt" (mouseleave)="resetSearch()" placeholder="     Search" />

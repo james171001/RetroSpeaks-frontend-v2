@@ -33,7 +33,7 @@ export class PostService extends GenericService<Post, String> {
     return this._http.get<any>(`${apiUrl}`, option)
     .pipe(
       catchError((err) => this.handleError(err))
-    ).subscribe(e => console.log(e));
+    );
   }
 
   disagreeToPost(groupId: number, postId: string) {
@@ -45,7 +45,7 @@ export class PostService extends GenericService<Post, String> {
     return this._http.get<any>(`${apiUrl}`, option)
     .pipe(
       catchError((err) => this.handleError(err))
-    ).subscribe(e => console.log(e));
+    );
   }
 
   private handleError(error: HttpErrorResponse) {

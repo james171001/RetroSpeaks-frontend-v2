@@ -4,6 +4,7 @@ import { AuthService } from '../../services/auth.service';
 import { ThemeService } from '../services/theme.service';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-header',
@@ -25,6 +26,7 @@ export class HeaderComponent implements OnInit {
   ) {}
 
   isToggle: boolean = false;
+  darkMode = false;
 
   toggleLink() {
     if (this.isToggle) {
@@ -41,9 +43,11 @@ export class HeaderComponent implements OnInit {
 
   }
 
-  toggleDarkMode() {
+  toggleDarkMode(event: Event) {
+    this.darkMode = (event.target as HTMLInputElement).checked;
     this.themeService.toggleDarkMode();
   }
+  
 
   resetSearch() {
     this.searchQuery = '';

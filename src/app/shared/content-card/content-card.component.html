@@ -5,25 +5,39 @@
       <div class="title-and-time">
         <h2 class="card-title">{{ title }}</h2>
         <span class="time-passed">{{ timePassed }}</span>
+        
       </div>
     </div>
   </mat-card-header>
   <mat-card-content>
     <p class="card-description">{{ description }}</p>
   </mat-card-content>
-  <mat-card-actions class="card-actions">
-    <button mat-button class="toggle-comments-button" (click)="toggleComments()">Comments</button>
-    <span class="spacer"></span>
-    <button mat-icon-button class="agree-button" (click)="thumbsUp()">
-      <mat-icon>thumb_up</mat-icon>
-    </button>
-    <button mat-icon-button class="disagree-button" (click)="thumbsDown()">
+
+<mat-card-actions class="card-actions">
+  <button mat-button class="toggle-comments-button" (click)="toggleComments()">Comments</button>
+  <span class="spacer"></span>
+  <button mat-icon-button
+          class="agree-button"
+          (click)="thumbsUp()"
+          [class.clicked]="agreeClicked"
+          [disabled]="agreeDisabled">
+    <mat-icon>thumb_up</mat-icon>
+  </button>
+  <span *ngIf="post.agreeCount !== 0" class="vote-count-agree">{{ post.agreeCount }}</span>
+  <ng-container>
+    <button mat-icon-button
+            class="disagree-button"
+            (click)="thumbsDown()"
+            [class.clicked]="disagreeClicked"
+            [disabled]="disagreeDisabled">
       <mat-icon>thumb_down</mat-icon>
     </button>
-  </mat-card-actions>
+    <span *ngIf="post.disagreeCount !== 0" class="vote-count-disagree">{{ post.disagreeCount }}</span>
+  </ng-container>
+</mat-card-actions>
+  
   <mat-expansion-panel [expanded]="showComments" [hideToggle]="!showComments">
     <mat-panel-description>{{ commentCount }}</mat-panel-description>
         <app-comments [post]="post"></app-comments>
-
   </mat-expansion-panel>
 </mat-card>

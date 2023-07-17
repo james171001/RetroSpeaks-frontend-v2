@@ -30,9 +30,8 @@
 
 .search-bar-group {
   flex: 1;
-  display: flex;
   justify-content: center;
-
+  margin-left: 250px;
 }
 
 .text-input {
@@ -42,7 +41,6 @@
   text-align: center;
   max-width: 300px;
 }
-
 
 .user-profile {
   display: flex;
@@ -65,6 +63,16 @@
   margin-left: 10px;
   cursor: pointer;
 }
+
+/* .dark-mode-toggle {
+  margin-right: 20px;
+  margin-left: 20px
+}
+
+.dark-mode-toggle:hover{
+  background-color: #007959;
+} */
+
 
 .logout-button:hover {
   background-color: #007959;
@@ -172,3 +180,69 @@ form:hover input {
 }
 
 
+
+
+
+.dark-mode-toggle {
+  position: relative;
+  display: inline-block;
+  width: 16px;
+  height: 10px;
+  margin-right: 12px;
+  margin-left: 25px;
+  background-color: #ccc;
+  border-radius: 26px;
+  transition: background-color 0.3s ease;
+}
+
+.dark-mode-toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #00866E;
+  transition: .4s;
+  border-radius: 26px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+.dark-mode-toggle input:checked + .slider {
+  background-color: #6c7272;
+}
+
+.dark-mode-label {
+  top: 6px;
+  right: 1250px;
+  position: absolute;
+}
+
+.dark-mode-toggle input:checked + .slider:before {
+  transform: translateX(22px);
+}
+
+.slider.round {
+  border-radius: 26px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}

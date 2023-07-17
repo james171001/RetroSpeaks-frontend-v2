@@ -50,13 +50,18 @@ html, body{
 }
 
 .dark-mode h2 {
-  color: #fff;
+  color: black;
 }
 .dark-mode h4 {
   color: #fff;
 }
 .dark-mode h3 {
   color: #fff;
+}
+
+.dark-mode app-header .dark-mode-label {
+  color: white;
+  
 }
 
 /* .dark-mode .box {
