@@ -6,6 +6,7 @@ import { AuthStateService } from '../../services/auth-state.service';
 import { CommentService } from '../../services/comment.service';
 import { Comment } from '../../models/comment';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ThemeService } from '../../services/theme.service';
 
 @Component({
   selector: 'app-comments',
@@ -19,10 +20,13 @@ export class CommentsComponent implements OnInit {
   comments: Comment[] = [];
   commentForm: FormGroup;
   content: FormControl = new FormControl('', Validators.required);
+
+  replyForm: FormGroup;
+  replyContent: FormControl = new FormControl('', Validators.required);
   comment: Comment = {};
   showComments = false;
   addReplyToggle = false;
-
+  currentReplyId: string | null = null;
   replyText:string;
 
   constructor(
@@ -34,6 +38,11 @@ export class CommentsComponent implements OnInit {
   ) {
     this.commentForm = new FormGroup({
       content: this.content,
+    });
+    this.replyText = "";
+
+    this.replyForm = new FormGroup({
+      replyContent: this.replyContent,
     });
     this.replyText = "";
   }
@@ -85,10 +94,11 @@ export class CommentsComponent implements OnInit {
     );
   }
 
-  addReply(replyText:string,commentId: string) {
-   ;
+  addReply(commentId: string) {
+   
+    const formValue = this.replyForm.value;
     this.comment = {
-      content: this.replyText,
+      content: formValue.replyContent,
     };
     const groupId = this.route.snapshot.paramMap.get('groupId');
     if (groupId !== null && this.post.id != null) {
@@ -111,11 +121,9 @@ export class CommentsComponent implements OnInit {
     comment.showChildComments = !comment.showChildComments;
   }
 
-  toggleReply() {
-    this.addReplyToggle = !this.addReplyToggle;
+  toggleReply(commentId: string) {
+    this.currentReplyId = this.currentReplyId === commentId ? null : commentId;
   }
-  
-
    cancelReply(comment: Comment) {
     comment.showReply = !comment.showReply;
     if (!comment.showReply) {

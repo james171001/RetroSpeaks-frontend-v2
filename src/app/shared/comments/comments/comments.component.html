@@ -26,12 +26,16 @@
     <div *ngFor="let comment of comments">
       <ng-container *ngIf="comment.parentCommentID === parentId">
         <!-- Display nested comments -->
-             <button class="reply-button" (click)="toggleReply()">Reply</button>
+    
         <div class="nested-comment-container">
           <div class="reply-author">{{ comment.commenter }}</div>
           <div class="reply-text">{{ comment.content }}</div>
-          <div *ngIf="addReplyToggle" class="comment-reply-input">
-            <input type="text" placeholder="Enter your reply" [(ngModel)]="replyText"  />
+          <button class="reply-button" (click)="toggleReply(comment.id)">Reply</button>
+          <div *ngIf="currentReplyId === comment.id" class="comment-reply-input">
+            <form [formGroup]="replyForm" (ngSubmit) ="addReply(comment.id)">
+              <input type="text" placeholder="Enter your reply" formControlName="replyContent" />
+              <button type ="submit" >Submit</button>
+            </form>
           </div>
         </div>
        

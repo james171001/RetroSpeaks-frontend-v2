@@ -51,7 +51,6 @@ export class ViewgroupComponent implements OnInit, OnDestroy {
 
             this.posts = posts;
             this.sortPostsByNewest();
-
           },
           error => {
             console.error('Error fetching posts:', error);
