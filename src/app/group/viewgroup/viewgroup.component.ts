@@ -14,6 +14,8 @@ import { GroupService } from 'src/app/shared/services/group.service';
 })
 export class ViewgroupComponent implements OnInit, OnDestroy {
   group: Group | undefined;
+  followersCount: number = 0;
+  postCount: number = 0;
 
   posts: Post[] = [];
   paramMapSubscription: Subscription | undefined;
@@ -40,6 +42,7 @@ export class ViewgroupComponent implements OnInit, OnDestroy {
         this.groupService.findById(parseGroupId).subscribe(
           group => {
             this.group = group;
+            this.followersCount = group.users.length;
           },
           error => {
             console.error('Error fetching group:', error);
@@ -50,7 +53,7 @@ export class ViewgroupComponent implements OnInit, OnDestroy {
           posts => {
             this.posts = posts;
             this.sortPostsByNewest();
-
+            this.postCount = this.posts.length;
           },
           error => {
             console.error('Error fetching posts:', error);

@@ -12,6 +12,13 @@
     transition: background-color 0.3s ease-in-out;
   }
 
+  .followers-count {
+    margin-left: 10%;
+  }
+  .post-count {
+    margin-left: 10%;
+  }
+
   .box{
     padding:20px;
     padding-top: 10px;
