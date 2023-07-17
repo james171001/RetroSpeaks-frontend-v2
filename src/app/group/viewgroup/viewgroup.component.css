@@ -14,6 +14,40 @@
 
   .box{
     padding:20px;
+    padding-top: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+  }
+
+  .group-header {
+    margin-bottom: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 1);
+    border: 20px black;
+  }
+
+  .group-header h2 {
+    text-transform: uppercase;
+  }
+
+  .group-header p {
+    margin-top: 0;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+
+  .group-name-category {
+    display: flex;
+    align-items: center; /* To center the elements horizontally */
+  }
+
+  .group-name-category h2 {
+    margin-right: 10px; /* Adjust the spacing between the group name and category name */
+  }
+
+  .small-category-name {
+    font-size: 12px; /* Adjust the font size for the category name */
+    background-color: #00866E;
+    color: white;
+    padding: 5px;
+    border-radius: 40px;
   }
