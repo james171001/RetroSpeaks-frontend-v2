@@ -38,7 +38,7 @@ export class ViewgroupComponent implements OnInit, OnDestroy {
         const parseGroupId = parseInt(groupId);
         console.log(parseGroupId);
         this.postService.setBaseUrl(parseGroupId);
-
+          this.groupService.setBaseUrl('','');
         this.groupService.findById(parseGroupId).subscribe(
           group => {
             this.group = group;
@@ -85,6 +85,41 @@ export class ViewgroupComponent implements OnInit, OnDestroy {
       this.paramMapSubscription.unsubscribe();
     }
   }
+    followGroup() {
+    const parseGroupId = this.group?.id.toString();
+    if(parseGroupId){
+      
+      this.groupService.setBaseUrl(parseGroupId, '/follow');
+      this.groupService.follow(parseGroupId).subscribe(
+        group => {
+        
+          window.location.reload();
+          console.log('Successfully followed the group.');
+        },
+        error => {
+          console.error('Error following the group:', error);
+        }
+      );
+    }
+
+  }
+  unfollowGroup() {
+    const parseGroupId = this.group?.id.toString();
+    if(parseGroupId){
+      this.groupService.setBaseUrl(parseGroupId, '/unfollow');
+      this.groupService.follow(parseGroupId).subscribe(
+        group => {
+          window.location.reload();
+          console.log('Successfully unfollowed the group.');
+        },
+        error => {
+          console.error('Error following the group:', error);
+        }
+      );
+    }
+
+  }
+
 }
 
 export default ViewgroupComponent;

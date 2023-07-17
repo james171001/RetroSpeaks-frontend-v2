@@ -2,7 +2,8 @@
 
 <div class="container">
   <div class="box">
-
+    <button (click) = "followGroup()">Follow </button>
+    <button (click) = "unfollowGroup()">Unfollow </button>
     <mat-expansion-panel hideToggle class="group-header">
       <mat-expansion-panel-header class="group-name-category">
         <mat-panel-title>
@@ -10,7 +11,7 @@
           <span class="small-category-name">{{group?.category?.name}}</span>
           <span class="post-count">Post Count: {{postCount}}</span>
           <span class="followers-count">Followers: {{followersCount}}</span>
-
+     
         </mat-panel-title>
       </mat-expansion-panel-header>
       <p>{{group?.description}}</p>
