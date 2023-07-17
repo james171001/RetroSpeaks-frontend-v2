@@ -79,7 +79,8 @@ export class ViewCategoryComponent implements OnInit {
       }
     );
   }
-  
+
+
 
   isGroupFollowed(groupId: number): boolean {
     return this.followedGroupIds.includes(groupId);

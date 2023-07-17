@@ -1,12 +1,15 @@
-// content-card.component.ts
-import { Component, Input, OnInit } from '@angular/core';
 
+import { Component, Input, OnInit } from '@angular/core';
+import { Post } from '../models/post';
 @Component({
   selector: 'app-content-card',
   templateUrl: './content-card.component.html',
   styleUrls: ['./content-card.component.css'],
 })
+
 export class ContentCardComponent implements OnInit {
+
+  @Input() post!: Post;
   @Input() username!: string;
   @Input() title!: string;
   @Input() description!: string;

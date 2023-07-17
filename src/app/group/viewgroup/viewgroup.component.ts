@@ -25,14 +25,18 @@ export class ViewgroupComponent implements OnInit, OnDestroy {
     private groupService: GroupService,
   ) { }
 
-  
+
+
   ngOnInit() {
+    console.log(this.route.url);
+
     this.route.paramMap.subscribe(params => {
       const groupId = params.get('groupId');
       if (groupId) {
         const parseGroupId = parseInt(groupId);
         console.log(parseGroupId);
         this.postService.setBaseUrl(parseGroupId);
+
         this.groupService.findById(parseGroupId).subscribe(
           group => {
             this.group = group;
@@ -41,10 +45,13 @@ export class ViewgroupComponent implements OnInit, OnDestroy {
             console.error('Error fetching group:', error);
           }
         );
+
         this.postService.findAll().subscribe(
           posts => {
+
             this.posts = posts;
             this.sortPostsByNewest();
+
           },
           error => {
             console.error('Error fetching posts:', error);
@@ -71,10 +78,11 @@ export class ViewgroupComponent implements OnInit, OnDestroy {
     });
   }
   
-
   ngOnDestroy() {
     if (this.paramMapSubscription) {
       this.paramMapSubscription.unsubscribe();
     }
   }
 }
+
+export default ViewgroupComponent;

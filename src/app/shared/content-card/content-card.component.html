@@ -1,7 +1,7 @@
 <mat-card class="post-card">
   <mat-card-header>
     <div class="creator-info">
-      <span class="creator-username">@{{ username }}</span>
+      <span class="creator-username">@{{ username }} </span>
       <div class="title-and-time">
         <h2 class="card-title">{{ title }}</h2>
         <span class="time-passed">{{ timePassed }}</span>
@@ -23,6 +23,7 @@
   </mat-card-actions>
   <mat-expansion-panel [expanded]="showComments" [hideToggle]="!showComments">
     <mat-panel-description>{{ commentCount }}</mat-panel-description>
-    <!-- <app-comments [usernameText]="username"></app-comments> -->
+        <app-comments [post]="post"></app-comments>
+
   </mat-expansion-panel>
 </mat-card>

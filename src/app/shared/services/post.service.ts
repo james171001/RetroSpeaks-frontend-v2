@@ -7,7 +7,7 @@ import { AuthStateService } from './auth-state.service';
 @Injectable({
   providedIn: 'root'
 })
-export class PostService extends GenericService<Post, number> {
+export class PostService extends GenericService<Post, String> {
   constructor(protected override _http: HttpClient, protected override authState: AuthStateService) {
     super(_http, authState);
   }

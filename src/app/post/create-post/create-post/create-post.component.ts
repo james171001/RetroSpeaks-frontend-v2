@@ -16,6 +16,7 @@ export class CreatePostComponent implements OnInit {
   title: FormControl = new FormControl('', Validators.required);
   description: FormControl = new FormControl('', Validators.required);
 
+
   constructor(
     private router: Router,
     private route: ActivatedRoute,

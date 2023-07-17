@@ -23,6 +23,7 @@ import { CommentsModule } from './comments/comments.module';
   declarations: [
     CreateGroupComponent,
     ContentCardComponent,
+    CommentsComponent
   ],
   imports: [
     CommonModule,
@@ -38,6 +39,6 @@ import { CommentsModule } from './comments/comments.module';
     MatIconModule,
     MatExpansionModule,
   ],
-  exports:[ContentCardComponent]
+  exports:[ContentCardComponent,CommentsComponent]
 })
 export class SharedModule { }
