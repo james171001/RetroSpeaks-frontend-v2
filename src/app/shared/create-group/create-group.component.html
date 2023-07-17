@@ -1,19 +1,18 @@
-<form [formGroup]="groupForm" (ngSubmit)="onSubmit()">
-    <mat-form-field>
-      <mat-label>Group Name</mat-label>
-      <input matInput formControlName="name" placeholder="Group Name">
-    </mat-form-field>
-  
-    <mat-form-field>
-      <mat-label>Description</mat-label>
-      <textarea matInput formControlName="description" placeholder="Description"></textarea>
-    </mat-form-field>
-  
-    <mat-form-field>
-      <mat-label>Category Type</mat-label>
-      <input matInput formControlName="categoryId" placeholder="Category Type">
-    </mat-form-field>
-  
-    <button mat-button type="submit">Create Group</button>
-  </form>
-  
+<form [formGroup]="groupForm" (ngSubmit)="onSubmit()" class="form-container">
+  <mat-form-field class="form-field">
+    <mat-label>Group Name</mat-label>
+    <input matInput formControlName="name" placeholder="Group Name">
+  </mat-form-field>
+
+  <mat-form-field class="form-field">
+    <mat-label>Description</mat-label>
+    <textarea matInput formControlName="description" placeholder="Description"></textarea>
+  </mat-form-field>
+
+  <mat-form-field class="form-field">
+    <mat-label>Category Type</mat-label>
+    <input matInput formControlName="categoryId" placeholder="Category Type">
+  </mat-form-field>
+
+  <button mat-button type="submit" class="submit-button" (click)="onSubmit()">Create Group</button>
+</form>

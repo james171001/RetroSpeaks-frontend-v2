@@ -57,8 +57,8 @@ export class SidebarComponent  {
 
   openCreateGroupDialog(): void {
     const dialogRef = this.dialog.open(CreateGroupComponent, {
-      width: '212px',
-      height: '312px',
+      width: '450px',
+      height: '420px',
     });
 
     dialogRef.afterClosed().subscribe(result => {

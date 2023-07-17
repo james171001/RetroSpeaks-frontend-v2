@@ -8,7 +8,7 @@
 
 .header {
   grid-area: 1 / 1 / 2 / 6;
-  
+
 }
 
 .side-bar {
@@ -20,4 +20,9 @@
   padding-top: 100px;
   padding-left: 50px;
 
+}
+
+body {
+  background: url('/assets/images/retro-bg.png');
+  background-size: 100%;
 }

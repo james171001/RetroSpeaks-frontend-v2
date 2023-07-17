@@ -1,0 +1,60 @@
+form.form-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Apply styles to form fields */
+.form-field {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Align the submit button to the center */
+.submit-button {
+    display: block;
+    margin: 0 auto;
+    background-color: #27909a;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Adjust the appearance of the input and textarea */
+input[type="text"], textarea {
+    font-size: 16px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Adjust the appearance of the textarea */
+textarea {
+    resize: vertical;
+    /* Allow vertical resizing of textarea */
+}
+
+/* Style the form field labels */
+mat-label {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Apply some focus styles to form controls */
+.mat-form-field-appearance-outline .mat-form-field-outline {
+    border-color: #4285F4;
+    /* Change this color to your preferred focus color */
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline-thicker {
+    border-width: 2px;
+    /* Adjust the border thickness on focus */
+}
+
+/* Add a subtle box shadow on focus */
+.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-start,
+.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-end {
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+  
