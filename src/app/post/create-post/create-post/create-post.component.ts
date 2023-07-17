@@ -50,7 +50,7 @@ export class CreatePostComponent implements OnInit {
       (savedPost) => {
    
         console.log('Post saved successfully:', savedPost);
-        this.router.navigate(['/home/feed']);
+        this.router.navigate(['../../'], { relativeTo: this.route });
         window.alert('Posted successfully');
       },
       (error) => {
