@@ -37,7 +37,7 @@ export class HomepageModule {
     // Fetch all posts from the API
     this.postService.getAllPostsFromApi().subscribe(
       (posts) => {
-        this.allPosts = posts; // Assign the fetched posts to the allPosts property
+        this.allPosts = posts;
       },
       (error) => {
         console.error('Error fetching posts:', error);

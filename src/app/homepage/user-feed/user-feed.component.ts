@@ -29,11 +29,28 @@ export class UserFeedComponent {
     this.postService.getAllPostsFromApi().subscribe(
       (posts) => {
         this.allPosts = posts; // Assign the fetched posts to the allPosts property
+        this.sortPostsByNewest()
       },
       (error) => {
         console.error('Error fetching posts:', error);
       }
     );
+  }
+  sortPostsByNewest() {
+    this.allPosts.sort((a, b) => {
+      const dateA = a.postDate ? new Date(a.postDate) : null;
+      const dateB = b.postDate ? new Date(b.postDate) : null;
+  
+      if (!dateA && !dateB) {
+        return 0; // If both dates are undefined or null, consider them equal
+      } else if (!dateA) {
+        return 1; // If dateA is undefined or null, place it after dateB
+      } else if (!dateB) {
+        return -1; // If dateB is undefined or null, place it after dateA
+      } else {
+        return dateB.getTime() - dateA.getTime(); // Sort in descending order (newest first)
+      }
+    });
   }
 
 
