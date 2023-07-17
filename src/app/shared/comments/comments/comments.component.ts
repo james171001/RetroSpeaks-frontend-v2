@@ -6,7 +6,6 @@ import { AuthStateService } from '../../services/auth-state.service';
 import { CommentService } from '../../services/comment.service';
 import { Comment } from '../../models/comment';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ThemeService } from '../../services/theme.service';
 
 
 
@@ -21,9 +20,9 @@ export class CommentsComponent implements OnInit {
   userId: string | null = null;
   comments: Comment[] = [];
   commentForm: FormGroup;
-  content: FormControl = new FormControl('', Validators.required);
+  content: FormControl = new FormControl('', [Validators.required, Validators.minLength(5)]);
   replyForm: FormGroup;
-  replyContent: FormControl = new FormControl('', Validators.required);
+  replyContent: FormControl = new FormControl('', [Validators.required, Validators.minLength(5)]);
   comment: Comment = {};
   showComments = false;
   addReplyToggle = false;
@@ -87,20 +86,24 @@ export class CommentsComponent implements OnInit {
     this.comment = {
       content: formValue.content,
     };
-    const groupId = this.route.snapshot.paramMap.get('groupId');
-    if (groupId !== null && this.post.id != null) {
-      this.commentService.setBaseUrl(groupId, this.post.id, '');
-    }
-    this.commentService.save(this.comment).subscribe(
-      response => {
-        console.log('Comment added:', response);
-        this.fetchAllCommentsByPost(groupId!); // Refresh comments after adding a new comment
-        this.commentForm.reset(); // Reset the form after successful comment submission
-      },
-      error => {
-        console.error('Error adding comment:', error);
+
+    const parseGroupId = this.post.groupId;
+    if(parseGroupId){
+      const groupId =  parseGroupId.toString();
+      if (groupId !== null && this.post.id != null) {
+        this.commentService.setBaseUrl(groupId, this.post.id, '');
+        this.commentService.save(this.comment).subscribe(
+          response => {
+            console.log('Comment added:', response);
+            this.fetchAllCommentsByPost(groupId!); // Refresh comments after adding a new comment
+            this.commentForm.reset(); // Reset the form after successful comment submission
+          },
+          error => {
+            console.error('Error adding comment:', error);
+          }
+        );
       }
-    );
+    }
   }
 
 
@@ -110,23 +113,24 @@ export class CommentsComponent implements OnInit {
       this.comment = {
         content: formValue.replyContent,
       };
-      const groupId = this.route.snapshot.paramMap.get('groupId');
-      if (groupId !== null && this.post.id != null) {
-        this.commentService.setBaseUrl(groupId, this.post.id, commentId);
-      }
-    
-      this.commentService.save(this.comment).subscribe(
-        response => {
-          console.log('Reply added:', response);
-          this.fetchAllCommentsByPost(groupId!);
-        
-        },
-        error => {
-          console.error('Error adding reply:', error);
+      const parseGroupId = this.post.groupId;
+      if(parseGroupId){
+        const groupId =  parseGroupId.toString();
+        if (groupId !== null && this.post.id != null) {
+          this.commentService.setBaseUrl(groupId, this.post.id, commentId);
+          this.commentService.save(this.comment).subscribe(
+            response => {
+              console.log('Reply added:', response);
+              this.fetchAllCommentsByPost(groupId!);
+            
+            },
+            error => {
+              console.error('Error adding reply:', error);
+            }
+          );
         }
-      );
+      }
     }
-   
 
   }
 

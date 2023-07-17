@@ -1,57 +1,73 @@
-
-<div class = "comment-list">
+<div class="comment-list">
   <div class="comment-input">
-    <form [formGroup]="commentForm" (ngSubmit) ="addComment()">
-    <input type="text" placeholder="Enter your comment" formControlName="content" />
-    <button type ="submit" >Submit</button>
-    </form> 
-  </div>
-  <div class = "comment ">
-  <div *ngFor="let comment of comments">
-    
-    <ng-container *ngIf="!comment.parentCommentID">
-      <!-- Display top-level comments -->
-      <span class="comment-author">@{{ comment.commenter }}:&nbsp;</span>
-      <mat-card-content class="parent-comment-content">
-        <span class="comment-text">{{ comment.content }}:&nbsp;</span>
-        <button class="reply-button" (click)="toggleReply(comment.id)">Reply</button>
-      
-    </mat-card-content>
-    <div *ngIf="currentReplyId === comment.id" class="comment-reply-input">
-      <form [formGroup]="replyForm" (ngSubmit) ="addReply(comment.id)">
-        <input type="text" placeholder="Enter your reply" formControlName="replyContent" />
-        <button type ="submit" >Submit</button>
-      </form>
-    </div>
-      <div class="nested-comments">
-        <!-- Display nested comments -->
-        <ng-container *ngTemplateOutlet="nestedComments; context:{ comments: comments, parentId: comment.id }"></ng-container>
+    <form [formGroup]="commentForm" (ngSubmit)="addComment()">
+      <input type="text" placeholder="Enter your comment" formControlName="content" />
+      <div *ngIf="commentForm.get('content')?.invalid && commentForm.get('content')?.touched">
+        <p class="error-message" *ngIf="commentForm.get('content')?.errors?.['required']">Comment is required</p>
       </div>
-    </ng-container>
+      <button type="submit">Submit</button>
+    </form>
   </div>
-
-  <ng-template #nestedComments let-comments="comments" let-parentId="parentId">
+  <div class="comment">
     <div *ngFor="let comment of comments">
-      <ng-container *ngIf="comment.parentCommentID === parentId">
-        <!-- Display nested comments -->
-    
-        <div class="nested-comment-container">
-          <div class="reply-author">{{ comment.commenter }}</div>
-          <div class="reply-text">{{ comment.content }}</div>
+      <ng-container *ngIf="!comment.parentCommentID">
+        <!-- Display top-level comments -->
+        <span class="comment-author">@{{ comment.commenter }}:&nbsp;</span>
+        <mat-card-content class="parent-comment-content">
+          <span class="comment-text">{{ comment.content }}:&nbsp;</span>
           <button class="reply-button" (click)="toggleReply(comment.id)">Reply</button>
-          <div *ngIf="currentReplyId === comment.id" class="comment-reply-input">
-            <form [formGroup]="replyForm" (ngSubmit) ="addReply(comment.id)">
-              <input type="text" placeholder="Enter your reply" formControlName="replyContent" />
-              <button type ="submit" >Submit</button>
-            </form>
-          </div>
+        </mat-card-content>
+        <div *ngIf="currentReplyId === comment.id" class="comment-reply-input">
+          <form [formGroup]="replyForm" (ngSubmit)="addReply(comment.id)">
+            <input type="text" placeholder="Enter your reply" formControlName="replyContent" />
+            <div *ngIf="replyForm.get('replyContent')?.invalid && replyForm.get('replyContent')?.touched">
+              <p class="error-message" *ngIf="replyForm.get('replyContent')?.errors?.['required']">Reply is required</p>
+              <p class="error-message" *ngIf="replyForm.get('replyContent')?.errors?.['minlength']">
+                Minimum length is 5 characters
+              </p>
+            </div>
+            <button type="submit">Submit</button>
+          </form>
         </div>
-       
         <div class="nested-comments">
-          <ng-container *ngTemplateOutlet="nestedComments; context:{ comments: comments, parentId: comment.id }"></ng-container>
+          <!-- Display nested comments -->
+          <ng-container
+            *ngTemplateOutlet="nestedComments; context:{ comments: comments, parentId: comment.id }"
+          ></ng-container>
         </div>
       </ng-container>
     </div>
-  </ng-template>
-  
+
+    <ng-template #nestedComments let-comments="comments" let-parentId="parentId">
+      <div *ngFor="let comment of comments">
+        <ng-container *ngIf="comment.parentCommentID === parentId">
+          <!-- Display nested comments -->
+
+          <div class="nested-comment-container">
+            <div class="reply-author">@{{ comment.commenter }}</div>
+            <div class="reply-text">{{ comment.content }}</div>
+            <button class="reply-button" (click)="toggleReply(comment.id)">Reply</button>
+            <div *ngIf="currentReplyId === comment.id" class="comment-reply-input">
+              <form [formGroup]="replyForm" (ngSubmit)="addReply(comment.id)">
+                <input type="text" placeholder="Enter your reply" formControlName="replyContent" />
+                <div *ngIf="replyForm.get('replyContent')?.invalid && replyForm.get('replyContent')?.touched">
+                  <p class="error-message" *ngIf="replyForm.get('replyContent')?.errors?.['required']">Reply is required</p>
+                  <p class="error-message" *ngIf="replyForm.get('replyContent')?.errors?.['minlength']">
+                    Minimum length is 5 characters
+                  </p>
+                </div>
+                <button type="submit">Submit</button>
+              </form>
+            </div>
+          </div>
+
+          <div class="nested-comments">
+            <ng-container
+              *ngTemplateOutlet="nestedComments; context:{ comments: comments, parentId: comment.id }"
+            ></ng-container>
+          </div>
+        </ng-container>
+      </div>
+    </ng-template>
+  </div>
 </div>

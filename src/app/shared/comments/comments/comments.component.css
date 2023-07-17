@@ -4,6 +4,15 @@
   margin-bottom: 10px;
   margin-top: 15px;
 }
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.comment-input input.ng-invalid.ng-touched {
+  border-color: red;
+}
 
 .comment-submit {
   background-color: #00866E;
@@ -103,12 +112,13 @@
 
 .comment-text {
   flex-grow: 1;
+  margin-left: 20px; 
 }
 
 .reply-author {
   font-style: italic;
   color: #00866E;
-  margin-left: 20px; 
+  margin-left: 40px; 
   font-size: 14px;
 }
 
