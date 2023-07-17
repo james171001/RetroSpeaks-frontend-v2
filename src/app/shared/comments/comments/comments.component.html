@@ -8,13 +8,21 @@
   </div>
   <div class = "comment ">
   <div *ngFor="let comment of comments">
+    
     <ng-container *ngIf="!comment.parentCommentID">
       <!-- Display top-level comments -->
       <span class="comment-author">@{{ comment.commenter }}:&nbsp;</span>
       <mat-card-content class="parent-comment-content">
         <span class="comment-text">{{ comment.content }}:&nbsp;</span>
+        <button class="reply-button" (click)="toggleReply(comment.id)">Reply</button>
+      
     </mat-card-content>
- 
+    <div *ngIf="currentReplyId === comment.id" class="comment-reply-input">
+      <form [formGroup]="replyForm" (ngSubmit) ="addReply(comment.id)">
+        <input type="text" placeholder="Enter your reply" formControlName="replyContent" />
+        <button type ="submit" >Submit</button>
+      </form>
+    </div>
       <div class="nested-comments">
         <!-- Display nested comments -->
         <ng-container *ngTemplateOutlet="nestedComments; context:{ comments: comments, parentId: comment.id }"></ng-container>

@@ -99,35 +99,41 @@ export class CommentsComponent implements OnInit {
     );
   }
 
-  addReply(commentId: string) {
-   
-    const formValue = this.replyForm.value;
-    this.comment = {
-      content: formValue.replyContent,
-    };
-    const groupId = this.route.snapshot.paramMap.get('groupId');
-    if (groupId !== null && this.post.id != null) {
-      this.commentService.setBaseUrl(groupId, this.post.id, commentId);
-    }
-  
-    this.commentService.save(this.comment).subscribe(
-      response => {
-        console.log('Reply added:', response);
-        this.fetchAllCommentsByPost(groupId!);
-      
-      },
-      error => {
-        console.error('Error adding reply:', error);
+  addReply(commentId?: string) {
+    if(commentId){
+      const formValue = this.replyForm.value;
+      this.comment = {
+        content: formValue.replyContent,
+      };
+      const groupId = this.route.snapshot.paramMap.get('groupId');
+      if (groupId !== null && this.post.id != null) {
+        this.commentService.setBaseUrl(groupId, this.post.id, commentId);
       }
-    );
+    
+      this.commentService.save(this.comment).subscribe(
+        response => {
+          console.log('Reply added:', response);
+          this.fetchAllCommentsByPost(groupId!);
+        
+        },
+        error => {
+          console.error('Error adding reply:', error);
+        }
+      );
+    }
+   
+
   }
 
   toggleComment(comment: Comment) {
     comment.showChildComments = !comment.showChildComments;
   }
 
-  toggleReply(commentId: string) {
-    this.currentReplyId = this.currentReplyId === commentId ? null : commentId;
+  toggleReply(commentId?: string) {
+    if(commentId){
+      this.currentReplyId = this.currentReplyId === commentId ? null : commentId;
+    }
+
   }
    cancelReply(comment: Comment) {
     comment.showReply = !comment.showReply;
