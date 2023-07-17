@@ -20,9 +20,9 @@ export class CommentsComponent implements OnInit {
   userId: string | null = null;
   comments: Comment[] = [];
   commentForm: FormGroup;
-  content: FormControl = new FormControl('', [Validators.required, Validators.minLength(5)]);
+  content: FormControl = new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z0-9]{4,20}$'), Validators.minLength(5)])
   replyForm: FormGroup;
-  replyContent: FormControl = new FormControl('', [Validators.required, Validators.minLength(5)]);
+  replyContent: FormControl = new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z0-9]{4,20}$'), Validators.minLength(5)])
   comment: Comment = {};
   showComments = false;
   addReplyToggle = false;
