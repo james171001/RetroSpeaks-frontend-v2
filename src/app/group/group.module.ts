@@ -6,21 +6,25 @@ import { ViewgroupComponent } from './viewgroup/viewgroup.component';
 import { ContentCardComponent } from '../shared/content-card/content-card.component';
 import { CommentsComponent } from '../shared/comments/comments/comments.component';
 import { FormsModule } from '@angular/forms';
-import {MatCardModule} from '@angular/material/card';
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { PollContentCardComponent } from '../shared/poll-content-card/poll-content-card.component';
-import {MatListModule} from '@angular/material/list';
-import {MatProgressBarModule} from '@angular/material/progress-bar';
-
+import { MatListModule } from '@angular/material/list';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { SurveyContentCardComponent } from '../shared/survey-content-card/survey-content-card.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatSliderModule } from '@angular/material/slider';
 
 @NgModule({
   declarations: [
     ViewgroupComponent,
     ContentCardComponent,
     CommentsComponent,
-    PollContentCardComponent
+    PollContentCardComponent,
+    SurveyContentCardComponent,
   ],
   imports: [
     CommonModule,
@@ -31,7 +35,10 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     MatIconModule,
     MatExpansionModule,
     MatListModule,
-    MatProgressBarModule
-  ]
+    MatProgressBarModule,
+    MatCheckboxModule,
+    MatRadioModule,
+    MatSliderModule,
+  ],
 })
-export class GroupModule { }
+export class GroupModule {}

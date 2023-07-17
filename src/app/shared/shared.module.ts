@@ -10,12 +10,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatOptionModule } from '@angular/material/core';
 import {MatCardModule} from '@angular/material/card';
 import { PollContentCardComponent } from './poll-content-card/poll-content-card.component';
+import { SurveyContentCardComponent } from './survey-content-card/survey-content-card.component';
 
 
 @NgModule({
   declarations: [
     CreateGroupComponent,
-    // PollContentCardComponent
   ],
   imports: [
     CommonModule,

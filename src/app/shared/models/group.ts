@@ -6,5 +6,6 @@ export interface Group {
     name: String;
     description: String;
     category:Category;
-    users: User[];    
+    users: User[];   
+    followed: boolean; 
 }

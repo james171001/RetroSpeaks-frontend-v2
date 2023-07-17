@@ -1,0 +1,67 @@
+<!-- survey-content-card.component.html -->
+
+<mat-card class="survey-card">
+    <mat-card-header>
+        <span class="username">@{{ username }}</span>
+        <mat-card-title>{{ surveyTitle }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <ng-container *ngFor="let question of questions">
+            <div class="question">
+                <p class="question-text">{{ question.question }}</p>
+
+                <!-- Single Choice -->
+                <div *ngIf="question.answerType === 'single-choice'">
+                    <mat-radio-group [(ngModel)]="question.selectedOption">
+                        <mat-radio-button class="radio-button-color"
+                            color="accent"
+                            *ngFor="let option of question.answerOptions"
+                            [value]="option.text">{{ option.text }}
+                        </mat-radio-button>
+                    </mat-radio-group>
+                </div>
+
+                <!-- Multiple Choice -->
+                <div *ngIf="question.answerType === 'multiple-choice'">
+                    <mat-checkbox-group [(ngModel)]="question.selectedOption">
+                        <mat-checkbox
+                            *ngFor="let option of question.answerOptions"
+                            [value]="option.text">{{ option.text }}
+                        </mat-checkbox>
+                    </mat-checkbox-group>
+                </div>
+
+                <!-- Linear Scale -->
+                <div *ngIf="question.answerType === 'linear-scale'">
+                    <!-- Use the user-provided 'minValue' and 'maxValue', providing default values -->
+                    <label class="example-value-label">{{ question.minValue ||
+                        'Min Value' }}</label>
+                    <mat-slider
+                        [(ngModel)]="question.selectedOption"
+                        [min]="question.minValue || 1"
+                        [max]="question.maxValue || 5"
+                        (input)="question.selectedOption = parseLinearScaleValue($event)">
+                        <input matSliderThumb>
+                    </mat-slider>
+                    <label class="example-value-label">{{ question.maxValue ||
+                        'Max Value' }}</label>
+                    <p class="slider-value">Selected Value: {{
+                        question.selectedOption }}</p>
+                </div>
+            </div>
+        </ng-container>
+
+        <div class="poll-footer">
+            <mat-card-actions class="card-actions">
+                <button mat-button class="toggle-comments-button"
+                    (click)="toggleComments()">Comments</button>
+                <span class="spacer"></span>
+            </mat-card-actions>
+            <mat-expansion-panel [expanded]="showComments"
+                [hideToggle]="!showComments">
+                <app-comments [usernameText]="username"></app-comments>
+            </mat-expansion-panel>
+        </div>
+
+    </mat-card-content>
+</mat-card>

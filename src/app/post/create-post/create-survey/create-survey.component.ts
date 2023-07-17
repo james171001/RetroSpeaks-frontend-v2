@@ -1,17 +1,18 @@
 import { Component } from '@angular/core';
 
-interface AnswerOption {
+export interface AnswerOption {
   text: string;
   selected?: boolean;
 }
 
-interface Question {
+export interface Question {
   question: string;
   answerType: string;
   answerOptions?: AnswerOption[];
-  selectedOption?: number;
-  minValue?: string;
-  maxValue?: string;
+  selectedOption?: number | number [] | string | any;
+  minValue?: number;
+  maxValue?: number;
+  selectedValue?: number;
 }
 
 @Component({
@@ -24,8 +25,17 @@ export class CreateSurveyComponent {
   questions: Question[] = [];
   isSubmitDisabled: boolean | null = null;
 
+  // Define constants for answer types
+  readonly SINGLE_CHOICE: 'single-choice' = 'single-choice';
+  readonly MULTIPLE_CHOICE: 'multiple-choice' = 'multiple-choice';
+  readonly LINEAR_SCALE: 'linear-scale' = 'linear-scale';
+
+  // Additional variables to handle the conditions
+  showAnswerOptions: boolean = false;
+  showLinearScaleOptions: boolean = false;
+
   constructor() {
-    this.addQuestion(); // Automatically add one question container when the component is initialized
+    this.addQuestion();
     this.updateSubmitButtonState();
   }
 
@@ -68,22 +78,28 @@ export class CreateSurveyComponent {
     const hasQuestions = this.questions.length > 0;
     const hasAnswerOptions = this.questions.some(
       (question) =>
-        question.answerOptions !== undefined &&
-        question.answerOptions.length >= 2
+        question.answerOptions !== undefined && question.answerOptions.length >= 2
     );
     return hasTitle && hasQuestions && hasAnswerOptions;
-  }  
+  }
 
   updateSubmitButtonState(): void {
     const hasTitle = !!this.surveyTitle && this.surveyTitle.trim() !== '';
     const hasQuestions = this.questions.length > 0;
     const hasAnswerOptions = this.questions.some(
       (question) =>
-        question.answerOptions !== undefined &&
-        question.answerOptions.length >= 2
+        question.answerOptions !== undefined && question.answerOptions.length >= 2
     );
     this.isSubmitDisabled = !(hasTitle && hasQuestions && hasAnswerOptions);
-  }  
+  }
+
+  onAnswerTypeChange(question: Question) {
+    this.showAnswerOptions =
+      question.answerType === this.SINGLE_CHOICE ||
+      question.answerType === this.MULTIPLE_CHOICE;
+    this.showLinearScaleOptions = question.answerType === this.LINEAR_SCALE;
+    this.updateSubmitButtonState();
+  }
 
   submitSurvey() {
     console.log('Title:', this.surveyTitle);
