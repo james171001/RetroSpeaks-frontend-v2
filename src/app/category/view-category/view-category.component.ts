@@ -11,6 +11,7 @@ import { GroupService } from 'src/app/shared/services/group.service';
 })
 export class ViewCategoryComponent implements OnInit {
   groups: Group[] = [];
+  followedGroupIds: number[] = [];
 
   constructor(
     private categoryService: CategoryService,
@@ -27,6 +28,8 @@ export class ViewCategoryComponent implements OnInit {
         this.categoryService.getGroups(categoryId).subscribe(
           groups => {
             this.groups = groups;
+            this.updateFollowedGroupIds();
+            this.syncGroupFollowStatus();
           },
           error => {
             console.error('Error fetching groups:', error);
@@ -34,17 +37,22 @@ export class ViewCategoryComponent implements OnInit {
         );
       }
     });
-  }
+  }  
+  
 
   navigateToGroup(groupId: number) {
     this.router.navigate(['/group', groupId]);
   }
+
   followGroup(groupId: number) {
     const parseGroupId = groupId.toString();
-    this.groupService.setBaseUrl(parseGroupId,'/follow')
+    this.groupService.setBaseUrl(parseGroupId, '/follow');
     this.groupService.follow(parseGroupId).subscribe(
-      groups => {
-        this.groups = groups;
+      group => {
+        const updatedGroupIndex = this.groups.findIndex(g => g.id === groupId);
+        if (updatedGroupIndex !== -1) {
+          this.groups[updatedGroupIndex].followed = true;
+        }
         console.log('Successfully followed the group.');
       },
       error => {
@@ -52,13 +60,16 @@ export class ViewCategoryComponent implements OnInit {
       }
     );
   }
-
+  
   unfollowGroup(groupId: number) {
     const parseGroupId = groupId.toString();
-    this.groupService.setBaseUrl(parseGroupId ,'/unfollow')
-    this.groupService.unfollow(parseGroupId ).subscribe(
-      groups => {
-        this.groups = groups;
+    this.groupService.setBaseUrl(parseGroupId, '/unfollow');
+    this.groupService.unfollow(parseGroupId).subscribe(
+      group => {
+        const updatedGroupIndex = this.groups.findIndex(g => g.id === groupId);
+        if (updatedGroupIndex !== -1) {
+          this.groups[updatedGroupIndex].followed = false;
+        }
         console.log('Successfully unfollowed the group.');
       },
       error => {
@@ -66,5 +77,32 @@ export class ViewCategoryComponent implements OnInit {
       }
     );
   }
-}
   
+
+  isGroupFollowed(groupId: number): boolean {
+    return this.followedGroupIds.includes(groupId);
+  }
+  
+  updateGroupFollowStatus(groupId: number, followed: boolean) {
+    const index = this.followedGroupIds.indexOf(groupId);
+    if (followed && index === -1) {
+      this.followedGroupIds.push(groupId);
+    } else if (!followed && index !== -1) {
+      this.followedGroupIds.splice(index, 1);
+    }
+  }
+
+  updateFollowedGroupIds() {
+    this.followedGroupIds = this.groups
+      .filter(group => group.followed)
+      .map(group => group.id);
+  }
+  
+  syncGroupFollowStatus() {
+    this.groups.forEach(group => {
+      group.followed = this.isGroupFollowed(group.id);
+    });
+  }  
+  
+  
+}
