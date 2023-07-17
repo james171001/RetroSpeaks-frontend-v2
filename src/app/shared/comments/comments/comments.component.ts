@@ -49,12 +49,17 @@ export class CommentsComponent implements OnInit {
 
   ngOnInit() {
     this.usernameText = this.authStateService.getUsername();
-    this.route.paramMap.subscribe(params => {
-      const groupId = params.get('groupId');
-      if (groupId) {
-        this.fetchAllCommentsByPost(groupId);
-      }
-    });
+    const parseGroupId = this.post.groupId;
+
+    if(parseGroupId){
+      const groupId =  parseGroupId.toString();
+      this.fetchAllCommentsByPost(groupId);
+    }
+ 
+    
+
+      
+  
   }
 
   fetchAllCommentsByPost(groupId: string) {
