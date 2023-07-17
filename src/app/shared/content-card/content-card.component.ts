@@ -1,6 +1,10 @@
 
 import { Component, Input, OnInit } from '@angular/core';
 import { Post } from '../models/post';
+import { PostService } from '../services/post.service';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { catchError, throwError } from 'rxjs';
+import { GenericService } from '../services/generic.service';
 @Component({
   selector: 'app-content-card',
   templateUrl: './content-card.component.html',
@@ -17,6 +21,11 @@ export class ContentCardComponent implements OnInit {
 
   private _creationDate!: Date | null;
 
+  constructor(
+    private postService: PostService,
+    private http: HttpClient) {
+   }
+
   @Input()
   set creationDate(value: Date | null) {
     if (value !== null && !(value instanceof Date)) {
@@ -30,8 +39,12 @@ export class ContentCardComponent implements OnInit {
     return this._creationDate;
   }
 
+  
+
   showComments = false;
   timePassed!: string;
+
+  agreeCount!: number;
 
   ngOnInit() {
     this.timePassed = this.calculateTimePassed();
@@ -74,8 +87,43 @@ export class ContentCardComponent implements OnInit {
     }
   }
   
+  thumbsUp(): void {
+    console.log('Thumbs up!');
+    console.log(this.post.groupId??0,this.post.id??'');
+    this.postService.agreeToPost(this.post.groupId??0,this.post.id??'')
+  }
+
+  thumbsDown(): void {
+    console.log('Thumbs down!');
+    console.log(this.post.groupId??0,this.post.id??'');
+    this.postService.disagreeToPost(this.post.groupId??0,this.post.id??'')
+  }
 
   toggleComments(): void {
     this.showComments = !this.showComments;
+  }
+
+  private handleError(error: HttpErrorResponse) {
+
+    if (error.status === 0)
+
+    {
+
+      console.error('An error occurred:', error.error);
+
+    }
+
+    else
+
+    {
+
+      console.warn(error);
+
+      alert(error.error.message);
+
+    }
+
+    return throwError(() => new Error(''))
+
   }
 }

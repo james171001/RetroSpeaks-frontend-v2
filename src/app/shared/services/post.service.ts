@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { GenericService } from './generic.service';
 import { Post } from '../models/post';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { AuthStateService } from './auth-state.service';
+import { catchError, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +24,52 @@ export class PostService extends GenericService<Post, String> {
     return this._http.get<Post[]>(`${apiUrl}`, option);
   }
 
+  agreeToPost(groupId: number, postId: string) {
+    // Assuming the endpoint for all posts is `/api/post/`
+    const option = this.createOptions();
+    console.log(option);
+    
+    const apiUrl = `http://localhost:8080/api/group/${groupId}/post/agreeToPost/${postId}`;
+    return this._http.get<any>(`${apiUrl}`, option)
+    .pipe(
+      catchError((err) => this.handleError(err))
+    ).subscribe(e => console.log(e));
+  }
 
+  disagreeToPost(groupId: number, postId: string) {
+    // Assuming the endpoint for all posts is `/api/post/`
+    const option = this.createOptions();
+    console.log(option);
+    
+    const apiUrl = `http://localhost:8080/api/group/${groupId}/post/disagreeToPost/${postId}`;
+    return this._http.get<any>(`${apiUrl}`, option)
+    .pipe(
+      catchError((err) => this.handleError(err))
+    ).subscribe(e => console.log(e));
+  }
 
+  private handleError(error: HttpErrorResponse) {
+
+    if (error.status === 0)
+
+    {
+
+      console.error('An error occurred:', error.error);
+
+    }
+
+    else
+
+    {
+
+      console.warn(error);
+
+      alert(error.error.message);
+
+    }
+
+    return throwError(() => new Error(''))
+
+  }
 
 }
