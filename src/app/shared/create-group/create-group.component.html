@@ -9,9 +9,21 @@
     <textarea matInput formControlName="description" placeholder="Description"></textarea>
   </mat-form-field>
 
-  <mat-form-field class="form-field">
+  <!-- <mat-form-field class="form-field">
     <mat-label>Category Type</mat-label>
     <input matInput formControlName="categoryId" placeholder="Category Type">
+  </mat-form-field> -->
+
+  <mat-form-field class="form-field">
+    <mat-label>Category Type</mat-label>
+    <select matNativeControl formControlName="categoryId">
+      <option value="">Select Category Type</option>
+      <option value="General">General</option>
+      <option value="Politics">Politics</option>
+      <option value="Art">Art</option>
+      <option value="Business">Business</option>
+      <option value="Entertainment">Entertainment</option>
+    </select>
   </mat-form-field>
 
   <button mat-button type="submit" class="submit-button" (click)="onSubmit()">Create Group</button>

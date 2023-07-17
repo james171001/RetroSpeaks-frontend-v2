@@ -17,6 +17,15 @@ export class CreateGroupComponent implements OnInit {
     categoryId: new FormControl(''),
   });
 
+
+  categoryMapping: { [key: string]: number } = {
+    'General': 5,
+    'Politics': 1,
+    'Arts': 4,
+    'Business': 3,
+    'Entertainment': 2,
+  };
+
   constructor(
     private groupService: CreateGroupService,
     private dialogRef: MatDialogRef<CreateGroupComponent>, // Add this line
@@ -26,20 +35,29 @@ export class CreateGroupComponent implements OnInit {
   ngOnInit(): void {}
 
   onSubmit(): void {
-    this.groupService
-      .createGroup(this.groupForm.value as GroupCreationPayload)
-      .subscribe(
+      const categoryName: string | null | undefined = this.groupForm.value.categoryId;
+      let categoryId: number = 0 ;
+
+    if (categoryName) {
+      categoryId = this.categoryMapping[categoryName];
+    }
+
+      const groupPayload: GroupCreationPayload = {
+        name: this.groupForm.value.name ?? '',
+        description: this.groupForm.value.description ?? '',
+        categoryId: categoryId,
+      };
+    
+      this.groupService.createGroup(groupPayload).subscribe(
         (response) => {
+          console.log(categoryId)
           console.log('Group created', response);
-          this.dialogRef.close(); // Close the dialog after successful form submission
-          this.showSuccessMessage('Group created successfully'); // Call the success snackbar function
           this.dialogRef.close();
-          // window.location.reload();
+          this.showSuccessMessage('Group created successfully');
         },
         (error) => {
-          console.log(this.groupForm.value);
           console.error('Error creating group', error);
-          this.showErrorMessage('Error creating group'); // Call the snackbar function on error
+          this.showErrorMessage('Error creating group');
         }
       );
   }
