@@ -5,8 +5,10 @@ import { Injectable, EventEmitter } from '@angular/core';
 })
 export class ThemeService {
   public isDarkMode = false;
+  public rotationDirection = 0;
 
   themeChangeEmitter = new EventEmitter<boolean>();
+  rotationChangeEmitter = new EventEmitter<number>();
 
   toggleDarkMode() {
     this.isDarkMode = !this.isDarkMode;
@@ -17,5 +19,13 @@ export class ThemeService {
     }
     
     this.themeChangeEmitter.emit(this.isDarkMode);
+  }
+
+  toggleRotation() {
+    this.rotationDirection = (this.rotationDirection + 90) % 360;
+    document.body.classList.remove('rotate-0', 'rotate-90', 'rotate-180', 'rotate-270');
+    document.body.classList.add(`rotate-${this.rotationDirection}`);
+    
+    this.rotationChangeEmitter.emit(this.rotationDirection);
   }
 }

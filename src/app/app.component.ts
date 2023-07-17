@@ -8,10 +8,18 @@ import { ThemeService } from './shared/services/theme.service';
 })
 export class AppComponent {
   isDarkMode = false;
+  rotationDirection = 0;
 
   constructor(private themeService: ThemeService) {
     this.themeService.themeChangeEmitter.subscribe(isDarkMode => {
       this.isDarkMode = isDarkMode;
     });
+    this.themeService.rotationChangeEmitter.subscribe(rotationDirection => {
+      this.rotationDirection = rotationDirection;
+    });
+  }
+
+  toggleRotation() {
+    this.themeService.toggleRotation();
   }
 }
