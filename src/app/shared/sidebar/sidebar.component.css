@@ -16,7 +16,6 @@
   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
   border-radius: 20px;
   overflow: hidden;
-  display: flex;
   flex-direction: column;
   padding: 15px;
   height: 500px;
@@ -100,7 +99,6 @@
   background-color: #00866e;
   color: white;
   opacity: 68%;
-  
 }
 
 .groups label {

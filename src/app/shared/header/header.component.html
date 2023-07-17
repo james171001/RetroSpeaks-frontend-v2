@@ -1,9 +1,11 @@
 <div class="box">
-  <div class="app-name" [ngClass]="{'clickable': isToggle}" (click)="toggleLink()">RetroSpeaks</div>
-  <button class="dark-mode-toggle" (click)="toggleDarkMode()">Dark Mode</button>
+  <a class="app-name" routerLink="/home/feed">RetroSpeaks</a>
+  <button class="dark-mode-toggle" (click)="toggleDarkMode()">
+    Dark Mode
+  </button>
   <div class="search-bar-group">
     <form name="search">
-     <input type="text" class="input" name="txt" (mouseleave)="resetSearch()" placeholder="     Search" />
+      <input type="text" class="input" name="txt" (mouseleave)="resetSearch()" placeholder="     Search" />
     </form>
   </div>
   <div class="user-profile">
@@ -12,7 +14,7 @@
         <div class="username-text">{{ usernameText | titlecase }}</div>
         <i class="fas fa-caret-down"></i>
       </div>
-      <div class="dropdown-content">9
+      <div class="dropdown-content">
         <button class="dropdown-item" (click)="goToEditProfile()">Edit Profile</button>
         <button class="dropdown-item" (click)="logout()">Logout</button>
       </div>

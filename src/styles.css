@@ -7,6 +7,10 @@
   height: 100vw;
 }
 
+body {
+  background: url('/assets/images/retro-bg.png');
+  background-size: 100%;
+}
 
 html, body{
     margin: 0;
@@ -35,20 +39,78 @@ html, body{
 /* Light mode styles */
 
 /* Dark mode styles */
-.dark-mode {
 
+.dark-mode body {
+  background: none;
   background-color: #222;
 }
 
+.dark-mode {
+  background-color: #222;
+}
+
+.dark-mode h2 {
+  color: #fff;
+}
 .dark-mode h4 {
   color: #fff;
 }
+.dark-mode h3 {
+  color: #fff;
+}
 
-.dark-mode .box {
+/* .dark-mode .box {
   background-color: #333;
   border-radius: 4px;
   padding: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+} */
+
+.dark-mode app-header .box{
+  background: #3b3b3b;
+}
+
+.dark-mode app-header .app-name{
+  color:white;
+}
+
+.dark-mode app-header .app-name:hover{
+  color:#00866E;
+}
+
+.dark-mode app-header .user-profile{
+  color:white;
+}
+
+.dark-mode app-content-card .mat-mdc-card{
+  background: #3b3b3b;
+}
+
+.dark-mode app-content-card .card-description{
+  color: white;
+}
+
+.dark-mode app-content-card .mdc-button__label{
+  color: white;
+}
+
+.dark-mode app-content-card h2{
+  color: white;
+}
+
+.dark-mode app-content-card .creator-username{
+  color: rgb(170, 212, 196);
+}
+
+.dark-mode app-view-category .example-card{
+  background-color: #3b3b3b;
+}
+
+.dark-mode app-view-category .mat-mdc-card-content {
+  color: white;
+}
+.dark-mode app-view-category .mat-card-actions{
+  background: #3b3b3b;
 }
 
 .dark-mode .card {

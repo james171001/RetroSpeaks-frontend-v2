@@ -6,6 +6,7 @@
   grid-row-gap: 30px;
 }
 
+
 .header {
   grid-area: 1 / 1 / 2 / 6;
 
@@ -13,6 +14,7 @@
 
 .side-bar {
   grid-area: 1 / 1 / 5 / 2;
+  
 }
 
 .body {
@@ -20,9 +22,4 @@
   padding-top: 100px;
   padding-left: 50px;
 
-}
-
-body {
-  background: url('/assets/images/retro-bg.png');
-  background-size: 100%;
 }
