@@ -13,7 +13,7 @@ export class GroupService extends GenericService<Group, number> {
     this.setBaseUrl('','');
   }
   setBaseUrl(groupId:string,url:string): void {
-    this._baseUrl = `http://localhost:8080/api/group/${groupId}${url}`;
+    this._baseUrl = `http://localhost:8080/api/group${groupId}${url}`;
   }
 
   follow(groupId:string): Observable<Group[]> {
@@ -24,5 +24,11 @@ export class GroupService extends GenericService<Group, number> {
     const options = this.createOptions();
     return this._http.put<Group[]>(`${this._baseUrl}`,{}, options);
   }
+
+  findById(groupId: number): Observable<Group> {
+    const options = this.createOptions();
+    return this._http.get<Group>(`${this._baseUrl}/${groupId}`, options);
+  }
+  
   
 }

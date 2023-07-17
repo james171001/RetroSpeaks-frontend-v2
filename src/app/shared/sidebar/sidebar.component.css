@@ -20,6 +20,10 @@
   position: fixed;
 }
 
+.home-left:hover {
+  overflow: auto; /* Show the scrollbar on hover */
+}
+
 .my-space label {
   color: #707070;
   font-family: "Inter-Regular", Helvetica;
