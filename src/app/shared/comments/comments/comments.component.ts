@@ -8,6 +8,8 @@ import { Comment } from '../../models/comment';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ThemeService } from '../../services/theme.service';
 
+
+
 @Component({
   selector: 'app-comments',
   templateUrl: './comments.component.html',
@@ -20,13 +22,14 @@ export class CommentsComponent implements OnInit {
   comments: Comment[] = [];
   commentForm: FormGroup;
   content: FormControl = new FormControl('', Validators.required);
-
   replyForm: FormGroup;
   replyContent: FormControl = new FormControl('', Validators.required);
   comment: Comment = {};
   showComments = false;
   addReplyToggle = false;
   currentReplyId: string | null = null;
+
+
   replyText:string;
 
   constructor(
@@ -39,16 +42,17 @@ export class CommentsComponent implements OnInit {
     this.commentForm = new FormGroup({
       content: this.content,
     });
-    this.replyText = "";
 
     this.replyForm = new FormGroup({
       replyContent: this.replyContent,
     });
     this.replyText = "";
+
   }
 
   ngOnInit() {
     this.usernameText = this.authStateService.getUsername();
+
     const parseGroupId = this.post.groupId;
 
     if(parseGroupId){
@@ -59,7 +63,7 @@ export class CommentsComponent implements OnInit {
     
 
       
-  
+
   }
 
   fetchAllCommentsByPost(groupId: string) {
@@ -99,6 +103,7 @@ export class CommentsComponent implements OnInit {
     );
   }
 
+
   addReply(commentId?: string) {
     if(commentId){
       const formValue = this.replyForm.value;
@@ -135,6 +140,7 @@ export class CommentsComponent implements OnInit {
     }
 
   }
+
    cancelReply(comment: Comment) {
     comment.showReply = !comment.showReply;
     if (!comment.showReply) {

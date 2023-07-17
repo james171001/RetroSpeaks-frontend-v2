@@ -48,9 +48,9 @@ export class ViewgroupComponent implements OnInit, OnDestroy {
 
         this.postService.findAll().subscribe(
           posts => {
-
             this.posts = posts;
             this.sortPostsByNewest();
+
           },
           error => {
             console.error('Error fetching posts:', error);
