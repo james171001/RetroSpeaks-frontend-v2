@@ -10,6 +10,7 @@ import { Group } from '../models/group';
   providedIn: 'root'
 })
 export class CategoryService extends GenericService<Category,number>  {
+  categoryId: any;
 
   constructor(protected override _http: HttpClient, protected override authState: AuthStateService) {
     super(_http, authState);

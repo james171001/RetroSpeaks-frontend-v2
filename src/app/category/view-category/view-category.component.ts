@@ -53,6 +53,7 @@ export class ViewCategoryComponent implements OnInit {
         if (updatedGroupIndex !== -1) {
           this.groups[updatedGroupIndex].followed = true;
         }
+        this.router.navigate(['/group', groupId]);
         console.log('Successfully followed the group.');
       },
       error => {
@@ -71,6 +72,7 @@ export class ViewCategoryComponent implements OnInit {
           this.groups[updatedGroupIndex].followed = false;
         }
         console.log('Successfully unfollowed the group.');
+        window.location.reload();
       },
       error => {
         console.error('Error unfollowing the group:', error);

@@ -26,6 +26,7 @@ export class CreateGroupComponent implements OnInit {
     this.groupService.createGroup(this.groupForm.value as GroupCreationPayload).subscribe(
       response => {
         console.log('Group created', response);
+        window.location.reload();
       },
       error => {
         console.log(this.groupForm.value);
