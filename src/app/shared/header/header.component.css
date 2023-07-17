@@ -13,9 +13,17 @@
 }
 
 .app-name {
-  padding-left: 50px;
+  /* padding-left: 50px; */
+  margin-left: 50px;
   font-size: 22px;
   font-weight: bold;
+  cursor: pointer;
+  text-shadow: -2px 2px 0px rgba(0, 134, 110, 0.5);
+}
+
+.app-name:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 5px;
 }
 
 .search-bar-group {

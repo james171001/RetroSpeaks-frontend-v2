@@ -24,9 +24,20 @@ export class HeaderComponent implements OnInit {
     private router: Router
   ) {}
 
+  isToggle: boolean = false;
+
+  toggleLink() {
+    if (this.isToggle) {
+      // Redirect to http://localhost:4200/home/feed
+      this.router.navigate(['/home/feed']);
+    }
+  }
+
   ngOnInit() {
     this.usernameText = this.authStateService.getUsername();
     this.userId = this.authStateService.getUserId();
+    this.isToggle = this.authStateService.isAuthenticated();
+
 
   }
 
