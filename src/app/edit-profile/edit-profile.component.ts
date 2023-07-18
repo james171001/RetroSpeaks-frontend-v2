@@ -53,10 +53,11 @@ export class EditProfileComponent implements OnInit {
     this.userService.updateUserProfile(userId, updatedUser).subscribe(
       (response) => {
         console.log('Profile updated successfully:', response);
-        this.router.navigate(['/home']);
+        this.router.navigate(['/home/feed']);
       },
       (error) => {
         console.error('Failed to update profile:', error);
+        this.router.navigate(['/home/feed']);
       }
     );
   }

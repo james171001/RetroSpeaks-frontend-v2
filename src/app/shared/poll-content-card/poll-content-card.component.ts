@@ -17,7 +17,7 @@ interface Reply {
   styleUrls: ['./poll-content-card.component.css'],
 })
 export class PollContentCardComponent {
-  username = 'JohnDoe';
+  username = 'Jayvee';
   pollQuestion = 'Which programming language is your favorite?';
   pollOptions = [
     { option: 'JavaScript', votes: 0 },

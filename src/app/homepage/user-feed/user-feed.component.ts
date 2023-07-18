@@ -53,10 +53,6 @@ export class UserFeedComponent {
     });
   }
 
-
-
-
-
   handleShowCreatePollEvent(createPollActive: boolean) {
     this.showCreatePollCard = createPollActive;
     this.showCreatePostComponent = false;
