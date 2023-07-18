@@ -2,6 +2,8 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
+import { catchError } from 'rxjs/operators';
+import { of } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -11,6 +13,8 @@ import { AuthService } from 'src/app/services/auth.service';
 export class LoginComponent {
   @ViewChild('container') container!: ElementRef;
 
+  errorMessageVisible: boolean = false;
+
   success: boolean = false;
   error: boolean = false;
   fail: boolean = false;
@@ -18,13 +22,12 @@ export class LoginComponent {
 
   // For Sign Up
   signUpForm: FormGroup;
-  signUpUserName: FormControl = new FormControl('', Validators.required);
-  signUpPassWord: FormControl = new FormControl();
-  signUpEmail: FormControl = new FormControl('', Validators.required);
-  signUpLastName: FormControl = new FormControl('', Validators.required);
-  signUpFirstName: FormControl = new FormControl('', Validators.required);
-  signUpAge: FormControl = new FormControl('', Validators.required);
-
+  signUpUserName: FormControl = new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z0-9]{4,20}$')]);
+  signUpPassWord: FormControl = new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z0-9]{4,20}$')]);
+  signUpEmail: FormControl = new FormControl('', [Validators.required,Validators.email]);
+  signUpLastName: FormControl = new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z0-9]{4,20}$')]);
+  signUpFirstName: FormControl = new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z0-9]{4,20}$')]);
+  signUpAge: FormControl = new FormControl('', [Validators.required, Validators.min(18),Validators.max(100)]);
   // For Sign In
   signInForm: FormGroup;
   userName: FormControl = new FormControl('', Validators.required);
@@ -55,6 +58,12 @@ export class LoginComponent {
   }
 
   signUp() {
+    if (this.signUpForm.invalid) {
+      this.signUpForm.markAllAsTouched();
+      this.errorMessageVisible = true;
+      return;
+    }
+
     const formValue = this.signUpForm.value;
 
     const model = {
@@ -67,8 +76,23 @@ export class LoginComponent {
     };
 
     this.authService.registerUser(model);
-    window.alert("Registration Success!");
+    window.alert('Registration Success!');
+
+    this.signUpForm.reset(); // Reset the form
+    this.errorMessageVisible = false; // Hide the error message
   }
+
+
+  
+  
+  // Helper method to clear error messages
+  clearErrors() {
+    setTimeout(() => {
+      this.error = false;
+      this.fail = false;
+    }, 5000); // Clear error messages after 5 seconds
+  }
+  
 
   signIn() {
     this.authService.authenticate(this.signInForm.value);
